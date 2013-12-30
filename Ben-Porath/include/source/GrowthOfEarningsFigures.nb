@@ -1,0 +1,457 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     15172,        377]*)
+(*NotebookOutlinePosition[     15817,        399]*)
+(*  CellTagsIndexPosition[     15773,        395]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(author = "\<jlt\>"\)], "Input"],
+
+Cell[BoxData[
+    \("jlt"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({y, m, d} = Take[Date[], 3]\)], "Input"],
+
+Cell[BoxData[
+    \({2007, 1, 26}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(year = ToString[y]\)], "Input"],
+
+Cell[BoxData[
+    \("2007"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(month = 
+      StringReplacePart["\<00\>", 
+        ToString[m], {3 - StringLength[ToString[m]], 2}]\)], "Input"],
+
+Cell[BoxData[
+    \("01"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(day = 
+      StringReplacePart["\<00\>", 
+        ToString[d], {3 - StringLength[ToString[d]], 2}]\)], "Input"],
+
+Cell[BoxData[
+    \("26"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(dateStamp = "\<_\>" <> year <> "\<-\>" <> month <> "\<-\>" <> 
+        day <> "\<_\>" <> author\)], "Input"],
+
+Cell[BoxData[
+    \("_2007-01-26_jlt"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(filePath\  = \ \
+"\</localathens/revisions/old-notes/include/source/\>"\)], "Input"],
+
+Cell[BoxData[
+    \("/localathens/revisions/old-notes/include/source/"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(growthEarningsPlot\  = \ 
+      Plot[{\ Log[x + 1], 1.5*Log[x + 1]}, {x, 0, 5}, \ 
+        AspectRatio \[Rule] Automatic, Ticks \[Rule] None, 
+        PlotStyle \[Rule] {{RGBColor[0.196, 0.804, 0.196], Thickness[0.01], 
+              Dashing[{0.05, 0.02}]}, {RGBColor[0.0, 0.0, 1.0], 
+              Thickness[0.01]}}]\)], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .53753 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.0238095 0.190476 0.0127983 0.190476 [
+[ 0 0 0 0 ]
+[ 1 .53753 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+0 .0128 m
+1 .0128 L
+s
+.02381 0 m
+.02381 .53753 L
+s
+0 0 m
+1 0 L
+1 .53753 L
+0 .53753 L
+closepath
+clip
+newpath
+.196 .804 .196 r
+.01 w
+[ .05 .02 ] 0 setdash
+.02381 .0128 m
+.06244 .04798 L
+.10458 .08013 L
+.14415 .10607 L
+.18221 .12807 L
+.22272 .149 L
+.26171 .16717 L
+.30316 .18477 L
+.34309 .2003 L
+.3815 .21414 L
+.42237 .22784 L
+.46172 .24016 L
+.49955 .25129 L
+.53984 .26248 L
+.57861 .27265 L
+.61984 .28291 L
+.65954 .29229 L
+.69774 .3009 L
+.73838 .30965 L
+.77751 .31771 L
+.81909 .32592 L
+.85916 .33351 L
+.89771 .34054 L
+.93871 .34774 L
+.97619 .35409 L
+s
+0 0 1 r
+[ ] 0 setdash
+.02381 .0128 m
+.06244 .06556 L
+.10458 .1138 L
+.14415 .15271 L
+.18221 .18571 L
+.22272 .21709 L
+.26171 .24436 L
+.30316 .27075 L
+.34309 .29405 L
+.3815 .31481 L
+.42237 .33536 L
+.46172 .35383 L
+.49955 .37054 L
+.53984 .38731 L
+.57861 .40258 L
+.61984 .41796 L
+.65954 .43203 L
+.69774 .44494 L
+.73838 .45807 L
+.77751 .47017 L
+.81909 .48248 L
+.85916 .49386 L
+.89771 .5044 L
+.93871 .5152 L
+.97619 .52473 L
+s
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 154.75},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000VR000`400?l00000o`00003o1`3oool0
+0`000000oooo0?ooo`3o0?oooaL0oooo00070?ooo`030000003oool0oooo0?l0oooo5`3oool000L0
+oooo00<0003o0?ooo`3oool0o`3ooolG0?ooo`001P0000000`0bcC80003o03;=<P3o000001L00000
+0@3oool000L0oooo0P000?l00`0bcC80oooo0?ooo`3o0?oooaD0oooo00070?ooo`04000000000?l0
+003o03;=<_l0oooo5P3oool000L0oooo00<000000?ooo`000?l00P0bcC;o0?oooaD0oooo00070?oo
+o`040000003oool0003o0000o`80</dbo`3ooolD0?ooo`001`3oool00`000000oooo0?ooo`020000
+o`80</dbo`3ooolC0?ooo`001`3oool01@000000oooo0?ooo`3oool0003o00<0</dbo`3ooolB0?oo
+o`001`3oool010000000oooo0?ooo`3oool20000o`<0</dbo`3ooolA0?ooo`001`3oool00`000000
+oooo0?ooo`020?ooo`80003o0`0bcC;o0?oooa00oooo00070?ooo`030000003oool0oooo00<0oooo
+0P000?l303;=<_l0oooo3`3oool000L0oooo00<000000?ooo`3oool0103oool00`000?l0oooo03;=
+<P0203;=<_l0oooo3P3oool000L0oooo00<000000?ooo`3oool0103oool20000o`030?ooo`0bcC80
+oooo0?l0oooo3P3oool000L0oooo00<000000?ooo`3oool01@3oool20000ool0oooo403oool000L0
+oooo00<000000?ooo`3oool01P3oool00`000?l0oooo0?ooo`030?ooo`0303;=<P3oool0oooo0?l0
+oooo203oool000L0oooo00<000000?ooo`3oool01P3oool20000o`<0oooo0`0bcC;o0?ooo`T0oooo
+00070?ooo`030000003oool0oooo00L0oooo0P000?l30?ooo`@0</dbo`3oool70?ooo`001`3oool0
+0`000000oooo0?ooo`080?ooo`80003o0`3oool403;=<_l0oooo1P3oool000L0oooo00<000000?oo
+o`3oool0203oool30000o`@0oooo0`0bcC;o0?ooo`D0oooo00070?ooo`030000003oool0oooo00T0
+oooo0`000?l40?ooo`@0</dbo`3oool30?ooo`001`3oool00`000000oooo0?ooo`0:0?ooo`<0003o
+103oool403;=<_l0oooo0P3oool000L0oooo00<000000?ooo`3oool02`3oool30000o`D0oooo0`0b
+cC;o0?ooo`40oooo00070?ooo`030000003oool0oooo00`0oooo0`000?l50?ooo`@0</dboP3oool0
+00L0oooo00<000000?ooo`3oool03@3oool20000o`H0oooo100bcC;m0?ooo`001`3oool00`000000
+oooo0?ooo`0>0?ooo`80003o1`3oool00`0bcC80oooo0?ooo`3l0?ooo`001`3oool00`000000oooo
+0?ooo`0>0?ooo`<0003o2`3oool00`0bcC80oooo0?ooo`3g0?ooo`001`3oool00`000000oooo0?oo
+o`0?0?ooo`<0003o2@3oool303;=<_P0oooo00070?ooo`030000003oool0oooo0100oooo0`000?l9
+0?ooo`@0</dbmP3oool000L0oooo00<000000?ooo`3oool04@3oool30000o`T0oooo1@0bcC;d0?oo
+o`001`3oool00`000000oooo0?ooo`0B0?ooo`<0003o2P3oool503;=<_80oooo00070?ooo`030000
+003oool0oooo01<0oooo0`000?l;0?ooo`@0</dbl@3oool000L0oooo00<000000?ooo`3oool0503o
+ool30000o``0oooo100bcC;_0?ooo`001`3oool00`000000oooo0?ooo`0E0?ooo`<0003o303oool5
+03;=<^d0oooo00070?ooo`030000003oool0oooo01H0oooo0`000?l=0?ooo`@0</dbk03oool000L0
+oooo00<000000?ooo`3oool05`3oool30000o`h0oooo00<0</db0?ooo`3oool0j`3oool000L0oooo
+00<000000?ooo`3oool0603oool30000oa80oooo00<0</db0?ooo`3oool0iP3oool000L0oooo00<0
+00000?ooo`3oool06@3oool30000oa00oooo100bcC;V0?ooo`001`3oool00`000000oooo0?ooo`0J
+0?ooo`<0003o403oool503;=<^@0oooo00070?ooo`030000003oool0oooo01/0oooo0`000?lA0?oo
+o`H0</dbh@3oool000L0oooo00<000000?ooo`3oool0703oool30000oa80oooo1P0bcC;O0?ooo`00
+1`3oool00`000000oooo0?ooo`0M0?ooo`<0003o503oool403;=<]h0oooo00070?ooo`030000003o
+ool0oooo01h0oooo0`000?lE0?ooo`@0</dbg03oool000L0oooo00<000000?ooo`3oool07`3oool3
+0000oaD0oooo100bcC;K0?ooo`001`3oool00`000000oooo0?ooo`0P0?ooo`<0003o5P3oool303;=
+<]X0oooo00070?ooo`030000003oool0oooo0240oooo0`000?lF0?ooo`0303;=<P3oool0oooo0080
+oooo00<0</db0?ooo`3oool0e03oool000L0oooo00<000000?ooo`3oool08P3oool30000oaT0oooo
+100bcC;D0?ooo`001`3oool00`000000oooo0?ooo`0S0?ooo`@0003o603oool503;=<]80oooo0007
+0?ooo`030000003oool0oooo02@0oooo10000?lI0?ooo`H0</dbc`3oool000L0oooo00<000000?oo
+o`3oool09P3oool30000oaX0oooo1P0bcC;=0?ooo`001`3oool00`000000oooo0?ooo`0W0?ooo`<0
+003o703oool603;=</X0oooo00070?ooo`030000003oool0oooo02P0oooo0`000?lM0?ooo`H0</db
+b03oool000L0oooo00<000000?ooo`3oool0:@3oool30000oal0oooo100bcC;70?ooo`001`3oool0
+0`000000oooo0?ooo`0Z0?ooo`@0003o7`3oool00`0bcC80oooo0?ooo`020?ooo`0303;=<P3oool0
+oooo0<40oooo00070?ooo`030000003oool0oooo02/0oooo10000?lR0?ooo`D0</db`03oool000L0
+oooo00<000000?ooo`3oool0;@3oool30000ob80oooo1`0bcC:m0?ooo`001`3oool00`000000oooo
+0?ooo`0^0?ooo`@0003o8`3oool603;=<[/0oooo00070?ooo`030000003oool0oooo02l0oooo1000
+0?lU0?ooo`H0</db^03oool000L0oooo00<000000?ooo`3oool0<@3oool30000obH0oooo1P0bcC:f
+0?ooo`001`3oool00`000000oooo0?ooo`0b0?ooo`@0003o9`3oool403;=<[D0oooo00070?ooo`03
+0000003oool0oooo03<0oooo10000?lX0?ooo`0303;=<P3oool0oooo00<0oooo00<0</db0?ooo`3o
+ool0[P3oool000L0oooo00<000000?ooo`3oool0=@3oool30000obd0oooo100bcC:]0?ooo`001`3o
+ool00`000000oooo0?ooo`0f0?ooo`@0003o;03oool603;=<ZX0oooo00070?ooo`030000003oool0
+oooo03L0oooo10000?l^0?ooo`L0</dbYP3oool000L0oooo00<000000?ooo`3oool0>@3oool30000
+oc00oooo1`0bcC:S0?ooo`001`3oool00`000000oooo0?ooo`0j0?ooo`@0003o<@3oool503;=<Z80
+oooo00070?ooo`030000003oool0oooo03/0oooo10000?lc0?ooo`0303;=<P3oool0oooo00D0oooo
+00<0</db0?ooo`3oool0V@3oool000L0oooo00<000000?ooo`3oool0?@3oool40000ocH0oooo1`0b
+cC:H0?ooo`001`3oool00`000000oooo0?ooo`0n0?ooo`@0003o=@3oool903;=<YH0oooo00070?oo
+o`030000003oool0oooo0400oooo10000?li0?ooo`H0</dbT`3oool000L0oooo00<000000?ooo`3o
+ool0@@3oool40000ocX0oooo1`0bcC:@0?ooo`001`3oool00`000000oooo0?ooo`130?ooo`@0003o
+>`3oool503;=<P@0oooo00<0</db0?ooo`3oool0R03oool000L0oooo00<000000?ooo`3oool0A03o
+ool50000ocX0oooo0`0bcC840?ooo`@0</dbR03oool000L0oooo00<000000?ooo`3oool0AP3oool5
+0000od00oooo1P0bcC:50?ooo`001`3oool00`000000oooo0?ooo`180?ooo`@0003o@@3oool803;=
+<X40oooo00070?ooo`030000003oool0oooo04X0oooo10000?m20?ooo`X0</dbO03oool000L0oooo
+00<000000?ooo`3oool0B`3oool50000odD0oooo1@0bcC840?ooo`0303;=<P3oool0oooo07D0oooo
+00070?ooo`030000003oool0oooo04d0oooo10000?m<0?ooo`D0</dbM03oool000L0oooo00<00000
+0?ooo`3oool0C`3oool40000od/0oooo1`0bcC9a0?ooo`001`3oool00`000000oooo0?ooo`1@0?oo
+o`@0003oC@3oool703;=<Vh0oooo00070?ooo`030000003oool0oooo0580oooo10000?m>0?ooo`T0
+</dbJ@3oool000L0oooo00<000000?ooo`3oool0D`3oool40000oe00oooo1P0bcC9Y0?ooo`001`3o
+ool00`000000oooo0?ooo`1E0?ooo`@0003oF03oool603;=<Ul0oooo00070?ooo`030000003oool0
+oooo05H0oooo1@000?mF0?ooo`X0</dbF`3oool000L0oooo00<000000?ooo`3oool0F03oool50000
+oeX0oooo200bcC9G0?ooo`001`3oool00`000000oooo0?ooo`1J0?ooo`@0003oG@3oool603;=<UD0
+oooo00070?ooo`030000003oool0oooo05`0oooo10000?mM0?ooo`@0</db1`3oool00`0bcC80oooo
+0?ooo`1;0?ooo`001`3oool00`000000oooo0?ooo`1M0?ooo`D0003oHP3oool:03;=<TP0oooo0007
+0?ooo`030000003oool0oooo05l0oooo1@000?mP0?oooa00</db@P3oool000L0oooo00<000000?oo
+o`3oool0H@3oool50000ofP0oooo1P0bcC920?ooo`001`3oool00`000000oooo0?ooo`1S0?ooo`D0
+003oL03oool00`0bcC80oooo0?ooo`0k0?ooo`001`3oool00`000000oooo0?ooo`1U0?ooo`D0003o
+KP3oool903;=<SD0oooo00070?ooo`030000003oool0oooo06L0oooo1@000?m]0?ooo`l0</db;P3o
+ool000L0oooo00<000000?ooo`3oool0J@3oool50000og80oooo200bcC840?ooo`0303;=<P3oool0
+oooo02L0oooo00070?ooo`030000003oool0oooo06/0oooo1@000?ml0?ooo`H0</db903oool000L0
+oooo00<000000?ooo`3oool0K@3oool50000og/0oooo2`0bcC8N0?ooo`001`3oool00`000000oooo
+0?ooo`1_0?ooo`D0003oOP3oool903;=<Q/0oooo00070?ooo`030000003oool0oooo0740oooo1P00
+0?n00?ooo`D0</db1@3oool203;=<Q<0oooo00070?ooo`030000003oool0oooo07<0oooo1P000?n2
+0?ooo`0403;=<P3oool0oooo0?ooo`T0</db3P3oool000L0oooo00<000000?ooo`3oool0MP3oool5
+0000oh@0oooo3P0bcC890?ooo`001`3oool00`000000oooo0?ooo`1h0?ooo`D0003oR`3oool603;=
+<PP0oooo00070?ooo`030000003oool0oooo07X0oooo1@000?n>0?ooo`0303;=<P3oool0oooo00H0
+oooo00070?ooo`030000003oool0oooo07`0oooo1P000?nD0?ooo`001`3oool00`000000oooo0?oo
+o`1n0?ooo`H0003oTP3oool000L0oooo00<000000?ooo`3oool0P@3oool50000oi00oooo00070?oo
+o`030000003oool0oooo08<0oooo1@000?n>0?ooo`001`3oool00`000000oooo0?ooo`250?ooo`D0
+003oS03oool000L0oooo00<000000?ooo`3oool0Q`3oool60000ohT0oooo00070?ooo`030000003o
+ool0oooo08T0oooo1P000?n70?ooo`001`3oool00`000000oooo0?ooo`2<0?ooo`D0003oQ@3oool0
+00L0oooo00<000000?ooo`3oool0SP3oool60000oh80oooo00070?ooo`030000003oool0oooo0900
+oooo1P000?n00?ooo`001`3oool00`000000oooo0?ooo`2C0?ooo`H0003oO@3oool000L0oooo00<0
+00000?ooo`3oool0U@3oool70000ogX0oooo00070?ooo`030000003oool0oooo09P0oooo1`000?mg
+0?ooo`001`3oool00`000000oooo0?ooo`2K0?ooo`L0003oM03oool000L0oooo00<000000?ooo`3o
+ool0WP3oool70000og40oooo00070?ooo`030000003oool0oooo0:40oooo1`000?m^0?ooo`001`3o
+ool00`000000oooo0?ooo`2T0?ooo`L0003oJ`3oool000L0oooo00<000000?ooo`3oool0Y`3oool7
+0000ofP0oooo00070?ooo`030000003oool0oooo0:X0oooo1`000?mU0?ooo`001`3oool00`000000
+oooo0?ooo`2]0?ooo`L0003oHP3oool000L0oooo00<000000?ooo`3oool0/03oool70000oel0oooo
+00070?ooo`030000003oool0oooo0;<0oooo1P000?mM0?ooo`001`3oool00`000000oooo0?ooo`2f
+0?ooo`H0003oFP3oool000L0oooo00<000000?ooo`3oool0^03oool70000oeL0oooo00070?ooo`03
+0000003oool0oooo0;/0oooo1`000?mD0?ooo`001`3oool00`000000oooo0?ooo`2n0?ooo`H0003o
+DP3oool000L0oooo00<000000?ooo`3oool0`@3oool60000odl0oooo00070?ooo`030000003oool0
+oooo0<<0oooo1`000?m<0?ooo`001`3oool00`000000oooo0?ooo`360?ooo`L0003oB@3oool000L0
+oooo00<000000?ooo`3oool0b@3oool80000odD0oooo00070?ooo`030000003oool0oooo0<d0oooo
+1`000?m20?ooo`001`3oool00`000000oooo0?ooo`3A0?ooo`L0003o?P3oool000L0oooo00<00000
+0?ooo`3oool0e03oool70000oc/0oooo00070?ooo`030000003oool0oooo0=L0oooo1`000?lh0?oo
+o`001`3oool00`000000oooo0?ooo`3J0?ooo`L0003o=@3oool000L0oooo00<000000?ooo`3oool0
+g@3oool70000oc80oooo00070?ooo`030000003oool0oooo0>00oooo20000?l^0?ooo`001`3oool0
+0`000000oooo0?ooo`3T0?ooo`P0003o:P3oool000L0oooo00<000000?ooo`3oool0j03oool80000
+obH0oooo00070?ooo`030000003oool0oooo0>`0oooo20000?lR0?ooo`001`3oool00`000000oooo
+0?ooo`3`0?ooo`L0003o7`3oool000L0oooo00<000000?ooo`3oool0m03oool70000oa/0oooo0007
+0?ooo`030000003oool0oooo0?L0oooo20000?lG0?ooo`001`3oool00`000000oooo0?ooo`3k0?oo
+o`L0003o503oool000L0oooo00<000000?ooo`3oool0o`3oool70000oa00oooo00070?ooo`030000
+003oool0oooo0?l0oooo0`3oool80000o``0oooo00070?ooo`030000003oool0oooo0?l0oooo1`3o
+ool80000o`P0oooo00070?ooo`030000003oool0oooo0?l0oooo2`3oool40000o`P0oooo00070?oo
+o`030000003oool0oooo0?l0oooo5`3oool000L0oooo00<000000?ooo`3oool0o`3ooolG0?ooo`00
+1`3oool00`000000oooo0?ooo`3o0?oooaL0oooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {153.75, 0}} -> {-0.133923, -0.0672053, \
+0.0183549, 0.0183549}}],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  Graphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Export[
+      filePath <> "\<fig-earnings-growth\>" <> dateStamp <> "\<.eps\>", 
+      growthEarningsPlot, \ "\<EPS\>"]\)], "Input"],
+
+Cell[BoxData[
+    \("/localathens/revisions/old-notes/include/source/fig-earnings-growth_\
+2007-01-26_jlt.eps"\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 881}},
+WindowSize->{567, 717},
+WindowMargins->{{48, Automatic}, {39, Automatic}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 51, 1, 30, "Input"],
+Cell[1830, 56, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1906, 62, 60, 1, 30, "Input"],
+Cell[1969, 65, 47, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2053, 71, 51, 1, 30, "Input"],
+Cell[2107, 74, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2184, 80, 133, 3, 50, "Input"],
+Cell[2320, 85, 38, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2395, 91, 131, 3, 50, "Input"],
+Cell[2529, 96, 38, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2604, 102, 128, 2, 30, "Input"],
+Cell[2735, 106, 51, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2823, 112, 104, 2, 30, "Input"],
+Cell[2930, 116, 84, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3051, 122, 350, 6, 150, "Input"],
+Cell[3404, 130, 11303, 227, 163, 1539, 102, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[14710, 359, 130, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[14877, 367, 152, 3, 50, "Input"],
+Cell[15032, 372, 124, 2, 48, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,355 @@
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=4.10.0.2363}
+%TCIDATA{Created=Tuesday, January 30, 2007 06:01:24}
+%TCIDATA{LastRevised=Tuesday, February 06, 2007 10:26:26}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\numberwithin{equation}{section}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{7in}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\renewcommand{\baselinestretch}{1.7}
+\allowdisplaybreaks
+\renewcommand{\baselinestretch}{1.7}
+\setlength{\parskip}{0 in}
+\pagestyle{empty}
+\input{tcilatex}
+
+\begin{document}
+
+
+\bigskip The Human Capital Dynamics
+
+\begin{eqnarray*}
+t_{0} &<&t<T;T\rightarrow \infty \\
+t^{\ast } &=&\left( \frac{\alpha }{1-\alpha }\right) \frac{1}{r}-\frac{%
+H_{0}^{1-\alpha }}{A\left( 1-\alpha \right) } \\
+t &=&t_{0}\Rightarrow H(t)=H_{0} \\
+t_{0} &<&t<t^{\ast }\Rightarrow H(t)=(A\left( 1-\alpha \right)
+t+H_{0}^{1-\alpha })^{\frac{1}{1-\alpha }} \\
+t &=&t^{\ast }\Rightarrow H(t)=\left( \frac{\alpha A}{r}\right) ^{^{\frac{1}{%
+1-\alpha }}} \\
+t^{\ast } &<&t\Rightarrow H(t)=\left( \frac{\alpha A}{r}\right) ^{^{\frac{%
+\alpha }{1-\alpha }}}\left( t-t^{\ast }\right) +H(t^{\ast })
+\end{eqnarray*}
+
+\pagebreak \bigskip
+
+Investment Dynamics
+
+\begin{eqnarray*}
+t_{0} &<&t<T;T\rightarrow \infty \\
+t &=&t_{0}\Rightarrow I(t)=1\text{ if }F^{\prime }(H_{0})g(t)>R \\
+t_{0} &<&t\leq t^{\ast }\Rightarrow I(t)=1 \\
+t^{\ast } &<&t\Rightarrow I(t)=\frac{\left( \frac{\alpha A}{r}\right) ^{^{%
+\frac{1}{1-\alpha }}}}{\left( \frac{\alpha A}{r}\right) ^{^{\frac{\alpha }{%
+1-\alpha }}}\left( t-t^{\ast }\right) +H(t^{\ast })} \\
+I(t) &=&\left( \left( \frac{\alpha A}{r}\right) ^{^{-1}}\left( t-t^{\ast
+}\right) +1\right) ^{-1}
+\end{eqnarray*}
+
+\pagebreak \bigskip
+
+Earnings Dynamics
+
+\begin{eqnarray*}
+t_{0} &<&t<T;T\rightarrow \infty  \\
+E(t) &=&RH(t)\cdot (1-I(t)) \\
+\text{ but for }t_{0} &<&t\leq t^{\ast }\Rightarrow I(t)=1\Rightarrow E(t)=0
+\\
+\text{For }t &>&t^{\ast } \\
+E(t) &=&RH(t)\cdot (1-I(t)) \\
+&=&RH(t)-RH(t)I(t) \\
+&=&RH(t)-\left( \frac{\alpha A}{r}\right) ^{^{\frac{1}{1-\alpha }}} \\
+&=&R\left( \frac{\alpha A}{r}\right) ^{^{\frac{\alpha }{1-\alpha }}}\left(
+t-t^{\ast }\right) 
+\end{eqnarray*}
+
+=
+
+\pagebreak
+
+\begin{equation*}
+\begin{tabular}{c}
+$\text{Human Capital Dynamics Varying }\alpha $ \\ 
+$\FRAME{itbpF}{4.0421in}{3.0407in}{0in}{}{}{alphah.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0407in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'alphaH.eps';file-properties
+"XNPEU";}}$ \\ 
+$\text{Dynamics of Capital for the parameters:}$ \\ 
+$A=3,r=0.05,H_{0}=1,$ \\ 
+$\alpha =0.3\text{ \ (dotted line)}$ \\ 
+$\alpha =0.4\text{ \ (dashed line)}$ \\ 
+$\alpha =0.5\text{ \ (solid line)}$%
+\end{tabular}%
+\bigskip
+\end{equation*}
+
+\pagebreak
+
+\begin{equation*}
+\begin{tabular}{c}
+Earnings$\text{ Dynamics Varying }\alpha $ \\ 
+\FRAME{itbpF}{4.0421in}{3.0415in}{0in}{}{}{alphae.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0415in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'alphaE.eps';file-properties
+"XNPEU";}} \\ 
+$\text{Dynamics of Earnings for the parameters:}$ \\ 
+$A=3,r=0.05,H_{0}=1,$ \\ 
+$\alpha =0.3\text{ \ (dotted line)}$ \\ 
+$\alpha =0.4\text{ \ (dashed line)}$ \\ 
+$\alpha =0.5\text{ \ (solid line)}$%
+\end{tabular}%
+\end{equation*}
+
+\pagebreak 
+\begin{equation*}
+\begin{tabular}{c}
+$\text{Human Investment Dynamics Varying }\alpha $ \\ 
+$\FRAME{itbpF}{4.0421in}{3.0407in}{0in}{}{}{alphainv.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0407in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'alphaInv.eps';file-properties
+"XNPEU";}}$ \\ 
+$\text{Dynamics of Investment for the parameters:}$ \\ 
+$A=3,r=0.05,H_{0}=1,R=1,$ \\ 
+$\alpha =0.3\text{ \ (dotted line)}$ \\ 
+$\alpha =0.4\text{ \ (dashed line)}$ \\ 
+$\alpha =0.5\text{ \ (solid line)}$%
+\end{tabular}%
+\end{equation*}
+
+\pagebreak 
+
+\pagebreak
+
+\begin{equation*}
+\begin{tabular}{c}
+$\text{Human Capital Dynamics Varying }r$ \\ 
+$\FRAME{itbpF}{4.0421in}{3.0407in}{0in}{}{}{rh.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0407in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'rH.eps';file-properties "XNPEU";}}
+$ \\ 
+$\text{Dynamics of Capital for the parameters:}$ \\ 
+$A=3,H_{0}=1,\alpha =0.5$ \\ 
+$r=0.04\text{ \ (dotted line)}$ \\ 
+$r=0.05\text{ \ (dashed line)}$ \\ 
+$r=0.06\text{ \ (solid line)}$%
+\end{tabular}%
+\bigskip
+\end{equation*}
+
+\pagebreak
+
+\bigskip 
+\begin{equation*}
+\begin{tabular}{c}
+$\text{Human Investment Dynamics Varying }r$ \\ 
+$\FRAME{itbpF}{4.0421in}{3.0407in}{0in}{}{}{rinv.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0407in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'rInv.eps';file-properties
+"XNPEU";}}$ \\ 
+$\text{Dynamics of Investment for the parameters:}$ \\ 
+$A=3,H_{0}=1,\alpha =0.5$ \\ 
+$r=0.04\text{ \ (dotted line)}$ \\ 
+$r=0.05\text{ \ (dashed line)}$ \\ 
+$r=0.06\text{ \ (solid line)}$%
+\end{tabular}%
+\bigskip
+\end{equation*}
+
+\pagebreak
+
+\bigskip 
+\begin{equation*}
+\begin{tabular}{c}
+Earnings$\text{ Dynamics Varying }r$ \\ 
+$\FRAME{itbpF}{4.0421in}{3.0415in}{0in}{}{}{re.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0415in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'rE.eps';file-properties "XNPEU";}}
+$ \\ 
+$\text{Dynamics of Investment for the parameters:}$ \\ 
+$A=3,H_{0}=1,\alpha =0.5,R=1,$ \\ 
+$r=0.04\text{ \ (dotted line)}$ \\ 
+$r=0.05\text{ \ (dashed line)}$ \\ 
+$r=0.06\text{ \ (solid line)}$%
+\end{tabular}%
+\bigskip
+\end{equation*}
+
+\pagebreak 
+\begin{equation*}
+\begin{tabular}{c}
+$\text{Human Capital Dynamics Varying }A$ \\ 
+\FRAME{itbpF}{4.0421in}{3.0415in}{0in}{}{}{ah.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0415in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'AH.eps';file-properties "XNPEU";}}
+\\ 
+$\text{Dynamics of Investment for the parameters:}$ \\ 
+$r=0.05,H_{0}=1,\alpha =0.5$ \\ 
+$A=5\text{ \ (dotted line)}$ \\ 
+$A=7\text{ \ (dashed line)}$ \\ 
+$A=9\text{ \ (solid line)}$%
+\end{tabular}%
+\end{equation*}
+
+\pagebreak
+
+\begin{equation*}
+\begin{tabular}{c}
+$\text{Human Investment Dynamics Varying }A$ \\ 
+\FRAME{itbpF}{4.0421in}{3.0415in}{0in}{}{}{ainv.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0415in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'AInv.eps';file-properties
+"XNPEU";}} \\ 
+$\text{Dynamics of Investment for the parameters:}$ \\ 
+$r=0.05,H_{0}=1,\alpha =0.5$ \\ 
+$A=5\text{ \ (dotted line)}$ \\ 
+$A=7\text{ \ (dashed line)}$ \\ 
+$A=9\text{ \ (solid line)}$%
+\end{tabular}%
+\end{equation*}
+
+\pagebreak
+
+\begin{equation*}
+\begin{tabular}{c}
+Earnings Dynamics $\text{Varying }A$ \\ 
+\FRAME{itbpF}{4.0421in}{3.0415in}{0in}{}{}{ae.eps}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "F";width 4.0421in;height 3.0415in;depth
+0in;original-width 5.8219in;original-height 4.3708in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename 'AE.eps';file-properties "XNPEU";}}
+\\ 
+$\text{Dynamics of Investment for the parameters:}$ \\ 
+$r=0.05,H_{0}=1,\alpha =0.5,R=1,$ \\ 
+$A=5\text{ \ (dotted line)}$ \\ 
+$A=7\text{ \ (dashed line)}$ \\ 
+$A=9\text{ \ (solid line)}$%
+\end{tabular}%
+\end{equation*}
+
+\pagebreak 
+
+The Mincer Equation based on Ben Porath
+
+Basic Equation:
+
+\begin{equation*}
+\ln E\left( \tau \right) =\ln \left( \frac{A^{2}R}{2}\right) +\ln \left(
+\tau \right) +\ln \left( 1+\frac{e^{-2rT}-e^{2r(\tau -T)}}{2r\tau }\right) 
+\end{equation*}
+
+\pagebreak
+
+The Taylor Expansions:
+
+\begin{eqnarray*}
+\ln \left( \tau \right) &\doteq &\ln \left( \tau _{0}\right) +\frac{1}{\tau
+_{0}}\left( \tau -\tau _{0}\right) -\frac{1}{\tau _{0}^{2}}\frac{\left( \tau
+-\tau _{0}\right) ^{2}}{2!} \\
+\ln \left( 1+\frac{e^{-2rT}-e^{2r(\tau -T)}}{2r\tau }\right) &\doteq &\xi
+_{0}+\xi _{1}\left( \tau -\tau _{0}\right) +\xi _{2}\frac{\left( \tau -\tau
+_{0}\right) ^{2}}{2!} \\
+\xi _{0} &\equiv &\ln \left( 1+\frac{e^{-2rT}-e^{2r(\tau _{0}-T)}}{2r\tau
+_{0}}\right) \\
+\xi _{1} &\equiv &-\left( \frac{e^{-2rT}+e^{2r(\tau _{0}-T)}\left( 2r\tau
+_{0}-1\right) }{\tau _{0}\left( 2r\tau _{0}+e^{-2rT}-e^{2r(\tau
+_{0}-T)}\right) }\right) \\
+\xi _{2} &\equiv &\left[ 
+\begin{array}{c}
+\frac{\left( e^{-2rT}+e^{2r(\tau _{0}-T)}\left( 2r\tau _{0}-1\right) \right) 
+}{\left( \tau _{0}\left( 2r\tau _{0}+e^{-2rT}-e^{2r(\tau _{0}-T)}\right)
+\right) ^{2}}\left( 4r\tau _{0}+e^{-2rT}-e^{2r(\tau _{0}-T)}\left( 2r\tau
+_{0}+1\right) \right) \\ 
+-\left( \frac{\left( 2r\right) ^{2}\tau _{0}e^{2r(\tau _{0}-T)}}{\left( \tau
+_{0}\left( 2r\tau _{0}+e^{-2rT}-e^{2r(\tau _{0}-T)}\right) \right) }\right)%
+\end{array}%
+\right]
+\end{eqnarray*}
+
+\pagebreak
+
+Adding the terms toguether:
+
+\begin{eqnarray*}
+\ln \left( \tau \right) +\ln \left( 1+\frac{e^{-2rT}-e^{2r(\tau -T)}}{2r\tau 
+}\right) &\doteq &\alpha _{0}+\alpha _{1}\left( \tau -\tau _{0}\right)
++\alpha _{2}\left( \tau -\tau _{0}\right) ^{2} \\
+\alpha _{0} &\equiv &\ln \left( \tau _{0}\right) +\xi _{0} \\
+\alpha _{1} &\equiv &\xi _{1}+\frac{1}{\tau _{0}} \\
+\alpha _{2} &\equiv &\left( -\frac{1}{\tau _{0}^{2}}+\xi _{2}\right) /2
+\end{eqnarray*}
+
+\pagebreak
+
+To obtain Mincer Equations:
+
+\begin{eqnarray*}
+\ln \left( \tau \right) +\ln \left( 1+\frac{e^{-2rT}-e^{2r(\tau -T)}}{2r\tau 
+}\right) &\doteq &k_{0}+k_{1}\tau +k_{2}\tau ^{2} \\
+k_{0} &\equiv &\alpha _{0}-\tau _{0}\alpha _{1}+\alpha _{2}\tau _{0}^{2} \\
+k_{1} &\equiv &\alpha _{1}-2\alpha _{2}\tau _{0} \\
+k_{2} &\equiv &\alpha _{2}
+\end{eqnarray*}
+
+Mincer Obtained:
+
+\begin{equation*}
+\begin{tabular}{c}
+Mincer Coefficients \\ 
+$\widehat{k_{1}}=0.081$ \\ 
+$\widehat{k_{2}}=-0.0012$ \\ 
+Using $r=0.0225,\tau _{0}=29.54,T=41.43$ \\ 
+$k_{1}=0.081$ \\ 
+$k_{2}=-0.0010$%
+\end{tabular}%
+\end{equation*}
+
+\pagebreak
+
+\begin{gather*}
+\begin{tabular}{ccc||cc}
+\multicolumn{3}{c||}{Parameters} & \multicolumn{2}{||c}{Ben Porath
+Coefficients} \\ \hline\hline
+$r$ & $\tau _{0}$ & $T$ & $k_{1}$ & $k_{2}$ \\ \hline
+$0.0225$ & $29.54$ & $41.43$ & $0.081$ & $-0.0010$ \\ \hline
+$0.05$ & $25$ & $60$ & $0.0808$ & $-0.0008$ \\ \hline
+$0.05$ & $20$ & $65$ & $0.1002$ & $-0.0013$ \\ \hline
+$0.0675$ & $24.70$ & $74.77$ & $0.081$ & $-0.0008$ \\ \hline\hline
+\multicolumn{3}{c}{Mincer Coefficients} & $0.081$ & $-0.0012$ \\ \hline
+\end{tabular}
+\\
+\text{Model: }\ln \left( Earnings\right) =k_{0}+k_{1}\tau +k_{2}\tau ^{2}
+\end{gather*}
+
+\end{document}
