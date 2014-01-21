@@ -121,7 +121,41 @@ H(t^*) &=& \int \limits _{0} ^{t^*} F (H(\tau)) d\tau + H_{0} \label{eq:humantst
 \end{eqnarray} 
 \noindent where $H(t^*)$ is the human capital stock accumulated up to time $t^*$, the sum over the period $[0,t^*]$ plus the initial stock.\\
 \indent Given that $R$ is fixed at $1$, any decrease in $g(t)$ lowers $t^*$ because it lowers the discount to gross investment in human capital. For example, relatively high $r$ implies relatively low $t^*$ because the individual is relatively present oriented. Also, from the \eqref{eq:humantstar}, note that a high value of $t^*$ implies lower value for $t^*$ because it takes less time to obtain $H(t^*)$.\footnote{A more realistic model, perhaps, makes $R$ depend on human capital so that more able individuals find it cheaper to invest in human capital. However, they also have higher foregone earnings and we cannot say without deeper analysis how $t^*$ behaves in such a case.} If $\sigma > 0 $ the the same conditions characterize specialization. However, the there may be more than one specialization period because, under some scenarios, a high value of $\sigma$ may knock off capital such that investment cycles are optimal. We stay away from such scenarios and keep $\sigma = 0$ in what follows.
-\begin{example} (No Depreciation and the Cobb-Douglas Production Function for Human Capital)
+\begin{example} (No Depreciation and the Cobb-Douglas Production Function for Human Capital: Initial Human Capital and the Specialization Period) \label{example:ndcdexample}
+In this case $\dot{H} = A \left(IH \right)^\alpha$ where $0 < \alpha < 1, A>0$. As argued above, specialization happens in the period $[0,t^*]$. Thus
+\begin{eqnarray}
+	\alpha A \left( H(0) \right) ^{\alpha - 1 }g(0) &>& R \nonumber \\
+	&\Leftrightarrow& \nonumber \\
+	H(0) &<& \left[ \frac{R}{g(0)\alpha A} \right]^{\frac{1}{\alpha-1}}.\\	
+\end{eqnarray}
+\indent As the conditions in \eqref{eq:humantstar} establish, the time spent in specialization is a decreasing function of $H(0)$. In this example, actually, the initial human capital needs to be below certain threshold in order for the individual to specialize during one period. 
+\end{example}
+
+\begin{example} (Infinite Horizon)
+In the setting of Exercise \ref{example:ndcdexample} and if the horizon of the problem is infinite: $H(0) < \left( \frac{\alpha A}{r} \right) ^{\frac{1}{1 - \alpha}}$ because $g(t) = \frac{R}{r}$.
+\end{example}
+
+\begin{example} (No Depreciation and the Cobb-Douglas Production Function for Human Capital: the Specialization Period)
+In the period of specialization $I(t) = 1$. Then,
+\begin{equation}
+\dot{H} = A \left( H \right)^{\alpha} \label{eq:humandiff}.
+\end{equation}
+The general solution for \eqref{eq:humandiff} is
+\begin{equation}
+H(t) = \left[ (1 - \alpha)(At + K) \right]^{\frac{1}{1-\alpha}}
+\end{equation}
+for some constant $K$. Given an initial condition $H(0) = H_{0}$, $K = \frac{H_{0}^{1-\alpha}}{1-\alpha}$ and
+\begin{equation}
+H(t) = \left[ (1 - \alpha)At + H_{0}^{1-\alpha} \right]^{\frac{1}{1-\alpha}}.
+\end{equation}
+At the end of the specialization period, as established in \eqref{eq:humantstar}:
+\begin{equation}
+\alpha g(t^*) A \left( H(t^*) \right)^{\alpha - 1} = R.
+\end{equation}
+If $T \rightarrow \infty$, $g(t) = \frac{R}{r}$ and
+\begin{equation}
+t^* = - \frac{H_{0}^{1 - \alpha}}{A(1 - \alpha)} + \frac{\alpha}{1 - \alpha}\frac{1}{r}.
+\end{equation}
 \end{example}
 
 
