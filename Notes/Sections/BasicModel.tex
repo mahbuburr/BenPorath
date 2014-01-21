@@ -1,7 +1,7 @@
 \section{Baseline Model}
 \noindent The first and very basic model builds on the following five assumptions: (i) a single representative agent; (ii) perfect capital markets; (iii) no non-market benefits of human capital; (iv) fixed labor supply; (v) constant depreciation of human capital stock, $\sigma$. Let $T$ define a time horizon. For each $t \in T$, $H$ denotes human capital, $I \in [0,1]$ investment time, $D$ market goods that serve as inputs to the production function, and $F$ a strictly concave production function in two normal inputs. The law of motion for human capital is
 \begin{equation}
-\dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma D(t)
+\dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t)
 \end{equation}
 and embeds a neutrality assumption. Namely, the current stock of human capital at time $t$, $H(t)$, and the investment time at time $t$, $I(t)$, appear as a single argument in a multiplicative fashion in the flow production of human capital. At each point of time, the current stock and the rental rate of human capital, $R$, define potential earnings
 \begin{equation}
@@ -97,10 +97,10 @@ Now, let $\sigma = 0$ and from \eqref{eq:grossdep} obtain $\frac{\ddot{g}}{g} = 
 \ddot{E} &=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} - \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) \right] + \left[ r \frac{\dot{g}}{g} - \left( \frac{\dot{g}}{g} \right)^2 \right] \frac{F'}{F''} \nonumber \\
 &=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} - \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) - \frac{gr - \dot{g}}{g} \right] \nonumber \\
 &=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} - \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) - \frac{1}{g} \right] \nonumber \\
-&=& \left( \frac{\dot{g}}{g} \right)^2 \frac{F'}{F''} \left( 1 - \frac{F'F'''}{{F''}^2} \right)
+&=& - \left( \frac{\dot{g}}{g} \right)^2 \frac{F'}{F''} \left( 1 - \frac{F'F'''}{{F''}^2} \right)
 \end{eqnarray}
 
-\noindent where the third equality uses \eqref{eq:grossdep}, i.e. $gr - \dot{g} = 1$. F is strictly concave and therefore $\left( \frac{\dot{g}}{g} \right)^2 \frac{F'}{F''} > 0$. The sign of $\eta \equiv \left( 1 - \frac{F'F'''}{{F''}^2} \right)$ depends on $F'''$. A sufficient condition for $\dot{E}$ to be concave is $\eta < 0$.
+\noindent where the third equality uses \eqref{eq:grossdep}, i.e. $gr - \dot{g} = 1$. F is strictly concave and therefore $-\left( \frac{\dot{g}}{g} \right)^2 \frac{F'}{F''} > 0$. The sign of $\eta \equiv \left( 1 - \frac{F'F'''}{{F''}^2} \right)$ depends on $F'''$. A sufficient condition for $\dot{E}$ to be concave is $\eta < 0$.
 \begin{example} (Human Capital Production Functions and Earnings Concavity)
 \begin{itemize}
 \item Power Production Function 1 : consider the case of $F(x) = \frac{Ax^{\alpha}}{\alpha}$ for $ - \infty < \alpha < 1, A > 0$. Then, $\eta = \frac{1}{\alpha - 1} < 0$. Under this specification the earnings function is strictly concave with respect to time.
