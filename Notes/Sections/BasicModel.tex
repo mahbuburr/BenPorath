@@ -126,7 +126,7 @@ In this case $\dot{H} = A \left(IH \right)^\alpha$ where $0 < \alpha < 1, A>0$. 
 \begin{eqnarray}
 	\alpha A \left( H(0) \right) ^{\alpha - 1 }g(0) &>& R \nonumber \\
 	&\Leftrightarrow& \nonumber \\
-	H(0) &<& \left[ \frac{R}{g(0)\alpha A} \right]^{\frac{1}{\alpha-1}}.\\	
+	H(0) &<& \left[ \frac{R}{g(0)\alpha A} \right]^{\frac{1}{\alpha-1}} \label{eq:h0forspe}.
 \end{eqnarray}
 \indent As the conditions in \eqref{eq:humantstar} establish, the time spent in specialization is a decreasing function of $H(0)$. In this example, actually, the initial human capital needs to be below certain threshold in order for the individual to specialize during one period. 
 \end{example}
@@ -146,7 +146,7 @@ H(t) = \left[ (1 - \alpha)(At + K) \right]^{\frac{1}{1-\alpha}}
 \end{equation}
 for some constant $K$. Given an initial condition $H(0) = H_{0}$, $K = \frac{H_{0}^{1-\alpha}}{1-\alpha}$ and
 \begin{equation}
-H(t) = \left[ (1 - \alpha)At + H_{0}^{1-\alpha} \right]^{\frac{1}{1-\alpha}}.
+H(t) = \left[ (1 - \alpha)At + H_{0}^{1-\alpha} \right]^{\frac{1}{1-\alpha}} \label{eq:hbeforetstar}.
 \end{equation}
 At the end of the specialization period, as established in \eqref{eq:humantstar}:
 \begin{equation}
@@ -154,12 +154,98 @@ At the end of the specialization period, as established in \eqref{eq:humantstar}
 \end{equation}
 If $T \rightarrow \infty$, $g(t) = \frac{R}{r}$ and
 \begin{equation}
-t^* = - \frac{H_{0}^{1 - \alpha}}{A(1 - \alpha)} + \frac{\alpha}{1 - \alpha}\frac{1}{r}.
+t^* = - \frac{H_{0}^{1 - \alpha}}{A(1 - \alpha)} + \frac{\alpha}{1 - \alpha}\frac{1}{r}. \label{eq:tstar}
 \end{equation}
+
+\indent \eqref{eq:tstar} provides some intuitive results: (i) an individual with relatively high initial human capital specializes during a relatively shorter period: $\frac{\partial t^*}{\partial       H_{0}} < 0$; (ii) a relatively abler individual specializes during relatively longer period: $\frac{\partial t^*}{\partial A} > 0$; a relatively impatient individual specializes for a relatively shorter period: $\frac{\partial t^*}{\partial r} < 0$.
 \end{example}
 
+\begin{example} (No Depreciation and the Cobb-Douglas Production for Human Capital: Post-experience Earnings)
+Let $\tau = t - t^*$ define the post-school work experience and write post-school earnings as follows:
+\begin{equation}
+E(\tau) = R \int \limits _{0} ^{\tau} \dot{H( l + t^*)}d l + R H(t^*) - RIH(\tau + t^*).
+\end{equation}
+Now, from \eqref{eq:humantstar} the following equality holds:
+\begin{eqnarray}
+\alpha g(t) A \left( IH(t) \right)^{\alpha - 1} &=& R \nonumber \\
+&\Leftrightarrow& \nonumber \\
+IH(t) &=& \left[ \frac{\alpha g(t) A}{R} \right]^{\frac{1}{1-\alpha}} \label{eq:itcobb}
+\end{eqnarray}
+Combining \eqref{eq:itcobb} and the law of motion for human capital:
+\begin{equation}
+\dot{H} = A \left[ \frac{\alpha g(t) A}{R} \right]^{\frac{\alpha}{1-\alpha}} \label{eq:hdot}.
+\end{equation}
+Then,
+\begin{equation}
+E(\tau) = R \int \limits _{0} ^{\tau} A \left[ \frac{\alpha g(l + t^*) A}{R} \right]^{\frac{\alpha}{1-\alpha}} dl + RH(\tau + t^*) 
+\end{equation}
+and if $T \rightarrow \infty$
+\begin{equation}
+E(\tau) = RA \left[ \frac{\alpha A}{R} \right]^{\frac{\alpha}{1-\alpha}} \tau.
+\end{equation}
+
+\begin{center}
+\begin{figure}[H]
+\caption{Earnings and Experience, Cobb Douglas Technology and No Depreciation}
+\centering
+\includegraphics[width=5in, height=3in]{Figures/fig-earnings-experience.pdf}
+\floatfoot{\begin{small}
+Note:
+\end{small}}
+\end{figure}
+\end{center}
 
 
+\end{example}
+
+\subsection{The Baseline Model Dynamics under the Cobb-Douglas Specification: a Summary}
+This section summarizes the dynamics of the main variables in the baseline model when there is no depreciation and market goods are ruled out as inputs for the production of human capital investment. We assume that the horizon is infinite to simplify the algebra but it is important to remark that the qualitative properties of the results remain unchanged under finite horizon.
+
+\subsubsection{Human Capital}
+\begin{itemize}
+\item At $t = 0$ an initial condition is given.
+\item At $0 < t < t^*$ the system \eqref{eq:humantstar} provides the conditions that human capital satisfies and its expression is given by \eqref{eq:hbeforetstar}.
+\item At $t = t^*$ \eqref{eq:hbeforetstar} is still a valid expression for human capital. To obtain the exact quantity it suffices to evaluate the expression for $t^*$, \eqref{eq:tstar}, into \eqref{eq:hbeforetstar}.
+\item At $ t > t^* $ \eqref{eq:humantstar} and the expression for $\dot{H}$, \eqref{eq:hdot}, provide the expression for human capital.
+\end{itemize}
+
+Then,
+
+\begin{eqnarray}
+H(t) =
+\begin{cases}
+H_{0} & t = 0 \\
+\left[ (1 - \alpha)At + H_{0}^{1-\alpha} \right]^{\frac{1}{1-\alpha}} , & 0 < t < t^* \\
+\left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}, & t = t^* \\
+\left[ \frac{\alpha A}{r} \right]^{\frac{ \alpha }{1 - \alpha}} \left( t - t^* \right) + \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} , & t > t^*. \label{eq:humancapall}
+\end{cases}
+\end{eqnarray}
+
+\subsubsection{Investment}
+We focus on the case in which there is an specialization period, i.e. the case in which \eqref{eq:h0forspe} holds. The combination of \eqref{eq:itcobb} and \eqref{eq:humancapall} gives the following
+
+\begin{eqnarray}
+I(t) =
+\begin{cases}
+1, & t = 0 \\
+1, & 0 < t < t^* \\
+1, & t = t^* \\
+\frac{\left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}}{\left[ \frac{\alpha A}{r} \right]^{\frac{ \alpha }{1 - \alpha}} \left( t - t^* \right) + \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}}, & t > t^*. \label{eq:investall}
+\end{cases}
+\end{eqnarray}
+
+\subsection{Earnings}
+For the case of earnings we also on the case in which there is an specialization period, i.e. the case in which \eqref{eq:h0forspe} holds. Thus, \eqref{eq:earnings}, \eqref{eq:humancapall}, \eqref{eq:investall} define earnings as follows
+
+\begin{eqnarray}
+E(t) =
+\begin{cases}
+0, & t = 0 \\
+0, & 0 < t < t^* \\
+0, & t = t^* \\
+RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* \right) , & t > t^*. \label{eq:earnsall}
+\end{cases}
+\end{eqnarray}
 
 
 
