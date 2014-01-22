@@ -1,4 +1,4 @@
-\section{Baseline Model}
+\section{Baseline Model} \label{section:baseline}
 \noindent The first and very basic model builds on the following five assumptions: (i) a single representative agent; (ii) perfect capital markets; (iii) no non-market benefits of human capital; (iv) fixed labor supply; (v) constant depreciation of human capital stock, $\sigma$. Let $T$ define a time horizon. For each $t \in T$, $H$ denotes human capital, $I \in [0,1]$ investment time, $D$ market goods that serve as inputs to the production function, and $F$ a strictly concave production function in two normal inputs. The law of motion for human capital is
 \begin{equation}
 \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t)
@@ -177,7 +177,7 @@ Combining \eqref{eq:itcobb} and the law of motion for human capital:
 \end{equation}
 Then,
 \begin{equation}
-E(\tau) = R \int \limits _{0} ^{\tau} A \left[ \frac{\alpha g(l + t^*) A}{R} \right]^{\frac{\alpha}{1-\alpha}} dl + RH(\tau + t^*) 
+E(\tau) = R \int \limits _{0} ^{\tau} A \left[ \frac{\alpha g(l + t^*) A}{R} \right]^{\frac{\alpha}{1-\alpha}} dl + RH(t^*) - R \left[ \frac{\alpha g \left( \tau + t^* \right) A}{r} \right]^{\frac{1}{1-\alpha}} \label{equation:postearnings}
 \end{equation}
 and if $T \rightarrow \infty$
 \begin{equation}
@@ -195,11 +195,10 @@ Note:
 \end{figure}
 \end{center}
 
-
 \end{example}
 
 \subsection{The Baseline Model Dynamics under the Cobb-Douglas Specification: a Summary}
-This section summarizes the dynamics of the main variables in the baseline model when there is no depreciation and market goods are ruled out as inputs for the production of human capital investment. We assume that the horizon is infinite to simplify the algebra but it is important to remark that the qualitative properties of the results remain unchanged under finite horizon.
+This section summarizes the dynamics of the main variables in the baseline model when there is no depreciation and market goods are ruled out as inputs for the production of human capital investment. We assume that the horizon is infinite to simplify the algebra but it is important to remark that the qualitative properties of the results remain unchanged under finite horizon. At the end we show simulations that illustrate how the variables of interest behave under various parametrizations. 
 
 \subsubsection{Human Capital}
 \begin{itemize}
@@ -209,7 +208,7 @@ This section summarizes the dynamics of the main variables in the baseline model
 \item At $ t > t^* $ \eqref{eq:humantstar} and the expression for $\dot{H}$, \eqref{eq:hdot}, provide the expression for human capital.
 \end{itemize}
 
-Then,
+Then,\footnote{There is a mistake in the definition of this function in the notes}
 
 \begin{eqnarray}
 H(t) =
@@ -247,9 +246,107 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
 \end{cases}
 \end{eqnarray}
 
+\subsubsection{Graphical Analysis}
+We now produce simulations to illustrate the comparative statics of the model. In all of them we set $R=1$.
+
+\begin{figure}[H]
+     \begin{center}
+    			\caption{Dynamics for $A = 3, r = .05, H_{0} = 1$ \\ $\alpha = .3$ (dotted); $\alpha = .4$ (dashed); $\alpha = .5$ (solid) }
+        \subfigure[Human Capital Investment]{
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-02.pdf}
+        }\\
+        \subfigure[Human Capital Stock]{
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-01.pdf}
+        }\\
+        \subfigure[Earnings]{%
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-03.pdf}
+        }
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+     \begin{center}
+    			\caption{Dynamics for $A = 3, \alpha = .5, H_{0} = 1$ \\ $r = .04$ (dotted); $r = .05$ (dashed); $r = .06$ (solid) }
+        \subfigure[Human Capital Investment]{
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-05.pdf}
+        }\\
+        \subfigure[Human Capital Stock]{
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-04.pdf}
+        }\\
+        \subfigure[Earnings]{%
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-06.pdf}
+        }
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+     \begin{center}
+   			\caption{Dynamics for $r = .03, \alpha = .5, H_{0} = 10$ \\ $A = .5$ (dotted); $A = 1.0$ (dashed); $A = 1.5$ (solid) }
+        \subfigure[Human Capital Investment]{
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-08.pdf}
+        }\\
+        \subfigure[Human Capital Stock]{
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-07.pdf}
+        }\\
+        \subfigure[Earnings]{%
+            \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-09.pdf}
+        }
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+     \begin{center}
+    			\caption{Dynamics for $r = .025, \alpha = .5, A = .6$ \\ $H_{0} = 10$ (dotted); $H_{0} = 20$ (dashed); $H_{0} = 30$ (solid)}
+        \subfigure[Human Capital Investment]{
+            \includegraphics[width=2in, height=2in]{Figures/fig-hc-earn-series-11.pdf}
+        }\\
+        \subfigure[Human Capital Stock]{
+            \includegraphics[width=2in, height=2in]{Figures/fig-hc-earn-series-10.pdf}
+        }\\
+        \subfigure[Earnings]{%
+            \includegraphics[width=2in, height=2in]{Figures/fig-hc-earn-series-12.pdf}
+        }
+    \end{center}
+\end{figure}
+
+\section{The Haley-Rosen Specification: Finite Horizon and the Auto-regressive Form}
+We analyze the finite horizon case under an specification that \citet{rosen1976theory} uses. Specifically, we assume that $\dot{H} = A \left( IH \right)^{\alpha}, \alpha = \frac{1}{2}, \sigma = 0$ and the exact same setting as in Section \ref{section:baseline}. Actually, in Section \ref{section:baseline} we rely on infinite horizon to derive a set of closed form solutions to the individual's problem. In this section we rely on the assumption $\alpha = \frac{1}{1}$ to do exactly the same.\\
+\indent We focus on the dynamics of post-schooling earnings because one of the less credible consequence of the infinite horizon is the linearity of earnings on experience. From \eqref{equation:postearnings} we can write\footnote{Typo there is Appendix slife 89. Confusin $t$ and $\tau$}
+\begin{eqnarray}
+E(\tau) &=& RH(t^*) + R \int \limits _{0} ^{\tau} A \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]dl - R \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]^{2} \nonumber \\
+&\Rightarrow& \nonumber \\
+\dot{E(\tau)} &=& \frac{g (t^* + \tau)A^2}{2R}\left( 2R -rg (t^* + \tau) \right) \nonumber \\
+&\Rightarrow& \nonumber \\
+\ddot{E(\tau)} &=& -\frac{A^2}{R}\dot{g(t^* + \tau)}^2 \label{eq:earnalpha2}
+\end{eqnarray}
+where the second and third equalities use \eqref{eq:grossdep}. Combining \eqref{eq:grossdep} and \eqref{eq:earnalpha2} we obtain a second order ODE with constant coefficients:
+\begin{equation}
+\ddot{E(\tau)} = 2r \dot{E(\tau)} - A^2 R \label{eq:earndifferential}
+\end{equation} 
+
+\noindent where the natural initial and terminal conditions that we impose are $E(0)$ and $\ddot{E(T)} = 0$ and then we guess and verify that $c_{2} = \frac{A^2r}{2r}\exp^{2rT}$ in the following general solution to \eqref{eq:earndifferential}\footnote{There is a typo here in the general solution to the differential equation (slide 50).}
+\begin{equation}
+E(\tau) = c_{0} + c_{1}\exp^{-2r \tau} + c_{2} \tau
+\end{equation}
+
+\noindent so that $c_{1} + c_{0} = 0, c_2 = \frac{A^2 R}{2r} exp^{2rT}$ and, therefore,\footnote{There is a typo in slide 51.}
+\begin{equation}
+E(\tau) = \frac{A^2 r}{4r^2} \exp^{-2r \tau} \left( 1 - \exp^{2r \tau} \right) + \frac{A^2 R}{2r} \tau.
+\end{equation}
+
+\begin{center}
+\begin{figure}[H]
+\caption{Post-school Earnings for Cobb-Douglas Technology with $\alpha = \frac{1}{2}$}
+\centering
+\includegraphics[width=5in, height=3in]{Figures/fig-earnings-growth.pdf}
+\floatfoot{\begin{small}
+Note:
+\end{small}}
+\end{figure}
+\end{center}
 
 
-
+ 
 
 
 
