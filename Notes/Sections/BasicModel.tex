@@ -70,7 +70,7 @@ Suppose that there is no human capital depreciation. Take the definition of earn
 
 \noindent The simplest version of this model occurs when $\sigma = 0$ and $F(I(t) H(t), D(t))$ is a Cobb-Douglas production function. \citet{ben1967production} shows that in this case $\dot{E(t)} > 0, \ddot{E(t)} < 0$. This is, earnings increase at a decreasing rate over the life cycle.\\
 
-\subsection{Earnings Growth Dynamics}
+\subsection{Earnings Growth Dynamics} \label{section:egdyn}
 It is of relevance to understand how earnings behave in cases that are more general relative to Cobb-Douglas. For that sake assume that $F_{D(t)} = 0 $, i.e. assume away $D(t)$ and therefore let $F(\cdot)$ take a single argument, $I(t) H(t)$. The first order condition for investment becomes
 \begin{equation}
 g(t) F'(I(t) H(t)) = R
@@ -440,10 +440,12 @@ Now, if $rT \approx 0$ then $\exp^{-rT} \approx 1$ and \eqref{eq:logs} becomes
 \ln E(\tau) \approx \ln \left( \frac{A^2 R}{2r} \right) + \ln \tau + \ln \left[ 1 + \frac{1 - \exp^{2r \tau}}{2 r \tau} \right] \label{eq:intercept}
 \end{equation}
 
-which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argues against the Ben-Porath model.\\
+which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argues against the Ben-Porath model. It could simply be the case that \citet{mincer1974schooling} does not include ability measures in his estimations, which appear in \eqref{eq:intercept}, and therefore finds a positive coefficient on schooling. 
 
-\section{The Rate of Return of Post-school Investment}
-We analyze the rate of return of post-school investment based on the model in Section \ref{section:baseline}. Recall that this model considers no depreciation, $\sigma = 0$, and $T \rightarrow \infty$.\footnote{Recall that this implies that $g(t) = \frac{R}{r}$}. Now, let $E(\tau)^{NPS}$ and $E(\tau)^{PS}$ denote earnings without and with post-schooling investment, respectively. By \eqref{eq:earnsall} we can write
+\section{Rates of Return}
+We analyze the rate of return to schooling and post-schooling investments based on the model in Section \ref{section:baseline}. Recall that this model considers no depreciation, $\sigma = 0$, and $T \rightarrow \infty$.\footnote{Recall that this implies that $g(t) = \frac{R}{r}$}.
+\subsection{Post-school Investment}
+Let $E(\tau)^{NPS}$ and $E(\tau)^{PS}$ denote earnings without and with post-schooling investment, respectively. By \eqref{eq:earnsall} we can write
 \begin{eqnarray}
 E(\tau)^{NPS} &=& R H(t*) \\ \nonumber
 &=& R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \\ \nonumber
@@ -453,14 +455,92 @@ E(\tau)^{PS} &=& \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \ta
 \noindent so that the increment in earnings due to post-schooling at $\tau$ is
 
 \begin{eqnarray}
-\Delta^{E(\tau)} \equiv E(\tau)^{NPS} - E(\tau)^{PS}.
+\Delta^{E(\tau)} \equiv E(\tau)^{PS} - E(\tau)^{NPS}.
 \end{eqnarray}
 
-\indent Actually, is we note that $E(\tau)^{PS} = IH(\tau)$ (see \eqref{eq:itcobb}) then we can interpret $\Delta^{E(\tau)}$ as ``returns less costs'' from post-schooling and let $\phi$ be the rate of return of post-schooling be defined by  
+\indent Actually, is we note that $E(\tau)^{PS} = IH(\tau)$ (see \eqref{eq:itcobb}) then we can interpret $\Delta^{E(\tau)}$ as ``returns less costs'' from post-schooling and let $\phi$ be the (internal) rate of return to post-schooling which solves for
+\begin{equation}
+\int \limits _{0} ^{\infty} \exp^{- \phi \tau} \left[ \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau - R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \right] d \tau = 0 \label{eq:postreturn}
+\end{equation}  
 
+\noindent Using the Laplace transform, \eqref{eq:postreturn} implies
+\begin{eqnarray}
+\frac{1}{\phi^2} RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} + \frac{1}{\phi} A \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} &=& 0 \nonumber \\
+&\Rightarrow& \nonumber \\
+\phi &=& \frac{r}{\alpha}
+\end{eqnarray}
 
+\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Individuals who are more productive require a smaller return in order to invest in the post-school period. Likewise, relatively patient individuals (relatively low $r$) require a smaller $\phi$ to invest in the post-schooling period. 
 
+\subsection{School Investment}
+Each $\tau$, an individual with no schooling earns $R H_{0}$ while he earns $R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}}$ with schooling and no post-schooling. Let $\varphi$ be the (internal) rate of return to schooling be defined as the value $\varphi$ that solves for\footnote{Typo in slide 74 in the definition of what do schooling people earn.}
+\begin{eqnarray}
+\int _{t^*} ^{\infty} \exp^{- \varphi t} R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} dt &=& \int \limits _{0} ^{\infty} \exp^{- \varphi t} R H_{0} dt \nonumber \\
+&\Rightarrow& \nonumber \\
+\varphi &=& \frac{\ln \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} - \ln H_{0}}{\frac{1}{r} - \frac{1}{2} \frac{H_{0}^{\frac{1}{2}}}{A}}
+\end{eqnarray}
  
+\section{Earnings Growth and Patience in Finite Horizon}
+In Section \ref{section:baseline} that relative patience (i.e., relatively low $r$) implies a relatively longer schooling period, relatively higher human capital accumulation, and a relatively steeper earnings profile. We now want to ask, in the same framework but with finite horizon, how earnings growth depends on relative patience. In order to answer that we investigate the behavior of $\frac{\partial \dot{E(\tau)}}{\partial r}$. Without loss of generality, assume that R =1 and note that\\
+\indent Note that
+\begin{equation}
+\frac{\partial \dot{E(\tau)} }{\partial r} = F'(\cdot) \frac{\partial IH}{\partial r} - \frac{\partial}{\partial r} \dot{IH}. \label{eq:earnpartialr}
+\end{equation}
+
+\noindent From \eqref{eq:newfocs} we know that the first order condition of the agent's problem is
+\begin{equation}
+g(t) F'(\cdot) = 1.
+\end{equation}
+
+\noindent which by the implicit function theorem yields
+\begin{eqnarray}
+\frac{\partial IH}{\partial r} &=& \frac{\frac{\partial g(t)}{\partial r} F'(\cdot)}{2 g(t) F''(\cdot)} \nonumber \\ 
+&<& 0
+\end{eqnarray}
+
+\noindent where the inequality follows from strict concavity of $F(\cdot)$ and  $\ g(t) > 0, \frac{\partial g(t)}{ \partial r} <0$ (see \eqref{eq:partialgr}). Thus, the first term in \eqref{eq:earnpartialr} is negative. If we show that the second term is negative then we can sign \eqref{eq:earnpartialr} and provide a meaning for this results. In order to do that we need $\frac{\partial \dot{IH}}{\partial r} > 0$. From \eqref{eq:itdot} note that 
+\begin{equation}
+\frac{\partial \dot{IH}}{\partial r} = -\frac{\dot{g}}{g} \left[ 1 - \frac{F'(\cdot)F'''(\cdot)}{{F''(\cdot)}^2}\right] \frac{\partial IH}{\partial r} + \frac{F'(\cdot)}{F''(\cdot)}\frac{\partial}{\partial r} \left[ - \frac{\dot{g}}{g} \right] \label{eq:ihdotr}
+\end{equation}
+
+\indent From Section \ref{section:egdyn} we know that a sufficient condition for earnings strict concavity, i.e. $\ddot{E} < 0$ is $1 - \frac{F'(\cdot) F'''(\cdot)}{{F''}^2} < 0$. This together with $\dot{g}, \frac{\partial IH}{\partial r} < 0$ implies that the first term in \eqref{eq:ihdotr} is positive. To sign the second term note that $\dot{g} = rg - 1, - \frac{\dot{g}}{g} = \frac{1}{g} - r$. Then,
+\begin{equation}
+\frac{\partial}{\partial r} \left[ - \frac{\dot{g}}{g} \right] = - \frac{1}{g^2} \frac{\partial g}{\partial r} - 1. \label{eq:dotgg}
+\end{equation}
+
+\indent To sign \eqref{eq:dotgg} note that
+\begin{eqnarray}
+\frac{\partial g}{\partial r} &=& \frac{\exp^{r(t-T)} \left( 1 - r(t - T) \right) - 1 }{r^2} \nonumber \\
+&<& 0 \label{eq:partialgr}
+\end{eqnarray}
+
+\noindent and
+
+\begin{eqnarray}
+- \frac{\partial g }{g^2 \partial r} - 1 &=& \frac{1}{r^2g^2} \exp^{r(t-T)} \left( 1 + r(t - T) - \exp^{r(t-T)} \right). \nonumber \\
+&<& 0
+\end{eqnarray}
+
+\indent Therefore, if the earnings function is concave, $\frac{\partial \dot{OH}}{\partial r} > 0$ which implies that $\frac{\partial \dot{E}}{\partial r} < 0$. This implies that the earnings function is relatively ``less concave'' for relatively impatient individuals (relatively high $r$). This is a consequence of their investment decisions: they spent less time in the schooling period and accumulate less human capital.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Earnings Profiles in Finite Horizon for Different Values of $r$ }
+\centering
+\includegraphics[width=3.5in, height=1.5in]{Figures/fig-earnings-growth.pdf}
+\floatfoot{\begin{small}
+Note:
+\end{small}}
+\end{figure}
+\end{center}
+ 
+
+
+
+
+
+
+
 
 
 
