@@ -1,7 +1,8 @@
-\section{Baseline Model} \label{section:baseline}
-\noindent The first and very basic model builds on the following five assumptions: (i) a single representative agent; (ii) perfect capital markets; (iii) no non-market benefits of human capital; (iv) fixed labor supply; (v) constant depreciation of human capital stock, $\sigma$. Let $T$ define a time horizon. For each $t \in T$, $H$ denotes human capital, $I \in [0,1]$ investment time, $D$ market goods that serve as inputs to the production function, and $F$ a strictly concave production function in two normal inputs. The law of motion for human capital is
+\section{Baseline Ben-Porath Model} \label{section:baseline}
+\noindent The first and very basic model builds on the following five assumptions: (i) a single representative agent; (ii) perfect capital markets; (iii) no non-market benefits of human capital; (iv) fixed labor supply; (v) constant depreciation of human capital stock, $\sigma$. Let $T$ define a time horizon. This model is known as the Ben-Porath model.\\
+\indent For each $t \in T$, $H$ denotes human capital, $I \in [0,1]$ investment time, $D$ market goods that serve as inputs to the production function, and $F$ a strictly concave production function in two normal inputs. The law of motion for human capital is
 \begin{equation}
-\dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t)
+\dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t) \label{eq:lawh}
 \end{equation}
 and embeds a neutrality assumption. Namely, the current stock of human capital at time $t$, $H(t)$, and the investment time at time $t$, $I(t)$, appear as a single argument in a multiplicative fashion in the flow production of human capital. At each point of time, the current stock and the rental rate of human capital, $R$, define potential earnings
 \begin{equation}
@@ -13,20 +14,17 @@ Y(t) = R H(t).
 E(t) = R H(t) -  R I(t) H(t) - P_{D} D(t) \label{eq:earnings}
 \end{equation}
 where $R I(t) H(t)$ are foregone earnings and $ P_{D} D(t) $ are direct goods costs. This expression clarifies that $I(t)$ is the fraction of time devoted to investment in each period of time. In particular, the individual occupies a fraction $I(t)$ of her human capital stock to produce a human capital flow.\\ 
-\indent The individual chooses $D(t)$ and $I(t)$ to maximize her lifetime earnings stream given an initial level of human capital, $H(0) = H_{0}$. This is
-\begin{equation}
-\max_{D_{t}, I_{t}} \int _{0} ^{T} e^{-rt} E_{t} dt.
-\end{equation}
-\noindent The \textit{current value Hamiltonian} associated to the individual's problem is
+\indent The individual chooses $D(t)$ and $I(t)$ to maximize her lifetime earnings stream given an initial level of human capital, $H(0) = H_{0}$ and subject to the law of motion of human capital, \eqref{eq:lawh}.\\
+\indent The \textit{current value Hamiltonian} associated to the individual's problem is
 \begin{equation}
 \mathcal{H} (\cdot) = e^{-rt} \left[ R H(t) -  R I(t) H(t) - P_{D} D(t) \right] + \mu_{t} \dot{H(t)} 
 \end{equation}
-where $\mu(t)$ defines the shadow price of human capital. The first order conditions of the individual's problem are
+where $\mu(t)$ defines the shadow price of human capital. For a strictly concave function $F(\cdot)$ the necessary and sufficient conditions for optimality are
 \begin{eqnarray}
 \frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& e^{-rt}R = \mu(t) F_{I(t)H(t)} \label{eq:focinvestment} \\
 \frac{\partial \mathcal{H} (\cdot)}{\partial D(t)} = 0 &\Leftrightarrow& e^{-rt}R I(t) = \mu(t) F_{D(t)} \label{eq:focgoods} \\
 \frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& e^{-rt} R \left( 1 - I (t) \right) + \mu(t) \left(  F_{I(t)H(t)} - \sigma \right) = - \dot{\mu(t)} \label{eq:focstock} \\ 
-\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = 0 &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma D(t) \label{eq:focmotion} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma D(t) \label{eq:focmotion} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversality}
 \end{eqnarray}
 where $F_{j} \equiv \frac{\partial F \left( I(t), D(t) \right) }{\partial j}$ for $j = D(t), I(t) H(t)$. Combine \eqref{eq:focinvestment} and \eqref{eq:focstock} to get 
@@ -533,6 +531,96 @@ Note:
 \end{small}}
 \end{figure}
 \end{center}
+ 
+\section{Generalized Ben-Porath Model}
+Let us consider a generalization of the model in Section \ref{section:baseline} and allow for the law of motion of human capital to be
+\begin{equation}
+\dot{H} = A I^{\alpha} H^{\beta} - \sigma H \label{eq:lawhgen}.
+\end{equation}
+
+\indent This baseline Ben-Porath model is a particular case of this general formulation when $\alpha = \beta$. To simplify the analysis of the implications of this model we assume that there neither discounting nor depreciation, i.e. $r = \sigma = 0$. To ease notation we neglect the argument $t$ when possible. We analyze this model in finite horizon and follow the same notation as in Section \ref{section:baseline}. Thus, the agent's problem is to maximize
+\begin{equation}
+\max_{I(t)} \int _{0} ^{T} \left[ RH(t) \left(1 - I(t) \right) \right]dt
+\end{equation}
+
+\noindent subject to an initial condition for the stock of human capital, $H(0) = H_{0}$, and \eqref{eq:lawhgen}. The Hamiltonian of the problem is
+\begin{equation}
+\mathcal{H} = RH(t) \left(1 - I(t) \right) + \mu \left( A I^{\alpha} H^{\beta} \right)
+\end{equation} 
+
+where $\mu(t)$ defines the shadow price of human capital. The first order conditions are
+\begin{eqnarray}
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu A \alpha I^{\alpha - 1} H^{\beta} \geq RG \label{eq:focinvestmentgen} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& -R(1 - I) - \beta \mu A I^{\alpha} H^{\beta -1} \label{eq:focstockgen} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma D(t) \label{eq:focmotiongen} \\
+\text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalitygen}
+\end{eqnarray}
+
+Importantly, these conditions are equivalent to the Mangasarian sufficient conditions for a global optimum if $\beta \leq 1$ \citep[see][]{mangasarian1966sufficient}.
+
+\subsection{Specialization}
+The specialization or schooling period when $I = 1$ happens if
+\eqref{eq:focinvestmentgen} holds with strict inequality for $I=1$.
+\begin{eqnarray}
+\text{Conditions for Specialization :}
+\begin{cases}
+H > \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta > 1 \\
+1 > \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta = 1 \\
+H < \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta < 1. \\
+\end{cases}
+\end{eqnarray}
+
+\noindent During this period \eqref{eq:focstockgen}, \eqref{eq:focmotiongen} become 
+\begin{eqnarray}
+\dot{\mu} &=& - \beta \mu A H^{\beta - 1} \label{eq:focstockgenspe} \\
+\dot{H}  &=& A H^{\beta}. \label{eq:focmotiongenspe}\\
+\end{eqnarray}
+
+\indent We can solve for \eqref{eq:focmotiongenspe} and get
+\begin{eqnarray}
+H(t) =
+\begin{cases}
+c_{0} \exp^{At}, & \beta = 1 \\ 
+\left( At + c_{1} \right)^{\frac{1}{1 - \beta}} (1 - \beta)^{\frac{1}{1 - \beta}}, & \beta \neq 1.
+
+\end{cases}
+\end{eqnarray}
+
+\noindent The initial condition for the human capital stock leads to $c_{0} = \frac{H_{0}}{\exp^{1}} $ and $c_{1} = \frac{H_{0}^{1 - \beta}}{1-\beta}$ which implies that
+\begin{eqnarray}
+H(t)
+\begin{cases}
+H_{0} \exp^{At - 1}, & \beta = 1 \\
+\left( At + \frac{H_{0}^{\frac{1}{1-\beta}}}{1-\beta} \right)^{\frac{1}{1 - \beta}} \left( 1 - \beta \right)^{\frac{1}{1-\beta}}, & \beta \neq 1. \label{eq:humanspe}
+\end{cases}
+\end{eqnarray}
+
+\indent Also, we can solve \eqref{eq:focstockgenspe} and find that
+\begin{eqnarray}
+\mu(t) =
+\begin{cases}
+k_{0} \exp^{-At}, & \beta = 1 \\
+\frac{k_{1}}{(At + c_{1})^{\frac{\beta}{1-\beta}}}, & \beta \neq 1 \label{eq:muspe}
+\end{cases}
+\end{eqnarray}
+
+\noindent for which there is an exact solution given an initial condition $\mu(0) = \mu_{0}$. This is, we can find $k_{0}, k_{1}$ in \eqref{eq:muspe} provided $\mu_{0} > 0$ (it is a price). In particular, note that $k_{0} = \mu_{0} > 0$ and $k_{1} = \mu_{0} c_{1}^{\frac{\beta}{1-\beta}} > 0$ for $0<\beta<1$.\\
+\indent Let $t^*$ denote the time when specialization ends. It must be true that, then, \eqref{eq:focinvestmentgen} holds with strict equality\footnote{typo in slide 18. All the time arguments in the first equation should be $t^*$.}
+\begin{equation}
+\mu(t^*) A \alpha H(t^*)^{\beta} = RH(t^*)
+\end{equation}
+
+\noindent which implies that 
+\begin{equation}
+t^* = \frac{1}{A} \left( \ln \left[ \frac{A\alpha}{R} + \ln k_{0} \right] \right)
+\end{equation}
+
+\noindent for $\beta = 1$. For $\beta \neq 1$, $t*$ solves
+\begin{equation}
+\frac{k_{1}}{ \left( At^* + c_{0} \right)^{\frac{\beta}{\beta-1}}} \frac{A \alpha}{R} = \left[ At^* \left( 1 - \beta \right)^{\frac{1}{1 - \beta}} + H_{0}^{1 - \beta} \left( 1 - \beta \right)^{\frac{\beta}{1 - \beta}} \right]^{1 - \beta}.
+\end{equation}
+
+\indent To wrap up the discussion we ask, if there is at least one period of specialization, how many periods of specialization there are. Consider two cases: (i) $\beta = 1$; (ii) $0 < \beta < 1$. In both cases, from \eqref{eq:muspe} we note that $\dot{mu(t)} < 0$. Importantly, $\mu(t)$ is the shadow price or value of human capital. Thus, $\dot{I(t)}$ and, if it exists, the period of specialization is unique.
  
 
 
