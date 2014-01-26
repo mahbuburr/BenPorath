@@ -668,18 +668,110 @@ t^* &=& \frac{1}{\sigma + r} \ln \frac{A - (\sigma + r) }{A} + T.
 From \eqref{eq:focmotiongenspe} we know that in the period $[0,t^*]$\footnote{Mistake in slide 8. Why add $\varphi$? Makes no sense.}
 \begin{eqnarray}
 \dot{H(t)} = (A - \sigma)H(t) \nonumber \\
-\Rightarrow \nonumber \\ 
+&\Rightarrow& \nonumber \\ 
 H(t) = H_{0} \exp^{A - \sigma}.
 \end{eqnarray}
 
-\indent At $t^*$, actually, $I(t) = 0$ so earnings are $Y(t) = R H(t^*)$.\footnote{Miss-defined in slide 8} Then,
+\noindent At $t^*$, actually, $I(t) = 0$ so earnings are $Y(t) = R H(t^*)$.\footnote{Miss-defined in slide 8} Then,
 \begin{equation}
 \ln Y(t^*) = \ln(RH_{0}) + (A - \sigma)t*.
 \end{equation} 
 
-\indent According to this model, the returns to schooling are given by the productivity of the human capital investment production function less the human capital depreciation.  
+\noindent According to this model, the returns to schooling are given by the productivity of the human capital investment production function less the human capital depreciation.  
 
-\section{The Interior Shenshinski Specification}
+\section{The Modified Shenshinski Specification}
+Consider, now, the law of motion for human capital $\dot{H} = AI - \sigma H$.\footnote{Typo in slide 21 in the definition of the law of motion and in the definition of the optimality conditions}. The Hamiltonian of the problem is
+\begin{equation}
+\mathcal{H}(\cdot) = \exp^{-rt} R (1 - I)H + \mu (AI - \sigma).
+\end{equation}
+
+\noindent The corresponding optimality conditions are
+\begin{eqnarray}
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu \exp^{rt} \geq \frac{RH}{A} \label{eq:focinvestmentmodsehn} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& \dot{\mu} = \mu \sigma - \exp^{-rt} R (1 - I) \label{eq:focstockmodshen} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} = AI - \sigma H \label{eq:focmotionmodshen} \\
+\text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0. \label{eq:foctransversalitymodshen}
+\end{eqnarray}
+
+\indent Define $g(t) = \mu(t) \exp^{rt}$ and use \eqref{eq:focstockmodshen} to obtain
+\begin{equation}
+\dot{g} = g(\sigma + r) - R(1 - I). \label{eq:gmodshen}
+\end{equation}
+
+\subsection{No Depreciation: a Schooling Model}
+Let $\sigma = 0 $. Then $\dot{g} = -R(1 - I) + rg$ ans $\dot{H} = A$ and we obtain the solution for the human capital trajectory when $I = 1$
+\begin{equation}
+H(t) = At + H_{0} \label{eq:humancapshenmod}.
+\end{equation} 
+
+\noindent At $t = 0$, $I = 1$ if $g(0) > \frac{R}{A} H_{0}$. Importantly, $I = 1$ implies that $\dot{g(t)} = r g(t) > 0$. As $t$ grows, the return for gross investment grows because the payoff period gets closer. $I = 1$ cannot be a solution forever because the agent receives no earnings if he invest all of the time during the complete life-cycle.\\
+\indent The question, then, is if there is more than one period of specialization. We can use \eqref{eq:foctransversalitymodshen} and solve \eqref{eq:gmodshen} for any $I \in [0,1)$ to obtain
+\begin{eqnarray}
+g(t) = \frac{R(1-I)}{r} \left[ 1 - \exp^{r(t - T)} \right] \label{eq:gshendisc}
+\end{eqnarray}
+
+\noindent and note that $\dot{g} < 0$.\footnote{This needs to be completely rewritten in slide 22 - 24. Nothing makes sense. Simply copy all this. Conditions have mistakes in the HO.} Thus, there is at most one period of specialization and it happens at the beginning of the life cycle. This is a model of schooling.\\
+\indent Finally, note that \eqref{eq:focinvestmentmodsehn} holds with strict equality at $t^*$ and \eqref{eq:humancapshenmod} is valid so that
+\begin{equation}
+g(t^*) = \frac{R}{A} \left( A t^* + H_{0} \right). 
+\end{equation}
+
+\noindent \eqref{eq:gshendisc} is also valid for $t^*$. Then,
+\begin{equation}
+\left( 1 - \exp^{r(t^*-T)} \right) = \frac{r}{A} \left( A t^* + H_{0} \right)
+\end{equation}
+
+\noindent and $\frac{\partial t^*}{\partial H_{0}} < 0, \frac{\partial t^*}{\partial A}> 0$ as in the model of Section \ref{section:baseline}. 
+ 
+\subsection{Depreciation}
+Let us give some conditions under which human capital investment would have different episodes over the life cycle. First assume that $g(0) > \frac{H_{0} R}{A}$ so that there is an specialization period to begin with. We can solve \eqref{eq:focmotionmodshen} and \eqref{eq:gmodshen} to obtain
+\begin{eqnarray}
+H(t) &=& \left[ H_{0} - \frac{A}{\sigma} \right] \exp^{- \sigma t} + \frac{A}{\sigma} \nonumber \\
+g(t) &=& g_{0} \exp^{(r + \sigma)t} \label{eq:gmodshent1} \nonumber
+\end{eqnarray}
+
+\noindent with $g_{0} > 0$. Once the solution becomes interior, $g(t) = \frac{R}{A} H(t)$ by \eqref{eq:focinvestmentmodsehn}. Assume that  $\sigma < \frac{A}{H_{0}}$ so that $\dot{H(0)} > 0$. Then, graphically,
+
+\begin{center}
+\begin{figure}[H]
+\caption{Return to Gross Investment in Human Capital in the Modified Shenshinski Specification}
+\centering
+\includegraphics[width=4.5in, height=3.5in]{Figures/fig-shesh-for-intersection.pdf}
+\floatfoot{\begin{small}
+Note:
+\end{small}}
+\end{figure}
+\end{center}
+
+\indent Let $t_{1}$ denote the period in which the solution first period of specialization finishes. If the solutions ``bangs-out'' to $I=0$ we can use \eqref{eq:gmodshen} and the low of motion for human capital to obtain
+
+\begin{eqnarray}
+\dot{g} &=& (\sigma + r)g - R \nonumber \\
+H(t) &=& H(t_{1}) \exp^{-\sigma(t - t_{1})} 
+\end{eqnarray}
+
+\noindent for $t_{1} < t < t_{2}$. Likewise, we can define a period $t_{2}$ in which the solutions ``bangs-in'' again and so on. Graphically,
+
+\begin{center}
+\begin{figure}[H]
+\caption{Human Capital Investment Episodes in the Modified Shenshinski Specification} \label{figure:multi}
+\centering
+\includegraphics[width=4.5in, height=3.5in]{Figures/fig-shesh-one-traj.pdf}
+\floatfoot{\begin{small}
+Note:
+\end{small}}
+\end{figure}
+\end{center}
+
+\indent We informally build some conditions for this kind of cycling to happen. In $t < t_{1}$, $I = 1$ implies $\dot{g} > 0$. $g$ needs to decrease for the problem to respect the transversality condition. Thus, in the neighborhood of $t_{1}$ it has to be that $\dot{g(t_{1})} < \frac{R \dot{H(t_{1})}}{A}$ (see Figure \eqref{figure:multi}). If we take the expression from the right of $g(t_{1})$ this requires
+\begin{eqnarray}
+- R (\sigma + r) g(t_{1}) &<& \frac{R \dot{H(t_{1})}}{A} \nonumber \\
+&=& \frac{- \sigma R H(t_{1})}{A} \nonumber \\
+&=& -\sigma g(t_{1}) \nonumber \\
+g(t_{1}) < \frac{R}{r}.  
+\end{eqnarray}
+
+\indent To have an initial period of specialization we need $g_{0} > \frac{R H_{0}}{A}$. At $t=0$, however, it should be the case that the slope of $\frac{R H_{0}}{A}$ exceeds $\dot{g}$. Otherwise the expressions for $g$ in the specialization period and the ``interior'' case do not intersect and the solution violates the transversality condition. This implies that $R \left[ 1 - \frac{\sigma H_{0}}{A} \right] > g_{0}(\sigma + r)$. High initial levels of human capital, low productivity, high discount, high depreciation, and low returns to human capital rule out an initial specialization period. Suppose the conditions described above hold so that specialization happens. We cannot show that $g(t_{3}) < g(t_{1})$ so that is better to accumulate ``all the human capital required for life'' in the first period of specialization. This is what we call cycling in the investment on human capital and is a consequence of depreciation.
 
 
 
