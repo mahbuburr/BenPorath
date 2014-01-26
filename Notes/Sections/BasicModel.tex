@@ -17,29 +17,29 @@ where $R I(t) H(t)$ are foregone earnings and $ P_{D} D(t) $ are direct goods co
 \indent The individual chooses $D(t)$ and $I(t)$ to maximize her lifetime earnings stream given an initial level of human capital, $H(0) = H_{0}$ and subject to the law of motion of human capital, \eqref{eq:lawh}.\\
 \indent The \textit{current value Hamiltonian} associated to the individual's problem is
 \begin{equation}
-\mathcal{H} (\cdot) = e^{-rt} \left[ R H(t) -  R I(t) H(t) - P_{D} D(t) \right] + \mu_{t} \dot{H(t)} 
+\mathcal{H} (\cdot) = \exp^{-rt} \left[ R H(t) -  R I(t) H(t) - P_{D} D(t) \right] + \mu_{t} \dot{H(t)} 
 \end{equation}
 where $\mu(t)$ defines the shadow price of human capital. For a strictly concave function $F(\cdot)$ the necessary and sufficient conditions for optimality are
 \begin{eqnarray}
-\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& e^{-rt}R = \mu(t) F_{I(t)H(t)} \label{eq:focinvestment} \\
-\frac{\partial \mathcal{H} (\cdot)}{\partial D(t)} = 0 &\Leftrightarrow& e^{-rt}R I(t) = \mu(t) F_{D(t)} \label{eq:focgoods} \\
-\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& e^{-rt} R \left( 1 - I (t) \right) + \mu(t) \left(  F_{I(t)H(t)} - \sigma \right) = - \dot{\mu(t)} \label{eq:focstock} \\ 
-\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma D(t) \label{eq:focmotion} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \exp^{-rt}R = \mu(t) F_{I(t)H(t)} \label{eq:focinvestment} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial D(t)} = 0 &\Leftrightarrow& \exp^{-rt}R I(t) = \mu(t) F_{D(t)} \label{eq:focgoods} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& \exp^{-rt} R \left( 1 - I (t) \right) + \mu(t) \left(  F_{I(t)H(t)} - \sigma \right) = - \dot{\mu(t)} \label{eq:focstock} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t) \label{eq:focmotion} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversality}
 \end{eqnarray}
 where $F_{j} \equiv \frac{\partial F \left( I(t), D(t) \right) }{\partial j}$ for $j = D(t), I(t) H(t)$. Combine \eqref{eq:focinvestment} and \eqref{eq:focstock} to get 
 \begin{equation}
-\dot{\mu(t)} = - e^{-rt} R + \mu(t) \sigma \label{eq:focinvstockcombine}.
+\dot{\mu(t)} = - \exp^{-rt} R + \mu(t) \sigma \label{eq:focinvstockcombine}.
 \end{equation}
 
-\noindent Let $g(t) \equiv \mu(t) e^{rt}$ and note that $\dot{g(t)} = \dot{\mu(t)} e^{rt} + r \mu(t) e ^{rt}$. Use \eqref{eq:focinvstockcombine} to obtain 
+\noindent Let $g(t) \equiv \mu(t) \exp^{rt}$ and note that $\dot{g(t)} = \dot{\mu(t)} \exp^{rt} + r \mu(t) e ^{rt}$. Use \eqref{eq:focinvstockcombine} to obtain 
 \begin{equation}
 \dot{g(t)} = (\sigma + r ) g(t) - R \label{eq:grossdep}.
 \end{equation}
 
 \indent $g(t)$ has fundamental importance to this problem because it is a discount factor that adjusts for exponential depreciation of gross investment and enables to write the individual's problem in a more intuitive way. In particular, note that \eqref{eq:foctransversality} implies that $\mu(T) = 0 $ and, therefore, $g(T) = 0$.\footnote{Note that $H(T) > 0$ because otherwise the individual losses the possibility to earn in the last period.} Thus, it is possible to solve \eqref{eq:grossdep} and obtain
 \begin{equation}
-g(t) = \frac{R}{\sigma + r} \left[ 1 - e^{(\sigma + r)(t - T)} \right].
+g(t) = \frac{R}{\sigma + r} \left[ 1 - \exp^{(\sigma + r)(t - T)} \right].
 \end{equation}
 
 \indent Importantly, for an interior solution, this enables to analyze the problem in $t$ and obtain all the features of the investment dynamics and human capital accumulation. In particular, the problem of the agent is to maximize her discounted gross flow of human capital less her costs (foregone earnings plus market goods costs) 
@@ -351,10 +351,10 @@ Note:
 \subsection{The Autoregression}
 From \eqref{eq:earningspostalpha12} it is possible to write
 \begin{equation}
-E(\tau + 1) - E(\tau) =  \frac{A^2 R}{2r}+ \frac{A^2 R}{4r^2} e^{-2rT} \left( \exp^{2r(\tau - 1)} \exp^{r \tau} \right) 
+E(\tau + 1) - E(\tau) =  \frac{A^2 R}{2r}+ \frac{A^2 R}{4r^2} \exp^{-2rT} \left( \exp^{2r(\tau - 1)} \exp^{r \tau} \right) 
 \end{equation}
 
-\noindent which implies that\footnote{slide 55 typo when multiplying by $e^2r$}
+\noindent which implies that\footnote{slide 55 typo when multiplying by $\exp^2r$}
 
 \begin{equation}
 z(\tau + 1) = e^{2r} z(\tau) + \frac{A^2 R}{2r} \left( 1 - \exp^{2r} \right) \label{eq:growthalpha12}
@@ -375,12 +375,12 @@ Note:
 
 \indent Apparently, the dynamics of the earnings growth are explosive. However, note that
 \begin{eqnarray}
-\frac{\partial \left[ E(\tau) - E(\tau - 1) \right] }{\partial \tau} &=& \frac{A^2 R}{2r} e^{2r(\tau - T)} \left[ \exp^{-2r} - 1 \right] \nonumber \\
+\frac{\partial \left[ E(\tau) - E(\tau - 1) \right] }{\partial \tau} &=& \frac{A^2 R}{2r} \exp{2r(\tau - T)} \left[ \exp^{-2r} - 1 \right] \nonumber \\
 &<& 0
 \end{eqnarray}
 so that even when the growth dynamics of earnings is autoregressive it converges to a constant. More formally, note that $z(0) = E(0) \equiv z_{0}$ and solve \eqref{eq:growthalpha12} to get
 \begin{equation}
-z(\tau) = \exp^{2rT} z_{0} + \frac{A^2 R}{2r} \left( 1 - e^{2r} \right) \sum \limits _{j=0} ^{T-1} \exp^{2rj}
+z(\tau) = \exp^{2rT} z_{0} + \frac{A^2 R}{2r} \left( 1 - \exp{2r} \right) \sum \limits _{j=0} ^{T-1} \exp^{2rj}
 \end{equation}
 
 \noindent so that the earnings growth converges to the constant $\exp^{2rT} z_{0}$.\\
@@ -532,7 +532,7 @@ Note:
 \end{figure}
 \end{center}
  
-\section{Generalized Ben-Porath Model}
+\section{Generalized Ben-Porath Model} \label{section:generalized}
 Let us consider a generalization of the model in Section \ref{section:baseline} and allow for the law of motion of human capital to be
 \begin{equation}
 \dot{H} = A I^{\alpha} H^{\beta} - \sigma H \label{eq:lawhgen}.
@@ -552,7 +552,7 @@ where $\mu(t)$ defines the shadow price of human capital. The first order condit
 \begin{eqnarray}
 \frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu A \alpha I^{\alpha - 1} H^{\beta} \geq RG \label{eq:focinvestmentgen} \\
 \frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& -R(1 - I) - \beta \mu A I^{\alpha} H^{\beta -1} \label{eq:focstockgen} \\ 
-\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma D(t) \label{eq:focmotiongen} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t) \label{eq:focmotiongen} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalitygen}
 \end{eqnarray}
 
@@ -622,6 +622,64 @@ t^* = \frac{1}{A} \left( \ln \left[ \frac{A\alpha}{R} + \ln k_{0} \right] \right
 
 \indent To wrap up the discussion we ask, if there is at least one period of specialization, how many periods of specialization there are. Consider two cases: (i) $\beta = 1$; (ii) $0 < \beta < 1$. In both cases, from \eqref{eq:muspe} we note that $\dot{mu(t)} < 0$. Importantly, $\mu(t)$ is the shadow price or value of human capital. Thus, $\dot{I(t)}$ and, if it exists, the period of specialization is unique.
  
+\section{The Basic Shenshinski Specification}
+The Basic Shenshinski specification is a particular case of the Generalized Ben Porath model in Section \ref{section:generalized} in which $\alpha = \beta = 1$. Then, $\dot{H(t)} = AI(t)H(t) - \sigma H(t)$. Proceeding in Section \ref{section:baseline} and Section \ref{section:generalized} we can write down the current value Hamiltonian and obtain the following conditions for optimality
+\begin{eqnarray}
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu(t) \exp{rt} \geq \frac{R}{A} \label{eq:focinvestmentshenbasic} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& - \exp^{rt} R(1 - I(t)) - \mu(t) \left( A I(t) - \sigma \right) = \dot{\mu(t)} \label{eq:focstockshenbasic} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} =  A I(t) H(t)- \sigma H(t) \label{eq:focmotionshenbasic} \\
+\text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalityshenbasic}
+\end{eqnarray}
+
+\indent We want to analyze the investment dynamics. To do that, define $g(t) = \mu(t) \exp^{rt}$. Use \eqref{eq:focstockshenbasic} and \eqref{eq:foctransversalityshenbasic} to obtain
+\begin{eqnarray}
+\dot{g} &=& -R + (R - Ag)I + (\sigma + r)g \label{eq:gbasicshen} \\ 
+g(T) &=& 0.
+\end{eqnarray}
+
+\indent In the specialization period $I(t) = 1$ and from \eqref{eq:gbasicshen} and \eqref{eq:focinvestmentshenbasic} we have $g(t) = g_{0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               } \exp^{(\sigma + r - A)t}$. If $\sigma + r > A$ the solution violates \eqref{eq:foctransversalityshenbasic}: $\dot{g(t)}>0$ and $I(t) = 1 \ \forall t \in [0,T]$. If $\sigma + r < A$, $\dot{g(t)}<0$. Actually, by \eqref{eq:focinvestmentshenbasic}, $g(t)$ decreases to $\frac{R}{A}$ and $I(t) = 0$ onwards. This happens because $g(t)$ represents returns to gross investment in human capital net accounting for time and depreciation and $I(t)$ is bounded below by zero. Thus, if $g(t)$ reaches a constant phase $I(t)$ remains constant at $0$. Now, when $I(t) = 0$ we can use $g(T) = 0$ and write
+\begin{eqnarray}
+\dot{(g(t))} &=& (\sigma + r)g(t) - R \nonumber \\
+&\Rightarrow& \nonumber \\ 
+g(t) &=& \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t-T)} \right] \label{eq:gshenbasei0}.
+\end{eqnarray}
+
+\noindent for which $\dot{g(t)}<0$ as well. Then, once $I(t)$ reaches zero it never goes back again to a positive value. This formulation has a Bang-Bang equilibrium.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Bang-Bang Equilibrium in the Basic Shenshinski Specification}
+\centering
+\includegraphics[width=3.5in, height=3.5in]{Figures/fig-shesh-rule.pdf}
+\floatfoot{\begin{small}
+Note:
+\end{small}}
+\end{figure}
+\end{center}
+
+\indent It follows that the schooling period is unique and at the beginning of the investment cycle.\footnote{Mistake in slide 7 when solving for $t^*$.} We can actually solve for $t^*$ the length of the schooling period using the fact that $g(t^*) = \frac{R}{A} $ by \eqref{eq:focinvestmentshenbasic} and $g(t^*) = \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t^*-T)} \right]$ by \eqref{eq:gshenbasei0}. This implies that (i) longer investment horizons imply more schooling, $\frac{\partial t^*}{\partial T} > 0$; (ii) greater depreciation implies less schooling, $\frac{\partial t^*}{\partial \sigma} < 0$; (iii) higher relative impatience implies less schooling, $\frac{\partial t^*}{\partial r} > 0$; (iv) higher productivity implies more schooling; (v) initial human capital does not affect schooling, $\frac{\partial t^*}{\partial H_{0}} = 0$. This is because
+\begin{eqnarray}
+\frac{R}{A} &=& \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t^*-T)} \right] \nonumber \\
+&\Leftrightarrow& \nonumber \\ 
+t^* &=& \frac{1}{\sigma + r} \ln \frac{A - (\sigma + r) }{A} + T.
+\end{eqnarray}
+
+\subsection{From the Basic Shenshinski Specification to the Mincer Equation}
+From \eqref{eq:focmotiongenspe} we know that in the period $[0,t^*]$\footnote{Mistake in slide 8. Why add $\varphi$? Makes no sense.}
+\begin{eqnarray}
+\dot{H(t)} = (A - \sigma)H(t) \nonumber \\
+\Rightarrow \nonumber \\ 
+H(t) = H_{0} \exp^{A - \sigma}.
+\end{eqnarray}
+
+\indent At $t^*$, actually, $I(t) = 0$ so earnings are $Y(t) = R H(t^*)$.\footnote{Miss-defined in slide 8} Then,
+\begin{equation}
+\ln Y(t^*) = \ln(RH_{0}) + (A - \sigma)t*.
+\end{equation} 
+
+\indent According to this model, the returns to schooling are given by the productivity of the human capital investment production function less the human capital depreciation.  
+
+\section{The Interior Shenshinski Specification}
 
 
 
