@@ -311,7 +311,7 @@ We now produce simulations to illustrate the comparative statics of the model. I
 We analyze the finite horizon case under an specification that \citet{haley1976estimation} and \citet{rosen1976theory} use. Specifically, we assume that $\dot{H} = A \left( IH \right)^{\alpha}, \alpha = \frac{1}{2}, \sigma = 0$ and the exact same setting as in Section \ref{section:baseline}. Actually, in Section \ref{section:baseline} we rely on infinite horizon to derive a set of closed form solutions to the individual's problem. In this section we rely on the assumption $\alpha = \frac{1}{1}$ to do exactly the same.\\
 \indent We focus on the dynamics of post-schooling earnings because one of the less credible consequence of the infinite horizon is the linearity of earnings on experience. From \eqref{equation:postearnings} we can write\footnote{Typo there is Appendix slife 89. Confusin $t$ and $\tau$}
 \begin{eqnarray}
-E(\tau) &=& RH(t^*) + R \int \limits _{0} ^{\tau} A \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]dl - R \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]^{2} \nonumber \\
+E(\tau) &=& RH(t^*) + R \int \limits _{0} ^{\tau} A \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]dl - R \left[\frac{1}{2} \frac{g(t^* + \tau)A}{R} \right]^{2} \nonumber \\
 &\Rightarrow& \nonumber \\
 \dot{E(\tau)} &=& \frac{g (t^* + \tau)A^2}{2R}\left( 2R -rg (t^* + \tau) \right) \nonumber \\
 &\Rightarrow& \nonumber \\
@@ -360,7 +360,7 @@ E(\tau + 1) - E(\tau) =  \frac{A^2 R}{2r}+ \frac{A^2 R}{4r^2} \exp^{-2rT} \left(
 z(\tau + 1) = e^{2r} z(\tau) + \frac{A^2 R}{2r} \left( 1 - \exp^{2r} \right) \label{eq:growthalpha12}
 \end{equation}
 
-\noindent and we can analyze the growth dynamics of earnings. Consider a visual representation of \eqref{eq:growthalpha12}
+\noindent where $z(\tau) \equiv = E(\tau + 1) - E(\tau)$ and we can analyze the growth dynamics of earnings. Consider a visual representation of \eqref{eq:growthalpha12}
 
 \begin{center}
 \begin{figure}[H]
