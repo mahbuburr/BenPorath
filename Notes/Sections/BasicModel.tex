@@ -146,7 +146,7 @@ Differentiate \eqref{eq:earnings} and use \eqref{eq:lawh} to write
 \subsection{Concavity} \label{section:egdyn}
 \indent We now analyze the curvature of the earnings function for the case in which there is no depreciation.\footnote{A similar analysis follows when $\sigma>0$ for the cases in which either $\dot{E(t)}> 0$ or $\dot{E(t)}< 0$}. Without loss of generality we assume away $D(t)$, i.e. $F_{D(t)} = 0 $ so that the production function takes the single argument $I(t) H(t)$, and $R \equiv 1$. 
 
-\begin{claim} (Concavity of the Earnings Function with no Depreciation)
+\begin{claim} (Concavity of the Earnings Function with no Depreciation) \label{claim:concearnnodep}
 Assume $\eta \equiv \left( 1 - \frac{F'F'''}{{F''}^2} \right) < 0$. Then, the earnings function is strictly concave. 
 \end{claim}
 
@@ -410,7 +410,7 @@ $\varphi$ is the (internal) rate of return to schooling and solves the equation
 \end{eqnarray}
 \end{definition}
 
-\subsection{Post-schooling}
+\subsubsection{Post-schooling}
 Let $E(\tau)^{NPS}$ and $E(\tau)^{PS}$ denote earnings without and with post-schooling investment, respectively. By \eqref{eq:earnsall} we can write
 \begin{eqnarray}
 E(\tau)^{NPS} &=& R H(t^*) \\ \nonumber
@@ -438,7 +438,69 @@ $\phi$ is the (internal) rate of return to schooling and solves the equation
 \end{eqnarray}
 \end{definition}
 
-\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Individuals who are more productive require a smaller return in order to invest in the post-school period. Likewise, relatively patient individuals (relatively low $r$) require a smaller $\phi$ to invest in the post-schooling period. 
+\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Individuals who are more productive require a smaller return in order to invest in the post-school period. Likewise, relatively patient individuals (relatively low $r$) require a smaller $\phi$ to invest in the post-schooling period.
+
+\subsection{Earnings Growth and Patience in Finite Horizon}
+In this section we want to ask, in the same framework, how earnings growth depend on what defines relative patience in this model, the discount rate $r$. To do that, we investigate $\frac{\partial \dot{E(\tau)}}{\partial r}$.
+
+\begin{claim} \label{claim:moreconcwithighr}
+Assume that $1 - \frac{F'(\cdot) F'''(\cdot)}{{F''}^2} < 0$ (recall from Claim \ref{claim:concearnnodep} that this is a sufficient condition for $\dot{E(t)}$ in the current context). Then, $\frac{\partial \dot{E(\tau)}}{\partial r} < 0$.
+\end{claim} 
+
+\begin{proof}
+Without loss of generality, assume that R =1 and note that\\
+\begin{equation}
+\frac{\partial \dot{E(\tau)} }{\partial r} = F'(\cdot) \frac{\partial IH}{\partial r} - \frac{\partial}{\partial r} \dot{IH}. \label{eq:earnpartialr}
+\end{equation}
+
+\noindent From \eqref{eq:newfocs} we know that the first order condition of the agent's problem is
+\begin{equation}
+g(t) F'(\cdot) = 1
+\end{equation}
+
+\noindent which by the implicit function theorem yields
+\begin{eqnarray}
+\frac{\partial IH}{\partial r} &=& \frac{\frac{\partial g(t)}{\partial r} F'(\cdot)}{2 g(t) F''(\cdot)} \nonumber \\ 
+&<& 0
+\end{eqnarray}
+
+\noindent where the inequality follows from strict concavity of $F(\cdot)$ and  $\ g(t) > 0, \frac{\partial g(t)}{ \partial r} <0$ (see \eqref{eq:partialgr}). Thus, the first term in \eqref{eq:earnpartialr} is negative. If we show that the second term is negative then we can sign \eqref{eq:earnpartialr} and provide a meaning for this results. In order to do that we need $\frac{\partial \dot{IH}}{\partial r} > 0$. From \eqref{eq:itdot} note that 
+\begin{equation}
+\frac{\partial \dot{IH}}{\partial r} = -\frac{\dot{g}}{g} \left[ 1 - \frac{F'(\cdot)F'''(\cdot)}{{F''(\cdot)}^2}\right] \frac{\partial IH}{\partial r} + \frac{F'(\cdot)}{F''(\cdot)}\frac{\partial}{\partial r} \left[ - \frac{\dot{g}}{g} \right] \label{eq:ihdotr}
+\end{equation}
+
+\indent We know that $1 - \frac{F'(\cdot) F'''(\cdot)}{{F''}^2} < 0$ and $\dot{g}, \frac{\partial IH}{\partial r} < 0$  the first term in \eqref{eq:ihdotr} is positive. To sign the second term note that $\dot{g} = rg - 1, - \frac{\dot{g}}{g} = \frac{1}{g} - r$. Then,
+\begin{equation}
+\frac{\partial}{\partial r} \left[ - \frac{\dot{g}}{g} \right] = - \frac{1}{g^2} \frac{\partial g}{\partial r} - 1. \label{eq:dotgg}
+\end{equation}
+
+\indent To sign \eqref{eq:dotgg} note that
+\begin{eqnarray}
+\frac{\partial g}{\partial r} &=& \frac{\exp^{r(t-T)} \left( 1 - r(t - T) \right) - 1 }{r^2} \nonumber \\
+&<& 0 \label{eq:partialgr}
+\end{eqnarray}
+
+\noindent and
+
+\begin{eqnarray}
+- \frac{\partial g }{g^2 \partial r} - 1 &=& \frac{1}{r^2g^2} \exp^{r(t-T)} \left( 1 + r(t - T) - \exp^{r(t-T)} \right). \nonumber \\
+&<& 0
+\end{eqnarray}
+
+\noindent which implies that $\frac{\partial \dot{E}}{\partial r} < 0$. 
+\end{proof}
+
+\indent The graphical representation of Claim~\ref{claim:moreconcwithighr} is in Figure~\ref{fig:earnprofr}. It implies that the earnings function is relatively ``less concave'' for relatively impatient individuals (relatively high $r$). This is a consequence of their investment decisions: they spent less time in the schooling period and accumulate less human capital.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Earnings Profiles in Finite Horizon for Different Values of $r$ } \label{fig:earnprofr}
+\centering
+\includegraphics[width=3.5in, height=1.5in]{Figures/fig-earnings-growth.pdf}
+\floatfoot{\begin{small}
+\end{small}}
+\end{figure}
+\end{center} 
 
 \section{The Haley-Rosen Specification: Finite Horizon and the Autoregression Form}
 
@@ -599,61 +661,6 @@ $24.70$ & $74.77$ & $0.081$ & $-0.0008$ \\ \hline\hline
 
 \noindent which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argues against the Ben-Porath model. It could simply be the case that \citet{mincer1974schooling} does not include ability measures in his estimations, which appear in \eqref{eq:intercept}, and therefore finds a positive coefficient on schooling. 
 
-
- 
-\section{Earnings Growth and Patience in Finite Horizon}
-In Section \ref{section:baseline} that relative patience (i.e., relatively low $r$) implies a relatively longer schooling period, relatively higher human capital accumulation, and a relatively steeper earnings profile. We now want to ask, in the same framework but with finite horizon, how earnings growth depends on relative patience. In order to answer that we investigate the behavior of $\frac{\partial \dot{E(\tau)}}{\partial r}$. Without loss of generality, assume that R =1 and note that\\
-\indent Note that
-\begin{equation}
-\frac{\partial \dot{E(\tau)} }{\partial r} = F'(\cdot) \frac{\partial IH}{\partial r} - \frac{\partial}{\partial r} \dot{IH}. \label{eq:earnpartialr}
-\end{equation}
-
-\noindent From \eqref{eq:newfocs} we know that the first order condition of the agent's problem is
-\begin{equation}
-g(t) F'(\cdot) = 1.
-\end{equation}
-
-\noindent which by the implicit function theorem yields
-\begin{eqnarray}
-\frac{\partial IH}{\partial r} &=& \frac{\frac{\partial g(t)}{\partial r} F'(\cdot)}{2 g(t) F''(\cdot)} \nonumber \\ 
-&<& 0
-\end{eqnarray}
-
-\noindent where the inequality follows from strict concavity of $F(\cdot)$ and  $\ g(t) > 0, \frac{\partial g(t)}{ \partial r} <0$ (see \eqref{eq:partialgr}). Thus, the first term in \eqref{eq:earnpartialr} is negative. If we show that the second term is negative then we can sign \eqref{eq:earnpartialr} and provide a meaning for this results. In order to do that we need $\frac{\partial \dot{IH}}{\partial r} > 0$. From \eqref{eq:itdot} note that 
-\begin{equation}
-\frac{\partial \dot{IH}}{\partial r} = -\frac{\dot{g}}{g} \left[ 1 - \frac{F'(\cdot)F'''(\cdot)}{{F''(\cdot)}^2}\right] \frac{\partial IH}{\partial r} + \frac{F'(\cdot)}{F''(\cdot)}\frac{\partial}{\partial r} \left[ - \frac{\dot{g}}{g} \right] \label{eq:ihdotr}
-\end{equation}
-
-\indent From Section \ref{section:egdyn} we know that a sufficient condition for earnings strict concavity, i.e. $\ddot{E} < 0$ is $1 - \frac{F'(\cdot) F'''(\cdot)}{{F''}^2} < 0$. This together with $\dot{g}, \frac{\partial IH}{\partial r} < 0$ implies that the first term in \eqref{eq:ihdotr} is positive. To sign the second term note that $\dot{g} = rg - 1, - \frac{\dot{g}}{g} = \frac{1}{g} - r$. Then,
-\begin{equation}
-\frac{\partial}{\partial r} \left[ - \frac{\dot{g}}{g} \right] = - \frac{1}{g^2} \frac{\partial g}{\partial r} - 1. \label{eq:dotgg}
-\end{equation}
-
-\indent To sign \eqref{eq:dotgg} note that
-\begin{eqnarray}
-\frac{\partial g}{\partial r} &=& \frac{\exp^{r(t-T)} \left( 1 - r(t - T) \right) - 1 }{r^2} \nonumber \\
-&<& 0 \label{eq:partialgr}
-\end{eqnarray}
-
-\noindent and
-
-\begin{eqnarray}
-- \frac{\partial g }{g^2 \partial r} - 1 &=& \frac{1}{r^2g^2} \exp^{r(t-T)} \left( 1 + r(t - T) - \exp^{r(t-T)} \right). \nonumber \\
-&<& 0
-\end{eqnarray}
-
-\indent Therefore, if the earnings function is concave, $\frac{\partial \dot{OH}}{\partial r} > 0$ which implies that $\frac{\partial \dot{E}}{\partial r} < 0$. This implies that the earnings function is relatively ``less concave'' for relatively impatient individuals (relatively high $r$). This is a consequence of their investment decisions: they spent less time in the schooling period and accumulate less human capital.
-
-\begin{center}
-\begin{figure}[H]
-\caption{Earnings Profiles in Finite Horizon for Different Values of $r$ }
-\centering
-\includegraphics[width=3.5in, height=1.5in]{Figures/fig-earnings-growth.pdf}
-\floatfoot{\begin{small}
-Note:
-\end{small}}
-\end{figure}
-\end{center}
  
 \section{Generalized Ben-Porath Model} \label{section:generalized}
 Let us consider a generalization of the model in Section \ref{section:baseline} and allow for the law of motion of human capital to be
