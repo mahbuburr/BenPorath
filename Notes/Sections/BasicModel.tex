@@ -765,33 +765,51 @@ In both cases \eqref{eq:muspe} implies that $\dot{\mu(t)} < 0$. Importantly, $\m
 \end{proof}
 
  
-\section{The Basic Shenshinski Specification}
-The Basic Shenshinski specification is a particular case of the Generalized Ben Porath model in Section \ref{section:generalized} in which $\alpha = \beta = 1$. Then, $\dot{H(t)} = AI(t)H(t) - \sigma H(t)$. Proceeding in Section \ref{section:baseline} and Section \ref{section:generalized} we can write down the current value Hamiltonian and obtain the following conditions for optimality
+\section{The Basic Shenshinski Specification: Bang-Bang E	quilibria}
+The Basic Shenshinski specification is a particular case of the Generalized Ben Porath model in Section \ref{section:generalized} in which $\alpha = \beta = 1$.
+\begin{definition} (Law of Motion for Human Capital Stock in the Basic Shenshinski Specification)
+\begin{equation}
+\dot{H(t)} = AI(t)H(t) - \sigma H(t).
+\end{equation}
+\end{definition}
+
+\indent Proceeding as in Section \ref{section:baseline} and Section \ref{section:generalized} we can write down the current value Hamiltonian and obtain the following conditions for optimality.
+
+\begin{condition} (Optimality Conditions for the Life-cycle Individual's Problem in the Basic Shenshinski Specification)
 \begin{eqnarray}
 \frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu(t) \exp{rt} \geq \frac{R}{A} \label{eq:focinvestmentshenbasic} \\
 \frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& - \exp^{rt} R(1 - I(t)) - \mu(t) \left( A I(t) - \sigma \right) = \dot{\mu(t)} \label{eq:focstockshenbasic} \\ 
 \frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} =  A I(t) H(t)- \sigma H(t) \label{eq:focmotionshenbasic} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalityshenbasic}
 \end{eqnarray}
+\end{condition}
 
-\indent We want to analyze the investment dynamics. To do that, define $g(t) = \mu(t) \exp^{rt}$. Use \eqref{eq:focstockshenbasic} and \eqref{eq:foctransversalityshenbasic} to obtain
+\begin{claim} (Bang-Bang in the Shenshinski Specification) \label{claim:bangbang}
+Assume that $\sigma + r < A$ and that there is an initial period of specialization. \footnote{Note that $\sigma + r > A$ implies that $\dot{g(t)} > 0$ and this violates the transversality condition.} Then, the solution to the problem is Bang-Bang, i.e. either $I = 0$ or $I = 1$. 
+\end{claim}
+
+\begin{proof}
+Define $g(t) = \mu(t) \exp^{rt}$ and use \eqref{eq:focstockshenbasic}, \eqref{eq:foctransversalityshenbasic} to obtain
 \begin{eqnarray}
 \dot{g} &=& -R + (R - Ag)I + (\sigma + r)g \label{eq:gbasicshen} \\ 
 g(T) &=& 0.
 \end{eqnarray}
 
-\indent In the specialization period $I(t) = 1$ and from \eqref{eq:gbasicshen} and \eqref{eq:focinvestmentshenbasic} we have $g(t) = g_{0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               } \exp^{(\sigma + r - A)t}$. If $\sigma + r > A$ the solution violates \eqref{eq:foctransversalityshenbasic}: $\dot{g(t)}>0$ and $I(t) = 1 \ \forall t \in [0,T]$. If $\sigma + r < A$, $\dot{g(t)}<0$. Actually, by \eqref{eq:focinvestmentshenbasic}, $g(t)$ decreases to $\frac{R}{A}$ and $I(t) = 0$ onwards. This happens because $g(t)$ represents returns to gross investment in human capital net accounting for time and depreciation and $I(t)$ is bounded below by zero. Thus, if $g(t)$ reaches a constant phase $I(t)$ remains constant at $0$. Now, when $I(t) = 0$ we can use $g(T) = 0$ and write
+\indent In the specialization period $I(t) = 1$  If $\sigma + r < A$, $\dot{g(t)}<0$. Actually, by \eqref{eq:focinvestmentshenbasic}, $g(t)$ decreases to $\frac{R}{A}$ and $I(t) = 0$ onwards. This happens because $g(t)$ represents returns to gross investment in human capital net accounting for time and depreciation and $I(t)$ is bounded below by zero. Thus, if $g(t)$ reaches a constant phase $I(t)$ remains constant at $0$. Now, when $I(t) = 0$ we can use $g(T) = 0$ and write
 \begin{eqnarray}
-\dot{(g(t))} &=& (\sigma + r)g(t) - R \nonumber \\
+\dot{g(t)} &=& (\sigma + r)g(t) - R \nonumber \\
 &\Rightarrow& \nonumber \\ 
 g(t) &=& \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t-T)} \right] \label{eq:gshenbasei0}.
 \end{eqnarray}
 
-\noindent for which $\dot{g(t)}<0$ as well. Then, once $I(t)$ reaches zero it never goes back again to a positive value. This formulation has a Bang-Bang equilibrium.
+\noindent for which $\dot{g(t)}<0$ as well. Then, once $I(t)$ reaches zero it never goes back again to a positive value. This formulation has a Bang-Bang solution.
+\end{proof}
+
+\indent It follows that the schooling period, if it exists, is unique and at the beginning of the investment cycle. If it does not exist the individual does not invest at all in human capital. Figure~\ref{fig:bangbang} is a graphical representation of Claim~\ref{claim:bangbang}. 
 
 \begin{center}
 \begin{figure}[H]
-\caption{Bang-Bang Equilibrium in the Basic Shenshinski Specification}
+\caption{Bang-Bang Equilibrium in the Basic Shenshinski Specification} \label{fig:bangbang}
 \centering
 \includegraphics[width=3.5in, height=3.5in]{Figures/fig-shesh-rule.pdf}
 \floatfoot{\begin{small}
@@ -800,26 +818,27 @@ Note:
 \end{figure}
 \end{center}
 
-\indent It follows that the schooling period is unique and at the beginning of the investment cycle.\footnote{Mistake in slide 7 when solving for $t^*$.} We can actually solve for $t^*$ the length of the schooling period using the fact that $g(t^*) = \frac{R}{A} $ by \eqref{eq:focinvestmentshenbasic} and $g(t^*) = \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t^*-T)} \right]$ by \eqref{eq:gshenbasei0}. This implies that (i) longer investment horizons imply more schooling, $\frac{\partial t^*}{\partial T} > 0$; (ii) greater depreciation implies less schooling, $\frac{\partial t^*}{\partial \sigma} < 0$; (iii) higher relative impatience implies less schooling, $\frac{\partial t^*}{\partial r} > 0$; (iv) higher productivity implies more schooling; (v) initial human capital does not affect schooling, $\frac{\partial t^*}{\partial H_{0}} = 0$. This is because
+\indent We can actually solve for $t^*$, the length of the schooling period, using the fact that $g(t^*) = \frac{R}{A} $ by \eqref{eq:focinvestmentshenbasic} and $g(t^*) = \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t^*-T)} \right]$ by \eqref{eq:gshenbasei0}:
 \begin{eqnarray}
 \frac{R}{A} &=& \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t^*-T)} \right] \nonumber \\
 &\Leftrightarrow& \nonumber \\ 
 t^* &=& \frac{1}{\sigma + r} \ln \frac{A - (\sigma + r) }{A} + T.
 \end{eqnarray}
 
+\indent Thus, (i) longer investment horizons imply more schooling, $\frac{\partial t^*}{\partial T} > 0$; (ii) greater depreciation implies less schooling, $\frac{\partial t^*}{\partial \sigma} < 0$; (iii) higher relative impatience implies less schooling, $\frac{\partial t^*}{\partial r} > 0$; (iv) higher productivity implies more schooling; (v) initial human capital does not affect schooling, $\frac{\partial t^*}{\partial H_{0}} = 0$.
+
 \subsection{From the Basic Shenshinski Specification to the Mincer Equation}
-From \eqref{eq:focmotiongenspe} we know that in the period $[0,t^*]$\footnote{Mistake in slide 8. Why add $\varphi$? Makes no sense.}
+Assume that there is a period of specialization. From \eqref{eq:focmotiongenspe} we know that in the period $[0,t^*]$
 \begin{eqnarray}
 \dot{H(t)} = (A - \sigma)H(t) \nonumber \\
 &\Rightarrow& \nonumber \\ 
 H(t) = H_{0} \exp^{A - \sigma}.
 \end{eqnarray}
 
-\noindent At $t^*$, actually, $I(t) = 0$ so earnings are $Y(t) = R H(t^*)$.\footnote{Miss-defined in slide 8} Then,
+\noindent At $t^*$, actually, $I(t) = 0$ so earnings are $Y(t) = R H(t^*)$ Then,
 \begin{equation}
-\ln Y(t^*) = \ln(RH_{0}) + (A - \sigma)t*.
+\ln Y(t^*) = \ln(RH_{0}) + (A - \sigma)t^*.
 \end{equation} 
-
 \noindent According to this model, the returns to schooling are given by the productivity of the human capital investment production function less the human capital depreciation.  
 
 \section{The Modified Shenshinski Specification}
