@@ -8,7 +8,7 @@ The assumptions of the basic Ben-Porath model are: (i) homogeneity (single repre
 \begin{assumption} (Strict Concavity of the Production Function) \label{assumption:scpf}  $\forall \ t \ in [0,T] \ F(\cdot, \cdot)$ is strictly concave in both of its arguments.
 \end{assumption}
 
-\begin{definition} (Law of Motion for Human Capital Stock)
+\begin{definition} (Law of Motion for Human Capital Stock in the Basic Ben-Porath Model)
 \ldots is defined as
 \begin{equation}
 \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t). \label{eq:lawh}
@@ -297,7 +297,7 @@ This section summarizes the dynamics of the main variables in the baseline model
 \item At $ t > t^* $ \eqref{eq:humantstar} and the expression for $\dot{H}$, \eqref{eq:hdot}, provide the expression for human capital.
 \end{itemize}
 
-Then,\footnote{There is a mistake in the definition of this function in the notes}
+Then,
 
 \begin{eqnarray}
 H(t) =
@@ -395,9 +395,69 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
     \end{center}
 \end{figure}
 
+\subsection{Rates of Return under the Cobb-Douglas Specification}
+We use this model to analyze returns both to schooling and post-schooling. In order to simplify the expressions we let $t \rightarrow T$ and we speculate that the analysis is not very sensitive to this assumption.
+
+\subsubsection{Schooling}
+We call schooling the period of specialization in which the individual devotes his complete human capital stock to produce human capital investment. To define the return to schooling consider two scenarios: (i) the individual does not invest either in schooling or in post-schooling. Each $\tau$ she earns $RH_{0}$; (ii) the individual invests during an specialization period and then does not invest after that. Each $\tau$ she earns $R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}}$. Then, we can define the (internal) rate of return of schooling as follows.
+
+\begin{definition} (``Internal'' Rate of Return to Schooling)
+$\varphi$ is the (internal) rate of return to schooling and solves the equation
+\begin{eqnarray}
+\int _{t^*} ^{\infty} \exp^{- \varphi t} R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} dt &=& \int \limits _{0} ^{\infty} \exp^{- \varphi t} R H_{0} dt \nonumber \\
+&\Rightarrow& \nonumber \\
+\varphi &=& \frac{\ln \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} - \ln H_{0}}{\frac{1}{r} - \frac{1}{2} \frac{H_{0}^{\frac{1}{2}}}{A}}.
+\end{eqnarray}
+\end{definition}
+
+\subsection{Post-schooling}
+Let $E(\tau)^{NPS}$ and $E(\tau)^{PS}$ denote earnings without and with post-schooling investment, respectively. By \eqref{eq:earnsall} we can write
+\begin{eqnarray}
+E(\tau)^{NPS} &=& R H(t^*) \\ \nonumber
+&=& R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \\ \nonumber
+E(\tau)^{PS} &=& \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau
+\end{eqnarray}
+
+\noindent so that the increment in earnings due to post-schooling at $\tau$ is
+\begin{eqnarray}
+\Delta^{E(\tau)} \equiv E(\tau)^{PS} - E(\tau)^{NPS}.
+\end{eqnarray}
+
+\indent Actually, note that $E(\tau)^{PS} = IH(\tau)$ (see \eqref{eq:itcobb}) so that we can interpret $\Delta^{E(\tau)}$ as ``returns less costs'' from post-schooling. Then, we define the (internal) rate of return to post-schooling as follows.
+
+\begin{definition} (``Internal'' Rate of Return to Post-schooling)
+$\phi$ is the (internal) rate of return to schooling and solves the equation
+\begin{equation}
+\int \limits _{0} ^{\infty} \exp^{- \phi \tau} \left[ \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau - R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \right] d \tau = 0 \label{eq:postreturn}
+\end{equation}
+\noindent Using the Laplace transform, \eqref{eq:postreturn} implies
+\begin{eqnarray}
+\frac{1}{\phi^2} RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} + \frac{1}{\phi} A \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} &=& 0 \nonumber \\
+&\Rightarrow& \nonumber \\
+\phi &=& \frac{r}{\alpha}.
+\end{eqnarray}
+\end{definition}
+
+\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Individuals who are more productive require a smaller return in order to invest in the post-school period. Likewise, relatively patient individuals (relatively low $r$) require a smaller $\phi$ to invest in the post-schooling period. 
+
 \section{The Haley-Rosen Specification: Finite Horizon and the Autoregression Form}
-We analyze the finite horizon case under an specification that \citet{haley1976estimation} and \citet{rosen1976theory} use. Specifically, we assume that $\dot{H} = A \left( IH \right)^{\alpha}, \alpha = \frac{1}{2}, \sigma = 0$ and the exact same setting as in Section \ref{section:baseline}. Actually, in Section \ref{section:baseline} we rely on infinite horizon to derive a set of closed form solutions to the individual's problem. In this section we rely on the assumption $\alpha = \frac{1}{1}$ to do exactly the same.\\
-\indent We focus on the dynamics of post-schooling earnings because one of the less credible consequence of the infinite horizon is the linearity of earnings on experience. From \eqref{equation:postearnings} we can write\footnote{Typo there is Appendix slife 89. Confusin $t$ and $\tau$}
+
+\citet{haley1976estimation} and \citet{rosen1976theory} consider a model in which  Assumption~\ref{assumption:bbpmodel} and Assumption~\ref{assumption:scpf} hold. They further assume that $\dot{H} = A \left( IH \right)^{\frac{1}{2}}$. This is, they assume that the production function for human capital investment is Cobb-Douglas with an specific value for $\alpha$ and that there is no depreciation.
+
+\begin{definition} (Law of Motion for Human Capital Stock in the Haley-Rosen Specification)
+\begin{equation}
+\dot{H} = A \left( IH \right)^{\frac{1}{2}} \label{eq:halroslaw}.
+\end{equation}
+\end{definition}
+
+\indent In Section \ref{section:baseline}, some of the results rely on infinite horizon to derive a set of closed form solutions to the individual's problem. This specification allows for tractability of the finite horizon case. In particular, we focus on the dynamics of post-schooling earnings because one of the implications of the infinite horizon case in Section~\ref{section:baseline} is the linear relation between earnings and experience an may be a caveat.\footnote{Estimates of the so-called Mincer equation usually establish a non-linear relation between earnings an experience \citep[see][]{heckman2006earnings}}\\
+
+\begin{claim} \label{claim:concavehalros} (Concavity of Earnings in the Haley-Rosen Specification)
+Consider the Haley-Rosen Specification of the Basic Ben-Porath Model explained in Section \ref{section:baseline}, i.e. assume that \eqref{eq:halroslaw} is the law of motion for human capital. Then, the earnings function is strictly concave in experience when the time horizon is finite.
+\end{claim}
+
+\begin{proof}
+\indent From \eqref{equation:postearnings} we can write
 \begin{eqnarray}
 E(\tau) &=& RH(t^*) + R \int \limits _{0} ^{\tau} A \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]dl - R \left[\frac{1}{2} \frac{g(t^* + \tau)A}{R} \right]^{2} \nonumber \\
 &\Rightarrow& \nonumber \\
@@ -410,19 +470,24 @@ where the second and third equalities use \eqref{eq:grossdep}. Combining \eqref{
 \ddot{E(\tau)} = 2r \dot{E(\tau)} - A^2 R \label{eq:earndifferential}
 \end{equation} 
 
-\noindent where the natural initial and terminal conditions that we impose are $E(0)$ and $\ddot{E(T)} = 0$ and then we guess and verify that $c_{2} = \frac{A^2 R}{2r}\exp^{2rT}$ in the following general solution to \eqref{eq:earndifferential}\footnote{There is a typo here in the general solution to the differential equation (slide 50) and in the initial conditions as well. Also, one wrong initial condition is provided.}
+\noindent where the natural initial and terminal conditions that we impose are $E(0)$ and $\ddot{E(T)} = 0$ and then we guess and verify that $c_{2} = \frac{A^2 R}{2r}\exp^{2rT}$ in the following general solution to \eqref{eq:earndifferential}
 \begin{equation}
 E(\tau) = c_{0} + c_{1}\exp^{-2r \tau} + c_{2} \tau
 \end{equation}
 
 \noindent so that $c_{1} + c_{0} = 0, 2rc_1 \exp^{2rT}  + c_{2} = 0$ and, therefore,
 \begin{equation}
-E(\tau) = \frac{A^2 R}{4r^2} \exp^{-2r T} \left( 1 - \exp^{2r \tau} \right) + \frac{A^2 R}{2r} \tau. \label{eq:earningspostalpha12}
+E(\tau) = \frac{A^2 R}{4r^2} \exp^{-2r T} \left( 1 - \exp^{2r \tau} \right) + \frac{A^2 R}{2r} \tau \label{eq:earningspostalpha12}
 \end{equation}
 
+\noindent which is strictly concave in $\tau$.
+\end{proof}
+
+
+\indent The graphical representation of Claim~\ref{claim:concavehalros} is in Figure~\ref{fig:halros}. 
 \begin{center}
 \begin{figure}[H]
-\caption{Post-school Earnings in the Haley-Rosen Specification}
+\caption{Post-school Earnings in the Haley-Rosen Specification} \label{fig:halros}
 \centering
 \includegraphics[width=3.5in, height=1.5in]{Figures/fig-finite-horiz.pdf}
 \floatfoot{\begin{small}
@@ -431,49 +496,55 @@ Note:
 \end{figure}
 \end{center}
 
-\indent \textbf{Need to include a discussion here on why this is constant in infinite horizon or $r = 0$.}
+\noindent As $t \rightarrow T$ the earnings function becomes less concave on experience. This follows from the trade-off that the individual faces when investing in the two different time horizons. When the individual faces an infinite horizon it is optimal for him to keep investing in human capital at a constant rate, even after the specialization period, as times goes by. In finite horizon, however, the incentives to invest decrease over time, and therefore, earnings increase at a decreasing rate. 
 
 \subsection{Evidence}
 \citet{brown1976model} estimates \eqref{eq:earningspostalpha12}, which enables to identify $r$ and $A^2 R$. His estimates, however, are imprecise and show that $r \rightarrow 0$. Then, he estimates the model for the infinite horizon case. He claims this to be a good approximation because he has a sample of young individuals. However, this disables him to estimate $r$.
 
 \subsection{The Autoregression}
-From \eqref{eq:earningspostalpha12} it is possible to write
+The Haley-Rosen specification enables straightforward analysis of the earnings dynamics. From \eqref{eq:earningspostalpha12} it is possible to write
 \begin{equation}
 E(\tau + 1) - E(\tau) =  \frac{A^2 R}{2r}+ \frac{A^2 R}{4r^2} \exp^{-2rT} \left( \exp^{2r(\tau - 1)} \exp^{r \tau} \right) 
 \end{equation}
 
-\noindent which implies that\footnote{slide 55 typo when multiplying by $\exp^2r$}
+\noindent which implies that
 
 \begin{equation}
 z(\tau + 1) = \exp^{2r} z(\tau) + \frac{A^2 R}{2r} \left( 1 - \exp^{2r} \right) \label{eq:growthalpha12}
 \end{equation}
 
-\noindent where $z(\tau) \equiv = E(\tau + 1) - E(\tau)$ and we can analyze the growth dynamics of earnings. Consider a visual representation of \eqref{eq:growthalpha12}
+\noindent where $z(\tau) \equiv  E(\tau + 1) - E(\tau)$. The graphical representation of \eqref{eq:growthalpha12} in Figure~\ref{fig:halrosgrowth} may mislead to the conclusion that earnings growth follow an explosive dynamic. Claim~\ref{claim:halrosdyn} clarifies this. 
 
 \begin{center}
 \begin{figure}[H]
-\caption{Earnings Growth in the Haley-Rosen Representation}
+\caption{Earnings Growth in the Haley-Rosen Representation} \label{fig:halrosgrowth}
 \centering
 \includegraphics[width=3in, height=3in]{Figures/fig-explode-converge.pdf}
 \floatfoot{\begin{small}
-Note:
 \end{small}}
 \end{figure}
 \end{center}
 
-\indent Apparently, the dynamics of the earnings growth are explosive. However, note that
+\begin{claim} \label{claim:halrosdyn}
+Earnings growth, $z(\tau)$, converges to a constant.
+\end{claim}
+
+\begin{proof}
+Informally, note that
 \begin{eqnarray}
 \frac{\partial \left[ E(\tau) - E(\tau - 1) \right] }{\partial \tau} &=& \frac{A^2 R}{2r} \exp{2r(\tau - T)} \left[ \exp^{-2r} - 1 \right] \nonumber \\
-&<& 0
+&<& 0.
 \end{eqnarray}
-so that even when the growth dynamics of earnings is autoregressive it converges to a constant. More formally, note that $z(0) = E(0) \equiv z_{0}$ and solve \eqref{eq:growthalpha12} to get
+
+\noindent Formally, note that $z(0) = E(0) \equiv z_{0}$ and solve \eqref{eq:growthalpha12} to get
 \begin{equation}
 z(\tau) = \exp^{2rT} z_{0} + \frac{A^2 R}{2r} \left( 1 - \exp{2r} \right) \sum \limits _{j=0} ^{T-1} \exp^{2rj}
 \end{equation}
 
-\noindent so that the earnings growth converges to the constant $\exp^{2rT} z_{0}$.\\
+\noindent so that the earnings growth converges to the constant $\exp^{2rT} z_{0}$.
+\end{proof}
 
-\subsection{From the Haley-Rosen Specification to the Mince Equation}
+\subsection{From the Haley-Rosen Specification to the Mincer Equation}
 The earnings function in the Haley-Rosen specification actually leads to the Mincer equation. To see that take take logs of \eqref{eq:earningspostalpha12} and obtain
 \begin{equation}
 \ln E(\tau) = \ln \left( \frac{A^2 R}{ 2r} \right) + \ln \tau + \ln \left[ 1 + \frac{\exp^{-2rT} - \exp^{2r(\tau - T)} }{2r \tau} \right]. \label{eq:logs}
@@ -490,7 +561,7 @@ The earnings function in the Haley-Rosen specification actually leads to the Min
 \ln(\tau) + \ln \left[ 1 + \frac{\exp^{-2rT} - \exp^{2r(\tau - T)} }{2r \tau} \right] \approx \alpha_{0} + \alpha_{1}\left( \tau - \tau_{0} \right) + \alpha_{2} \left( \tau - \tau_{0} \right)^2
 \end{equation}
 
-\noindent with $\alpha_{0} \equiv = \ln(\tau_{0}) + \xi_{0}, \alpha_{1} \equiv \frac{1}{\tau_{0}} + \xi_{1}, \alpha_{2} \equiv \frac{-\frac{1}{\tau_{0}^2} + \xi_{2}}{2}$. This leads to the so called Mincer equation \citep[see][]{mincer1974schooling}:
+\noindent with $\alpha_{0} \equiv \ln(\tau_{0}) + \xi_{0}, \alpha_{1} \equiv \frac{1}{\tau_{0}} + \xi_{1}, \alpha_{2} \equiv \frac{-\frac{1}{\tau_{0}^2} + \xi_{2}}{2}$, which leads to the so-called Mincer equation \citep[see][]{mincer1974schooling}:
 \begin{equation}
 \ln E(\tau) = k_{0} + k_{1} \tau k_{2} \tau^2 \label{eq:mincer}
 \end{equation}
@@ -521,50 +592,14 @@ $24.70$ & $74.77$ & $0.081$ & $-0.0008$ \\ \hline\hline
 \end{table}
 \end{center}
 
-Now, if $rT \approx 0$ then $\exp^{-rT} \approx 1$ and \eqref{eq:logs} becomes 
+\indent Now, if $rT \approx 0$ then $\exp^{-rT} \approx 1$ and \eqref{eq:logs} becomes 
 \begin{equation}
 \ln E(\tau) \approx \ln \left( \frac{A^2 R}{2r} \right) + \ln \tau + \ln \left[ 1 + \frac{1 - \exp^{2r \tau}}{2 r \tau} \right] \label{eq:intercept}
 \end{equation}
 
-which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argues against the Ben-Porath model. It could simply be the case that \citet{mincer1974schooling} does not include ability measures in his estimations, which appear in \eqref{eq:intercept}, and therefore finds a positive coefficient on schooling. 
+\noindent which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argues against the Ben-Porath model. It could simply be the case that \citet{mincer1974schooling} does not include ability measures in his estimations, which appear in \eqref{eq:intercept}, and therefore finds a positive coefficient on schooling. 
 
-\section{Rates of Return}
-We analyze the rate of return to schooling and post-schooling investments based on the model in Section \ref{section:baseline}. Recall that this model considers no depreciation, $\sigma = 0$, and $T \rightarrow \infty$.\footnote{Recall that this implies that $g(t) = \frac{R}{r}$}.
-\subsection{Post-school Investment}
-Let $E(\tau)^{NPS}$ and $E(\tau)^{PS}$ denote earnings without and with post-schooling investment, respectively. By \eqref{eq:earnsall} we can write
-\begin{eqnarray}
-E(\tau)^{NPS} &=& R H(t*) \\ \nonumber
-&=& R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \\ \nonumber
-E(\tau)^{PS} &=& \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau
-\end{eqnarray}
 
-\noindent so that the increment in earnings due to post-schooling at $\tau$ is
-
-\begin{eqnarray}
-\Delta^{E(\tau)} \equiv E(\tau)^{PS} - E(\tau)^{NPS}.
-\end{eqnarray}
-
-\indent Actually, is we note that $E(\tau)^{PS} = IH(\tau)$ (see \eqref{eq:itcobb}) then we can interpret $\Delta^{E(\tau)}$ as ``returns less costs'' from post-schooling and let $\phi$ be the (internal) rate of return to post-schooling which solves for
-\begin{equation}
-\int \limits _{0} ^{\infty} \exp^{- \phi \tau} \left[ \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau - R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \right] d \tau = 0 \label{eq:postreturn}
-\end{equation}  
-
-\noindent Using the Laplace transform, \eqref{eq:postreturn} implies
-\begin{eqnarray}
-\frac{1}{\phi^2} RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} + \frac{1}{\phi} A \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} &=& 0 \nonumber \\
-&\Rightarrow& \nonumber \\
-\phi &=& \frac{r}{\alpha}
-\end{eqnarray}
-
-\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Individuals who are more productive require a smaller return in order to invest in the post-school period. Likewise, relatively patient individuals (relatively low $r$) require a smaller $\phi$ to invest in the post-schooling period. 
-
-\subsection{School Investment}
-Each $\tau$, an individual with no schooling earns $R H_{0}$ while he earns $R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}}$ with schooling and no post-schooling. Let $\varphi$ be the (internal) rate of return to schooling be defined as the value $\varphi$ that solves for\footnote{Typo in slide 74 in the definition of what do schooling people earn.}
-\begin{eqnarray}
-\int _{t^*} ^{\infty} \exp^{- \varphi t} R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} dt &=& \int \limits _{0} ^{\infty} \exp^{- \varphi t} R H_{0} dt \nonumber \\
-&\Rightarrow& \nonumber \\
-\varphi &=& \frac{\ln \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} - \ln H_{0}}{\frac{1}{r} - \frac{1}{2} \frac{H_{0}^{\frac{1}{2}}}{A}}
-\end{eqnarray}
  
 \section{Earnings Growth and Patience in Finite Horizon}
 In Section \ref{section:baseline} that relative patience (i.e., relatively low $r$) implies a relatively longer schooling period, relatively higher human capital accumulation, and a relatively steeper earnings profile. We now want to ask, in the same framework but with finite horizon, how earnings growth depends on relative patience. In order to answer that we investigate the behavior of $\frac{\partial \dot{E(\tau)}}{\partial r}$. Without loss of generality, assume that R =1 and note that\\
