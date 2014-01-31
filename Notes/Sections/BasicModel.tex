@@ -663,34 +663,37 @@ $24.70$ & $74.77$ & $0.081$ & $-0.0008$ \\ \hline\hline
 
  
 \section{Generalized Ben-Porath Model} \label{section:generalized}
-Let us consider a generalization of the model in Section \ref{section:baseline} and allow for the law of motion of human capital to be
+We know generalize the model in Section \ref{section:baseline} to a more general production function of human capital investment. We focus our analysis on specialization because the analysis of other conditions is very similar to that of Section \ref{section:baseline}
+
+\begin{definition} (Law of Motion for Human Capital Stock in the Generalized Ben-Porath Model)
 \begin{equation}
 \dot{H} = A I^{\alpha} H^{\beta} - \sigma H \label{eq:lawhgen}.
 \end{equation}
+\end{definition}
 
-\indent This baseline Ben-Porath model is a particular case of this general formulation when $\alpha = \beta$. To simplify the analysis of the implications of this model we assume that there neither discounting nor depreciation, i.e. $r = \sigma = 0$. To ease notation we neglect the argument $t$ when possible. We analyze this model in finite horizon and follow the same notation as in Section \ref{section:baseline}. Thus, the agent's problem is to maximize
-\begin{equation}
-\max_{I(t)} \int _{0} ^{T} \left[ RH(t) \left(1 - I(t) \right) \right]dt
-\end{equation}
-
-\noindent subject to an initial condition for the stock of human capital, $H(0) = H_{0}$, and \eqref{eq:lawhgen}. The Hamiltonian of the problem is
+\indent The model in Section \ref{section:baseline} is a particular case of this general formulation when $\alpha = \beta$. To simplify the analysis of the implications of this model we assume that there is neither discounting nor depreciation, i.e. $r = \sigma = 0$. To ease notation we neglect the argument $t$ when possible. We analyze this model in finite horizon.\\
+\indent The Hamiltonian of the problem is
 \begin{equation}
 \mathcal{H} = RH(t) \left(1 - I(t) \right) + \mu \left( A I^{\alpha} H^{\beta} \right)
 \end{equation} 
 
-where $\mu(t)$ defines the shadow price of human capital. The first order conditions are
+\noindent where $\mu(t)$ defines the shadow price of human capital. The following condition describe optimality.
+
+\begin{condition} (Optimality Conditions for the Life-Cycle Individual's Problem in the Generalized Ben-Porath Model) \label{condition:optgen}
 \begin{eqnarray}
 \frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu A \alpha I^{\alpha - 1} H^{\beta} \geq RG \label{eq:focinvestmentgen} \\
 \frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& -R(1 - I) - \beta \mu A I^{\alpha} H^{\beta -1} \label{eq:focstockgen} \\ 
 \frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t) \label{eq:focmotiongen} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalitygen}
 \end{eqnarray}
+\end{condition}
 
-Importantly, these conditions are equivalent to the Mangasarian sufficient conditions for a global optimum if $\beta \leq 1$ \citep[see][]{mangasarian1966sufficient}.
+\indent Condition \ref{condition:optgen} are equivalent to the Mangasarian sufficient conditions for a global optimum if $\beta \leq 1$ \citep[see][]{mangasarian1966sufficient}.
 
 \subsection{Specialization}
-The specialization or schooling period when $I = 1$ happens if
-\eqref{eq:focinvestmentgen} holds with strict inequality for $I=1$.
+If \eqref{eq:focinvestmentgen} holds with strict inequality the individual specializes, i.e. $I=1$. Thus, Condition~\ref{condition:spe} guarantees specialization.
+
+\begin{condition} (Conditions for Specialization in the Generalized Ben-Porath Model) \label{condition:spe}
 \begin{eqnarray}
 \text{Conditions for Specialization :}
 \begin{cases}
@@ -699,14 +702,15 @@ H > \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta > 1 \\
 H < \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta < 1. \\
 \end{cases}
 \end{eqnarray}
+\end{condition}
 
-\noindent During this period \eqref{eq:focstockgen}, \eqref{eq:focmotiongen} become 
+\indent During the period(s) of specialization \eqref{eq:focstockgen}, \eqref{eq:focmotiongen} become 
 \begin{eqnarray}
 \dot{\mu} &=& - \beta \mu A H^{\beta - 1} \label{eq:focstockgenspe} \\
-\dot{H}  &=& A H^{\beta}. \label{eq:focmotiongenspe}\\
+\dot{H}  &=& A H^{\beta} \label{eq:focmotiongenspe}\\
 \end{eqnarray}
 
-\indent We can solve for \eqref{eq:focmotiongenspe} and get
+\noindent and we can solve for the dynamics of human capital stock in this region
 \begin{eqnarray}
 H(t) =
 \begin{cases}
@@ -735,7 +739,7 @@ k_{0} \exp^{-At}, & \beta = 1 \\
 \end{eqnarray}
 
 \noindent for which there is an exact solution given an initial condition $\mu(0) = \mu_{0}$. This is, we can find $k_{0}, k_{1}$ in \eqref{eq:muspe} provided $\mu_{0} > 0$ (it is a price). In particular, note that $k_{0} = \mu_{0} > 0$ and $k_{1} = \mu_{0} c_{1}^{\frac{\beta}{1-\beta}} > 0$ for $0<\beta<1$.\\
-\indent Let $t^*$ denote the time when specialization ends. It must be true that, then, \eqref{eq:focinvestmentgen} holds with strict equality\footnote{typo in slide 18. All the time arguments in the first equation should be $t^*$.}
+\indent Let $t^*$ denote the time when specialization ends. It must be true that, then, \eqref{eq:focinvestmentgen} holds with strict equality
 \begin{equation}
 \mu(t^*) A \alpha H(t^*)^{\beta} = RH(t^*)
 \end{equation}
@@ -745,12 +749,21 @@ k_{0} \exp^{-At}, & \beta = 1 \\
 t^* = \frac{1}{A} \left( \ln \left[ \frac{A\alpha}{R} + \ln k_{0} \right] \right)
 \end{equation}
 
-\noindent for $\beta = 1$. For $\beta \neq 1$, $t*$ solves
+\noindent for $\beta = 1$. For $\beta \neq 1$, $t^*$ solves
 \begin{equation}
 \frac{k_{1}}{ \left( At^* + c_{0} \right)^{\frac{\beta}{\beta-1}}} \frac{A \alpha}{R} = \left[ At^* \left( 1 - \beta \right)^{\frac{1}{1 - \beta}} + H_{0}^{1 - \beta} \left( 1 - \beta \right)^{\frac{\beta}{1 - \beta}} \right]^{1 - \beta}.
 \end{equation}
 
-\indent To wrap up the discussion we ask, if there is at least one period of specialization, how many periods of specialization there are. Consider two cases: (i) $\beta = 1$; (ii) $0 < \beta < 1$. In both cases, from \eqref{eq:muspe} we note that $\dot{mu(t)} < 0$. Importantly, $\mu(t)$ is the shadow price or value of human capital. Thus, $\dot{I(t)}$ and, if it exists, the period of specialization is unique.
+\indent To wrap up the discussion we ask if the period of specialization is unique for some particular cases.
+
+\begin{claim} (Uniqueness of the Specialization Period)
+The period of specialization is unique when either $\beta = 1$ or $\beta \in [0,1]$. 
+\end{claim}
+
+\begin{proof}
+In both cases \eqref{eq:muspe} implies that $\dot{\mu(t)} < 0$. Importantly, $\mu(t)$ is the shadow price or value of human capital. Thus, $\dot{I(t)} < 0 $ and, if it exists, the period of specialization is unique.
+\end{proof}
+
  
 \section{The Basic Shenshinski Specification}
 The Basic Shenshinski specification is a particular case of the Generalized Ben Porath model in Section \ref{section:generalized} in which $\alpha = \beta = 1$. Then, $\dot{H(t)} = AI(t)H(t) - \sigma H(t)$. Proceeding in Section \ref{section:baseline} and Section \ref{section:generalized} we can write down the current value Hamiltonian and obtain the following conditions for optimality
