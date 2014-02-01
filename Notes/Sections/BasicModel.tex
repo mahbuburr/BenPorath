@@ -1,83 +1,60 @@
 \section{Basic Ben-Porath Model} \label{section:baseline}
-\begin{assumption} (Basic Ben-Porath Model) \label{assumption:bbpmodel}
-The assumptions of the basic Ben-Porath model are: (i) homogeneity (single representative agent); (ii) perfect capital markets; (iii) no non-market benefits from human capital; (iv) fixed labor supply; (v) constant depreciation of human capital, $\sigma$; (vi) finite horizon.
+
+The baseline Ben-Porath model studies how a single representative agent makes optimal life-cycle decisions on human capital investments to maximize her total lifetime disposable earnings. At each point in time, the agent's current stock of human capital, $H(t)$, and the rental rate of human capital, $R$, determine the amount of her potential earnings: $Y(t)=RH(t)$. In the meantime, the agent makes two types of investments on producing human capital: one is a fraction of the current stock of human capital, $I(t)H(t)$, with $I(t) \in [0,1]$, and the other is market goods, $D(t)$. Therefore, the cost of human capital investments include both the foregone earnings, $RI(t)H(t)$, and the costs of the purchased market goods, $P_DD(t)$, with $P_D$ the price of the market goods.\\
+\indent Then the agent's disposable earning in period $t$, $E(t)$, is equivalent to her potential earning in period $t$, $Y(t)$, subtracted by the total costs of human capital investments:
+
+\begin{equation}
+E(t) = R H(t) -  R I(t) H(t) - P_{D} D(t) \label{eq:earnings}
+\end{equation}
+
+\indent Another interpretation for $I(t)$ is the amount of time the agent spends on producing human capital. With one unit of total time, the rest of her time, $1-I(t)$, is assumed to be all spent on working in the labor market. Therefore, the observed earning the agent makes from working in the labor market is $R(1-I(t))H(t)$, which is higher than her disposable earning and lower than her potential earnings. Subtracting this by the costs of purchased market goods, $P_DD(t)$, gives the level of her disposable earnings, $E(t)$.\\
+\indent In addition, the human capital production function takes the agent's two types of investments as inputs: $F(I(t)H(t),D(t))$. And the following assumption is assumed to hold.
+
+\begin{assumption} (Strict Concavity of the Production Function) \label{assumption:scpf}  $\forall \ t \in [0,T] \ F(\cdot, \cdot)$ is strictly concave in both of its arguments.
 \end{assumption}
 
-\noindent Let Assumption~\ref{assumption:bbpmodel} hold for the rest of this section. For each $t \in [0,T]$, $H$ denotes human capital, $I \in [0,1]$ allocation to investment in human capital, $D$ market goods, and $F(I,D)$ the production function of human capital stock. Thus, the human capital stock is produced through two inputs, $D$ and $I$. 
+\indent The change in human capital stock at time $t$, which is summarized by the law of motion for $H(t)$, is defined as: 
 
-\begin{assumption} (Strict Concavity of the Production Function) \label{assumption:scpf}  $\forall \ t \ in [0,T] \ F(\cdot, \cdot)$ is strictly concave in both of its arguments.
-\end{assumption}
-
-\begin{definition} (Law of Motion for Human Capital Stock in the Basic Ben-Porath Model)
-\ldots is defined as
+\begin{definition} (Law of Motion for Human Capital Stock in the Basic Ben-Porath Specification)
 \begin{equation}
 \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t). \label{eq:lawh}
 \end{equation}
 \end{definition}
 
-\begin{remark} (Neutrality)
-In the basic Ben-Porath model the law of motion for human capital stock embeds a neutrality assumption. Namely, the current stock of human capital at time $t$, $H(t)$, and the investment time at time $t$, $I(t)$, appear as a single argument in a multiplicative fashion in the flow production of human capital stock. 
-\end{remark}
-
-\indent At each point of time, the current stock and the rental rate of human capital, $R$, define potential earnings as $Y(t) = R H(t)$. In general, earnings and potential earnings differ by two terms: (i) foregone earnings; (ii) direct market goods costs. 
-
-\begin{definition} (Earnings) \label{definition:earnings}
-Let $P_{D}$ be the price of markets. Earnings are
-\begin{equation}
-E(t) = R H(t) -  R I(t) H(t) - P_{D} D(t) \label{eq:earnings}
-\end{equation}
-
-\noindent where $R I(t) H(t)$ are foregone earnings and $ P_{D} D(t) $ are direct goods costs. 
-\end{definition}
-
-\indent Definition~\ref{definition:earnings} clarifies that $I(t)$ is the allocation to investment in each period of time. In particular, the individual occupies a fraction $I(t)$ of her human capital stock to produce human capital. The individual chooses $D(t)$ and $I(t)$ to maximize her lifetime earnings stream given an initial level of human capital, $H(0) = H_{0}$ and subject to the law of motion for human capital, \eqref{eq:lawh}. Explicitly,
+\noindent which is the amount of human capital produced at time $t$ subtracted by the amount of human capital depreciation, with $\sigma$ as the depreciation rate.\\
+\indent The law of motion for human capital stock embeds a neutrality assumption. Namely, the current stock of human capital at time $t$, $H(t)$, and the investment time at time $t$, $I(t)$, appear as a single argument in a multiplicative fashion in the flow production of human capital stock. This assumption simplifies our calculations by neutralizing the effect of $H(t)$ on the optimal decision on time investment. In particular, a higher level of $H(t)$ increases the marginal return of $I(t)$ in producing human capital and the marginal cost of $I(t)$ in foregone earnings, both in a multiplicative pattern. As a result, $H(t)$ cancels out in the FOC of $I(t)$ as we show later.\\
+\indent The agent's life-cycle problem is to choose $I(t)$ and $D(t)$ optimally over time to maximize her total disposable earnings subject to the law of motion for human capital. Given an initial condition of human capital, $H(0)=H_0$, the agent's problem is as follows.
 
 \begin{problem} \label{problem:bbp} (Life-cycle Individual's Problem in the Basic Ben-Porath Model)
 \begin{equation}
-\max_{I_{t}, D_{t}} \int \limits _{0} ^{T} \exp^{-rt} RH(t)(1 - I(t)) dt \nonumber \\
+\max_{{I_{t}, D_{t}}} \int \limits _{0} ^{T} \exp^{-rt} RH(t)(1 - I(t)) dt \nonumber \\
 \end{equation}
 \noindent s.t.
 \begin{eqnarray}
-H(0) = H_{0} \nonumber \\
-\text{\eqref{eq:lawh} holds} \nonumber .
+H(0) &=& H_{0} \nonumber \\
+\dot{H(t)} &=& F \left( I(t) H(t), D(t) \right) - \sigma H(t) \nonumber
 \end{eqnarray}
 \end{problem}
 
-\indent The \textbf{current value Hamiltonian} associated to Problem \ref{problem:bbp} is
+\indent Therefore, the \textbf{current value Hamiltonian} associated to the agent's maximization problem is
 \begin{equation}
 \mathcal{H} (\cdot) = \exp^{-rt} \left[ R H(t) -  R I(t) H(t) - P_{D} D(t) \right] + \mu(t) \dot{H(t)} 
 \end{equation}
 
-\noindent where $\mu(t)$ defines the shadow price of the human capital stock. Assumption~\ref{assumption:bbpmodel} guarantees that the necessary and sufficient conditions for optimality are the following.
+\noindent where $\mu(t)$ defines the shadow price of the human capital stock. Thus, the following conditions must be satisfied for the interior solutions.
+
 \begin{condition} (Optimality Conditions for the Life-cycle Individual's Problem in the Basic Ben-Porath Model) 
 \begin{eqnarray}
-\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \exp^{-rt}R = \mu(t) F_{I(t)H(t)} \label{eq:focinvestment} \\
-\frac{\partial \mathcal{H} (\cdot)}{\partial D(t)} = 0 &\Leftrightarrow& \exp^{-rt}R I(t) = \mu(t) F_{D(t)} \label{eq:focgoods} \\
-\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& \exp^{-rt} R \left( 1 - I (t) \right) + \mu(t) \left(  F_{I(t)H(t)} - \sigma \right) = - \dot{\mu(t)} \label{eq:focstock} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \exp^{-rt}R = \mu(t) F_{1} \left( I(t) H(t), D(t) \right) \label{eq:focinvestment} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial D(t)} = 0 &\Leftrightarrow& \exp^{-rt}P_D = \mu(t) F_{2} \left( I(t) H(t), D(t) \right) \label{eq:focgoods} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& \exp^{-rt} R \left( 1 - I (t) \right) + \mu(t) \left(  F_{1} \left( I(t) H(t), D(t) \right)I(t) - \sigma \right) = - \dot{\mu(t)} \label{eq:focstock} \\ 
 \frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t) \label{eq:focmotion} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversality}
 \end{eqnarray}
-where $F_{j} \equiv \frac{\partial F \left( I(t), D(t) \right) }{\partial j}$ for $j = D(t), I(t) H(t)$.
+where $F_j$ is the first order derivative of the production function $F$ with respect to its $j$th argument.
 \end{condition}
 
-\indent In order to analyze some aspects of this model, it is useful to solve the period-by-period counterpart of Problem~\ref{problem:bbp}. We can think of this as a problem in which, each period, the agent maximizes gross investment in human capital less input costs. Provided that we have the adequate discount factor we can write the period-by-period counterpart. $ \forall \ t \in [0,T]$ define $g(t)$ as a discount factor and write the period-by-period problem.
-\begin{problem} (Period-by-Period Individual's Problem in the Baisc Ben-Porath Model)\label{problem:perbyperbbpm}
-\begin{eqnarray}
-\max_{I(t),D(t)} \left[ g(t) F \left( I(t),H(t) \right) - P_{D}D(t) - RI(t)H(t) \right]. \nonumber
-\end{eqnarray}
-\end{problem} 
-
-\indent Actually, we can interpret Problem~\ref{problem:perbyperbbpm} as a production problem: the individual is a firm that receives $g(t)$ (return to gross investment in human capital) for the production of human capital investment through the technology $F \left( I(t),H(t) \right)$. It pays the prices $P_{D}, R$ for the inputs $D(t), I(t)H(t)$.
-
-\begin{claim} (Life-cycle and Period-by-period Solution Equivalence) 
-Let $g(t) \equiv \exp^{rt} \mu(t)$. Then, the solution to Problem~\ref{problem:bbp} and Problem~\ref{problem:bbp} are equivalent.
-\end{claim}
-
-\begin{proof}
-The equivalence follows after comparing the first order conditions (note that $g(t)$ makes equivalent the first order conditions of the two problems).
-\end{proof}
-
-\indent Economically, $g(t)$ is a discount factor that adjusts for the correct exponential depreciation of gross investment so that the period-by-period and the life-cycle solutions coincide. In order to analyze the solution combine \eqref{eq:focinvestment} and \eqref{eq:focstock} to get 
+\indent To simply notations, combine the two terms with intertemporal meanings in the life-cycle decision problem into one term by defining $g(t)\equiv \exp^{rt}\mu(t)$. In order to analyze the solution combine \eqref{eq:focinvestment} and \eqref{eq:focstock} to get 
 \begin{equation}
 \dot{\mu(t)} = - \exp^{-rt} R + \mu(t) \sigma \label{eq:focinvstockcombine}
 \end{equation}
@@ -87,71 +64,59 @@ The equivalence follows after comparing the first order conditions (note that $g
 \dot{g(t)} = (\sigma + r ) g(t) - R. \label{eq:grossdep}
 \end{equation}
 
-\indent Equation~\eqref{eq:foctransversality} implies that $\mu(T) = 0 $ and, therefore, $g(T) = 0$ provided that $H(t) = 0$ because conditions under which $H(T) = 0$ have no economic sense. It is possible, thus, to solve \eqref{eq:grossdep} and obtain
+\indent Equation~\eqref{eq:foctransversality} implies that $\mu(T) = 0 $, and therefore $g(T) = 0$ provided that $H(T) = 0$ has no economic sense. It is possible, thus, to solve \eqref{eq:grossdep} and obtain
 \begin{equation}
 g(t) = \frac{R}{\sigma + r} \left[ 1 - \exp^{(\sigma + r)(t - T)} \right].
 \end{equation}
 
-\noindent which leads to $\dot{g(t)} < 0$. To wrap up the discussion note that the optimality conditions for Problem \ref{problem:perbyperbbpm} are the following.\\
- 
-\begin{condition} (Optimality Conditions for the Period-by-period Individual's Problem in the Basic Ben-Porath Model)
+\noindent which leads to $\dot{g(t)} < 0$. To wrap up the discussion note that the optimality conditions for the interior solutions are:
 \begin{eqnarray}
-g(t) F_{I(t)H(t)} H(t) &=& R H (t) \nonumber \\
-g(t) F_{D(t)} H(t) &=& P_{D} \label{eq:newfocs}. 
+g(t) F_{1}(I(t)H(t),D(t)) &=& R \nonumber \\
+g(t) F_{2}(I(t)H(t),D(t)) &=& P_{D} \label{eq:newfocs}. 
 \end{eqnarray}
-\end{condition}
 
-\indent The system in \eqref{eq:newfocs} consists of two equations and two unknowns that solve for the Marshallian demands for $I(t)H(t)$ and $D(t)$. Assumption~\ref{assumption:scpf} together with $\dot{g(t)} < 0$ imply that the both Marshallian demands are decreasing overtime, which is intuitive because the agent faces a finite horizon problem.
+\indent The system in \eqref{eq:newfocs} consists of two equations and two unknowns that solve for the Marshallian demands for $I(t)H(t)$ and $D(t)$. Note that if the optimal solutions are interior and the cross-partial derivative of the production function with its two arguments is assumed to be zero, i.e. $\frac{\partial^2F}{\partial IH \partial D} = 0$, then strict concavity of the production function together with $\dot{g(t)} < 0$ imply that both Marshallian demands are decreasing overtime, which is intuitive because the agent faces a finite horizon problem and the amount of time left to capture the returns of human capital investment is decreasing overtime. 
 
 \subsection{Earnings Dynamics}
-\indent One of the fundamental questions that this basic model enables to ask is how earnings evolve over the life-cycle. Consider Claim \ref{claim:earnnodep} and Claim \ref{claim:earndep}
+\indent One of the fundamental questions that this basic model enables to ask is how earnings evolve over the life-cycle. Consider both the slope and curvature of the earnings dynamics in the case with no $D(t)$, i.e. $F_{D(t)}=0$ so that the production function takes the single argument $I(t)H(t)$. Without loss of generality, also assume that $R\equiv1$.
+
+\subsubsection{The Slope of Earnings Dynamics}
 
 \begin{claim} (Earnings over Time with no Depreciation) \label{claim:earnnodep}
-Let $\sigma = 0$. Then, $\dot{E(t)} > 0$.
+Let $\sigma = 0$. Then, when the optimal solution of $I(t)$ is interior, $\dot{E(t)} > 0$.
 \end{claim}
 
 \begin{proof}
 Differentiate \eqref{eq:earnings} and use \eqref{eq:lawh} to write
 \begin{eqnarray}
-\dot{E(t)} &=& R \dot{H(t)} - R \dot{I(t)H(t)} - P_{D} \dot{D(t)} \nonumber \\
-           &=& R F \left( I(t) H(t), D(t) \right) - R \dot{I(t)H(t)} - P_{D} \dot{D(t)} \nonumber \\     
+\dot{E(t)} &=& \dot{H(t)} - \dot{I(t)H(t)}  \nonumber \\
+           &=& F \left( I(t) H(t) \right) - \dot{I(t)H(t)}  \nonumber \\     
            &>& 0 
 \end{eqnarray}
 
-\noindent where the equality follows because the Marshallian demands for $I(t)H(t)$ and $D(t)$ are decreasing over time.
+\noindent where the inequality follows because the Marshallian demands for $I(t)H(t)$ is decreasing over time.
 \end{proof}
 
-\begin{claim} (Earnings over Time with no Depreciation) \label{claim:earndep}
+\begin{claim} (Earnings over Time with Depreciation) \label{claim:earndep}
 Let $\sigma > 0$. Then, $\dot{E(t)} \lessgtr 0$. 
 \end{claim}
 
 \begin{proof}
-Follow the same steps as in the proof of Claim~\ref{claim:earnnodep} and note that the term $R \sigma H(t)$ appears in the expression for $\dot{E(t)}$. This terms could be $\lessgtr R F \left( I(t) H(t), D(t) \right) - R \dot{I(t)H(t)} - P_{D} \dot{D(t)} $.
+Follow the same steps as in the proof of Claim~\ref{claim:earnnodep} and note that the term $\sigma H(t)$ appears in the expression for $\dot{E(t)}$. This terms could be $\lessgtr F \left( I(t) H(t) \right) - \dot{I(t)H(t)} $.
 \end{proof}
 
-\indent Claim \ref{claim:earnnodep} follows because the solution for human capital investment is interior $\forall \ t \in [0,T]$. Since there is no depreciation, individuals continuously add to their human capital stock and earn $R$ for each accumulated unity. Claim \ref{claim:earndep} follows because the interior solution for human capital investment may be driven down by a relatively high rate of depreciation.
+\indent Claim \ref{claim:earnnodep} follows because with a positive amount of investment (interior solutions) and no depreciation, human capital stock is accumulating overtime. In the mean time, investments on human capital decline over time, and thus disposable earnings are increasing overtime. Claim \ref{claim:earndep} follows because the accumulated stock of human capital may be driven down by a relatively high rate of depreciation.
 
+\subsubsection{The Curvature of Earnings Dynamics} \label{section:egdyn}
+\indent We now analyze the curvature of the earnings function for the case in which there is no depreciation.\footnote{A similar analysis follows when $\sigma>0$ for the cases in which either $\dot{E(t)}> 0$ or $\dot{E(t)}< 0$}. 
 
-\begin{proof}
-Differentiate \eqref{eq:earnings} and use \eqref{eq:lawh} to write
-\begin{eqnarray}
-\dot{E(t)} &=& R \dot{H(t)} - R \dot{I(t)H(t)} - P_{D} \dot{D(t)} \nonumber \\
-           &=& R F \left( I(t) H(t), D(t) \right) - R \dot{I(t)H(t)} - P_{D} \dot{D(t)} \nonumber \\     
-           &>& 0 
-\end{eqnarray}
-
-\noindent where the equality follows because the Marshallian demands for $I(t)H(t)$ and $D(t)$ are decreasing over time.
-\end{proof}
-
-\subsection{Concavity} \label{section:egdyn}
-\indent We now analyze the curvature of the earnings function for the case in which there is no depreciation.\footnote{A similar analysis follows when $\sigma>0$ for the cases in which either $\dot{E(t)}> 0$ or $\dot{E(t)}< 0$}. Without loss of generality we assume away $D(t)$, i.e. $F_{D(t)} = 0 $ so that the production function takes the single argument $I(t) H(t)$, and $R \equiv 1$. 
-
-\begin{claim} (Concavity of the Earnings Function with no Depreciation) \label{claim:concearnnodep}
+\begin{claim} (Concavity of the Earnings Function with no Depreciation)
+\label{claim:concearnnodep}
 Assume $\eta \equiv \left( 1 - \frac{F'F'''}{{F''}^2} \right) < 0$. Then, the earnings function is strictly concave. 
 \end{claim}
 
 \begin{proof}
-First note that $\dot{E(t)} > 0$ by Claim~\ref{claim:earnnodep}. Since $F_{D(t)} = 0 $ we can write the first order for investment becomes
+First note that $\dot{E(t)} > 0$ by Claim~\ref{claim:earnnodep}. Since $F_{D(t)} = 0 $ we can write the first order condition for investment as
 \begin{equation}
 g(t) F'(I(t) H(t)) = 1
 \end{equation}
@@ -174,16 +139,16 @@ where we substitute in $\eqref{eq:itdot}$. Further, note that
 
 \noindent and from \eqref{eq:grossdep} obtain $\frac{\ddot{g}}{g} = r \frac{\dot{g}}{g}$. Thus,
 \begin{eqnarray}
-\ddot{E} &=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} - \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) \right] + \left[ r \frac{\dot{g}}{g} - \left( \frac{\dot{g}}{g} \right)^2 \right] \frac{F'}{F''} \nonumber \\
-&=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} - \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) - \frac{gr - \dot{g}}{g} \right] \nonumber \\
-&=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} - \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) - \frac{1}{g} \right] \nonumber \\
+\ddot{E} &=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} + \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) \right] + \left[ r \frac{\dot{g}}{g} - \left( \frac{\dot{g}}{g} \right)^2 \right] \frac{F'}{F''} \nonumber \\
+&=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} + \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) - \frac{gr - \dot{g}}{g} \right] \nonumber \\
+&=& - \frac{\dot{g}}{g} \frac{F'}{F''} \left[ \frac{1}{g} + \frac{\dot{g}}{g} \left( 1 - \frac{F'F'''}{{F''}^2} \right) - \frac{1}{g} \right] \nonumber \\
 &=& - \left( \frac{\dot{g}}{g} \right)^2 \frac{F'}{F''} \left( 1 - \frac{F'F'''}{{F''}^2} \right)
 \end{eqnarray}
 
 \noindent where the third equality uses \eqref{eq:grossdep}, i.e. $gr - \dot{g} = 1$. F is strictly concave and therefore $-\left( \frac{\dot{g}}{g} \right)^2 \frac{F'}{F''} > 0$. Since $\left( 1 - \frac{F'F'''}{{F''}^2} \right) < 0$ the claim follows.
 \end{proof}
 
-\indent A sufficient condition for $\dot{E(t)}$ to be concave is $\eta < 0$. This crucially depends on how concave $F'''$ is. Intuitively, given that there is no human capital depreciation, the production function for human capital investment needs to be concave enough to make the earnings function concave.
+\indent  Therefore, ${E(t)}$ is concave if and only if $\eta < 0$, which implies a necessary condition for concavity: $F^{'''}>0$.
 
 \begin{example} (Human Capital Production Functions and Earnings Concavity)
 \begin{itemize}
@@ -192,25 +157,25 @@ where we substitute in $\eqref{eq:itdot}$. Further, note that
 \item Power Production Function 3: consider the case of $F(x) = a - b \exp^{-cx}$ with $b,c > 0$. Then, $\eta = 0$. 
 \item Quadratic Production Function: any quadratic production function has $F''' = 0$ and does not induce concavity of earnings with respect to time. 
 \end{itemize}
-\noindent Importantly, all this examples consider no depreciation of human capital, $\sigma = 0$. 
+\noindent Importantly, all these examples consider no depreciation of human capital, $\sigma = 0$. 
 \end{example} 
 
-\subsection{Specialization Period}
+\subsection{Specialization Period} \label{section:specialization}
 Specialization happens when the agent devotes his complete human capital to produce human capital stock, i.e. when $I(t) = 1$ for $t \in [ \underline{t}, \bar{t}]$. In order to analyze some of the properties of specialization periods we assume away $D(t)$ so that $F_{D(t)} = 0$ and rule out depreciation.\\
-\indent Recall that we can interpret $g(t)$ as the return to investment in human capital investment and that we show above that in this case $\dot{g} < 0$. Then, there is at most one period of specialization at the beginning of the time horizon, if it happens. We denote this by $[0,t^*]$. \citet{ben1967production} calls this the schooling period and it happens under the conditions that follow.
+\indent Recall that we can interpret $g(t)$ as the return to investment in human capital and that we show above that $\dot{g} < 0$. Then, there is at most one period of specialization at the beginning of the time horizon, if it happens. We denote this by $[0,t^*]$. \citet{ben1967production} calls this the schooling period and it happens under the conditions as follows.
 
 \begin{condition} (Conditions for the Existence of a Period of Specialization in the Basic Ben-Porath Model with no Depreciation)
 \begin{eqnarray}
-F'(H(t))g(t) &>& R \nonumber \\
-F'(H(t^*))g(t^*) &=& R \nonumber \\
-I(t^*) &=& 1 \nonumber \\
+F'(H(t))g(t) &>& R\ \ \ \forall \ t\in [0,t^*) \nonumber \\
+F'(H(t^*))g(t^*) &=& R\nonumber \\
+I(t) &=& 1\ \ \ \ \forall \ t\in [0,t^*] \nonumber \\
 H(t^*) &=& \int \limits _{0} ^{t^*} F (H(\tau)) d\tau + H_{0} \label{eq:humantstar}
 \end{eqnarray} 
-\noindent where $H(t^*)$ is the human capital stock accumulated up to time $t^*$, the sum over the period $[0,t^*]$ plus the initial stock.\\
+\noindent where $H(t^*)$ is the human capital stock accumulated up to time $t^*$.\\
 \end{condition}
 
-\indent Given that $R$ is fixed, any decrease in $g(t)$ lowers $t^*$ because it lowers the return to gross investment in human capital. For example, relatively high $r$ implies relatively low $t^*$ because the individual is relatively present oriented. Also, from \eqref{eq:humantstar}, note that a high value of $t^*$ implies a lower value for $t^*$ because it takes less time to obtain $H(t^*)$. If $\sigma > 0 $ the the same conditions characterize specialization. However, the there may be more than one specialization period because, under some scenarios, a high value of $\sigma$ may knock off capital such that various investment episodes are optimal. We differ that case for Section \ref{section:cycles}.
-\begin{case} (No Depreciation and the Cobb-Douglas Production Function for Human Capital: Initial Human Capital and the Specialization Period) \label{case:ndcdexample}
+\indent Given that $R$ is fixed, any decrease in the function $g(t)$ for a given $t$ lowers $t^*$ because it lowers the return to gross investment in human capital. For example, relatively high $r$ implies relatively low $t^*$ because the individual is relatively present oriented. Also, from the system \eqref{eq:humantstar}, note that a high value of $H_0$ implies a lower value for $t^*$ because it takes less time to obtain $H(t^*)$. If $\sigma > 0 $, similar conditions characterize the specialization period. However, there may be more than one specialization period because, under some scenarios, a high value of $\sigma$ may knock off capital such that various investment episodes are optimal. We defer that case for Section \ref{section:cycles}.
+\begin{case} (No Depreciation and the Cobb-Douglas Production Function for Human Capital: Initial Level of Human Capital) \label{case:ndcdexample}
 In this case $\dot{H} = A \left(IH \right)^\alpha$ where $0 < \alpha < 1, A>0$. As argued above, specialization happens in the period $[0,t^*]$. Thus
 \begin{eqnarray}
 	\alpha A \left( H(0) \right) ^{\alpha - 1 }g(0) &>& R \nonumber \\
@@ -220,7 +185,7 @@ In this case $\dot{H} = A \left(IH \right)^\alpha$ where $0 < \alpha < 1, A>0$. 
 \indent As the conditions in \eqref{eq:humantstar} establish, the time spent in specialization is a decreasing function of $H(0)$. In this example, actually, the initial human capital needs to be below certain threshold in order for the individual to specialize during one period. 
 \end{case}
 
-\begin{case} (No Depreciation and the Cobb-Douglas Production Function for Human Capital: Infinite Horizon, Initial Human Capital and the Specialization Period)
+\begin{case} (No Depreciation and the Cobb-Douglas Production Function for Human Capital with Infinite Horizon: Initial Level of Human Capital)
 In the setting of Case~\ref{case:ndcdexample} and if the horizon of the problem is infinite: $H(0) < \left( \frac{\alpha A}{r} \right) ^{\frac{1}{1 - \alpha}}$ because $g(t) = \frac{R}{r}$.
 \end{case}
 
@@ -246,10 +211,10 @@ If $T \rightarrow \infty$, $g(t) = \frac{R}{r}$ and
 t^* = - \frac{H_{0}^{1 - \alpha}}{A(1 - \alpha)} + \frac{\alpha}{1 - \alpha}\frac{1}{r}. \label{eq:tstar}
 \end{equation}
 
-\indent \eqref{eq:tstar} provides some intuitive results: (i) an individual with relatively high initial human capital specializes during a relatively shorter period: $\frac{\partial t^*}{\partial       H_{0}} < 0$; (ii) a relatively abler individual specializes during relatively longer period: $\frac{\partial t^*}{\partial A} > 0$; a relatively impatient individual specializes for a relatively shorter period: $\frac{\partial t^*}{\partial r} < 0$.
+\indent \eqref{eq:tstar} provides some intuitive results: (i) an individual with relatively high initial human capital specializes during a relatively shorter period: $\frac{\partial t^*}{\partial       H_{0}} < 0$; (ii) a relatively abler individual specializes during relatively longer period: $\frac{\partial t^*}{\partial A} > 0$; (iii) a relatively impatient individual specializes for a relatively shorter period: $\frac{\partial t^*}{\partial r} < 0$.
 \end{case}
 
-\begin{case} (No Depreciation and the Cobb-Douglas Production for Human Capital: Post-experience Earnings)
+\begin{case} (No Depreciation and the Cobb-Douglas Production for Human Capital: Post-school Earnings)
 Let $\tau = t - t^*$ define the post-school work experience and write post-school earnings as follows:
 \begin{equation}
 E(\tau) = R \int \limits _{0} ^{\tau} \dot{H( l + t^*)}d l + R H(t^*) - RIH(\tau + t^*).
@@ -266,11 +231,11 @@ Combining \eqref{eq:itcobb} and the law of motion for human capital:
 \end{equation}
 Then,
 \begin{equation}
-E(\tau) = R \int \limits _{0} ^{\tau} A \left[ \frac{\alpha g(l + t^*) A}{R} \right]^{\frac{\alpha}{1-\alpha}} dl + RH(t^*) - R \left[ \frac{\alpha g \left( \tau + t^* \right) A}{r} \right]^{\frac{1}{1-\alpha}} \label{equation:postearnings}
+E(\tau) = R \int \limits _{0} ^{\tau} A \left[ \frac{\alpha g(l + t^*) A}{R} \right]^{\frac{\alpha}{1-\alpha}} dl + RH(t^*) - R \left[ \frac{\alpha g \left( \tau + t^* \right) A}{R} \right]^{\frac{1}{1-\alpha}} \label{equation:postearnings}
 \end{equation}
 and if $T \rightarrow \infty$
 \begin{equation}
-E(\tau) = RA \left[ \frac{\alpha A}{R} \right]^{\frac{\alpha}{1-\alpha}} \tau.
+E(\tau) = RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau.
 \end{equation}
 
 \begin{center}
@@ -278,26 +243,24 @@ E(\tau) = RA \left[ \frac{\alpha A}{R} \right]^{\frac{\alpha}{1-\alpha}} \tau.
 \caption{Earnings and Experience, Cobb Douglas Technology and No Depreciation}
 \centering
 \includegraphics[width=3.5in, height=1.5in]{Figures/fig-earnings-experience.pdf}
-\floatfoot{\begin{small}
-Note:
-\end{small}}
 \end{figure}
 \end{center}
 
+\indent When the time horizon is infinite, there is no concern with the reduction in time left for capturing returns to human capital investment and thus $g(t)$ is fixed overtime. Then when the solution is interior, the optimal choice on $I(t)H(t)$ is constant overtime, which implies the increase in $H(t)$ overtime is also a constant. This is why $E(t)$ increases at a constant rate as well. However, with a finite time horizon, the Cobb-Douglas production function with no depreciation implies a strictly concave earning function $E(t)$.
 \end{case}
 
 \subsection{The Baseline Model Dynamics under the Cobb-Douglas Specification: a Summary}
-This section summarizes the dynamics of the main variables in the baseline model when there is no depreciation, market goods are ruled out, and the production function for human capital investment is Cobb-Douglas. We assume that the horizon is infinite to simplify the algebra but it is important to remark that the qualitative properties of the results remain unchanged under finite horizon. To wrap up the section we show simulations that illustrate how the variables of interest behave under various parametrizations (in all of them we set $R = 1$). 
+This section summarizes the dynamics of the main variables in the baseline model when there is no depreciation, market goods are ruled out, and the production function for human capital investment is Cobb-Douglas. We assume that the horizon is infinite to simplify the algebra but it is important to remark that the qualitative properties of the results remain unchanged under finite horizon. To wrap up the section we show simulations that illustrate how the variables of interest behave under various parameterizations (in all of them we set $R = 1$). 
 
 \subsubsection{Human Capital}
 \begin{itemize}
 \item At $t = 0$ an initial condition is given.
 \item At $0 < t < t^*$ the system \eqref{eq:humantstar} provides the conditions that human capital satisfies and its expression is given by \eqref{eq:hbeforetstar}.
-\item At $t = t^*$ \eqref{eq:hbeforetstar} is still a valid expression for human capital. To obtain the exact quantity it suffices to evaluate the expression for $t^*$, \eqref{eq:tstar}, into \eqref{eq:hbeforetstar}.
+\item At $t = t^*$ \eqref{eq:hbeforetstar} is still a valid expression for human capital. To obtain the exact quantity it suffices to substitute the expression for $t^*$, \eqref{eq:tstar}, into \eqref{eq:hbeforetstar}.
 \item At $ t > t^* $ \eqref{eq:humantstar} and the expression for $\dot{H}$, \eqref{eq:hdot}, provide the expression for human capital.
 \end{itemize}
 
-Then,
+Then,\footnote{There is a mistake in the definition of this function in the notes}
 
 \begin{eqnarray}
 H(t) =
@@ -305,7 +268,7 @@ H(t) =
 H_{0} & t = 0 \\
 \left[ (1 - \alpha)At + H_{0}^{1-\alpha} \right]^{\frac{1}{1-\alpha}} , & 0 < t < t^* \\
 \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}, & t = t^* \\
-\left[ \frac{\alpha A}{r} \right]^{\frac{ \alpha }{1 - \alpha}} \left( t - t^* \right) + \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} , & t > t^*. \label{eq:humancapall}
+A \left[ \frac{\alpha A}{r} \right]^{\frac{ \alpha }{1 - \alpha}} \left( t - t^* \right) + \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} , & t > t^*. \label{eq:humancapall}
 \end{cases}
 \end{eqnarray}
 
@@ -318,7 +281,7 @@ I(t) =
 1, & t = 0 \\
 1, & 0 < t < t^* \\
 1, & t = t^* \\
-\frac{\left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}}{\left[ \frac{\alpha A}{r} \right]^{\frac{ \alpha }{1 - \alpha}} \left( t - t^* \right) + \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}}, & t > t^*. \label{eq:investall}
+\frac{\left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}}{A \left[ \frac{\alpha A}{r} \right]^{\frac{ \alpha }{1 - \alpha}} \left( t - t^* \right) + \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}}}, & t > t^*. \label{eq:investall}
 \end{cases}
 \end{eqnarray}
 
@@ -336,8 +299,11 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
 \end{eqnarray}
 
 \begin{figure}[H]
-     \begin{center}
-    			\caption{Dynamics for $A = 3, r = .05, H_{0} = 1$ \\ $\alpha = .3$ (dotted); $\alpha = .4$ (dashed); $\alpha = .5$ (solid) }
+\centering
+\captionsetup{justification=centering}
+    			\caption{Dynamics with Variations in a Production Technology Parameter\\
+    			$\alpha = .3$ (dotted); $\alpha = .4$ (dashed); $\alpha = .5$ (solid) \\
+    			 for  $A = 3, r = .05, H_{0} = 1$ \\  }
         \subfigure[Human Capital Investment]{
             \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-02.pdf}
         }\\
@@ -347,12 +313,14 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
         \subfigure[Earnings]{%
             \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-03.pdf}
         }
-    \end{center}
 \end{figure}
 
 \begin{figure}[H]
-     \begin{center}
-    			\caption{Dynamics for $A = 3, \alpha = .5, H_{0} = 1$ \\ $r = .04$ (dotted); $r = .05$ (dashed); $r = .06$ (solid) }
+\centering
+\captionsetup{justification=centering}
+    			\caption{Dynamics with Variations in the Discounting Factor \\
+    			$r = .04$ (dotted); $r = .05$ (dashed); $r = .06$ (solid) \\
+    			for $A = 3, \alpha = .5, H_{0} = 1$ \\  }
         \subfigure[Human Capital Investment]{
             \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-05.pdf}
         }\\
@@ -362,12 +330,14 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
         \subfigure[Earnings]{%
             \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-06.pdf}
         }
-    \end{center}
 \end{figure}
 
 \begin{figure}[H]
-     \begin{center}
-   			\caption{Dynamics for $r = .03, \alpha = .5, H_{0} = 10$ \\ $A = .5$ (dotted); $A = 1.0$ (dashed); $A = 1.5$ (solid) }
+\centering
+\captionsetup{justification=centering}
+   			\caption{Dynamics with Variations in a Production Technology Parameter \\
+   			$A = .5$ (dotted); $A = 1.0$ (dashed); $A = 1.5$ (solid) \\
+   			for $r = .03, \alpha = .5, H_{0} = 10$ \\  }
         \subfigure[Human Capital Investment]{
             \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-08.pdf}
         }\\
@@ -377,12 +347,12 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
         \subfigure[Earnings]{%
             \includegraphics[width=2.2in, height=2.2in]{Figures/fig-hc-earn-series-09.pdf}
         }
-    \end{center}
 \end{figure}
 
 \begin{figure}[H]
-     \begin{center}
-    			\caption{Dynamics for $r = .025, \alpha = .5, A = .6$ \\ $H_{0} = 10$ (dotted); $H_{0} = 20$ (dashed); $H_{0} = 30$ (solid)}
+    			\centering 
+    			\captionsetup{justification=centering}
+\caption{Dynamics with Variations in the Initial Level of Human Capital \\ $H_{0} = 10$ (dotted); $H_{0} = 20$ (dashed); $H_{0} = 30$ (solid) \\ for $r = .025, \alpha = .5, A = .6$,}
         \subfigure[Human Capital Investment]{
             \includegraphics[width=2in, height=2in]{Figures/fig-hc-earn-series-11.pdf}
         }\\
@@ -392,30 +362,29 @@ RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1 - \alpha}} \left( t - t^* 
         \subfigure[Earnings]{%
             \includegraphics[width=2in, height=2in]{Figures/fig-hc-earn-series-12.pdf}
         }
-    \end{center}
 \end{figure}
 
 \subsection{Rates of Return under the Cobb-Douglas Specification}
-We use this model to analyze returns both to schooling and post-schooling. In order to simplify the expressions we let $t \rightarrow T$ and we speculate that the analysis is not very sensitive to this assumption.
+We use this model to analyze returns both to schooling and post-schooling. In order to simplify the expressions we let $t \rightarrow  \infty$. Similar implications hold for the finite time horizon problem.
 
-\subsubsection{Schooling}
-We call schooling the period of specialization in which the individual devotes his complete human capital stock to produce human capital investment. To define the return to schooling consider two scenarios: (i) the individual does not invest either in schooling or in post-schooling. Each $\tau$ she earns $RH_{0}$; (ii) the individual invests during an specialization period and then does not invest after that. Each $\tau$ she earns $R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}}$. Then, we can define the (internal) rate of return of schooling as follows.
+\subsubsection{Return to Schooling}
+We call schooling the period of specialization in which the individual devotes his complete human capital stock to produce new human capital. To define the return to schooling consider two scenarios: (i) the individual does not invest either in schooling or in post-schooling. Then in each period $t$ she earns $RH_{0}$; (ii) the individual invests in schooling and does not make any post-schooling investments after that. Then in each after-schooling period $\tau$ she earns $R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}}$. Then, we define the (internal) rate of return of schooling as the discount rate at which the present values of the disposable income streams in the two scenarios are equal.
 
 \begin{definition} (``Internal'' Rate of Return to Schooling)
 $\varphi$ is the (internal) rate of return to schooling and solves the equation
 \begin{eqnarray}
 \int _{t^*} ^{\infty} \exp^{- \varphi t} R \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} dt &=& \int \limits _{0} ^{\infty} \exp^{- \varphi t} R H_{0} dt \nonumber \\
 &\Rightarrow& \nonumber \\
-\varphi &=& \frac{\ln \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} - \ln H_{0}}{\frac{1}{r} - \frac{1}{2} \frac{H_{0}^{\frac{1}{2}}}{A}}.
+\varphi &=& \frac{\ln \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1 - \alpha}} - \ln H_{0}}{-\frac{H_0^{1-\alpha}}{A(1-\alpha)}+\frac{\alpha}{1-\alpha} \frac{1}{r}}.
 \end{eqnarray}
 \end{definition}
 
-\subsubsection{Post-schooling}
+\subsubsection{Return to Post-schooling}
 Let $E(\tau)^{NPS}$ and $E(\tau)^{PS}$ denote earnings without and with post-schooling investment, respectively. By \eqref{eq:earnsall} we can write
 \begin{eqnarray}
 E(\tau)^{NPS} &=& R H(t^*) \\ \nonumber
 &=& R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \\ \nonumber
-E(\tau)^{PS} &=& \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau
+E(\tau)^{PS} &=& R A \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau
 \end{eqnarray}
 
 \noindent so that the increment in earnings due to post-schooling at $\tau$ is
@@ -423,28 +392,28 @@ E(\tau)^{PS} &=& \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \ta
 \Delta^{E(\tau)} \equiv E(\tau)^{PS} - E(\tau)^{NPS}.
 \end{eqnarray}
 
-\indent Actually, note that $E(\tau)^{PS} = IH(\tau)$ (see \eqref{eq:itcobb}) so that we can interpret $\Delta^{E(\tau)}$ as ``returns less costs'' from post-schooling. Then, we define the (internal) rate of return to post-schooling as follows.
+\indent We can interpret $\Delta^{E(\tau)}$ as ``returns less costs'' from post-schooling, with $E(\tau)^{NPS}$ as the costs (i.e. foregone earnings) of post-schooling investments. Then, we define the (internal) rate of return to post-schooling as follows.
 
 \begin{definition} (``Internal'' Rate of Return to Post-schooling)
 $\phi$ is the (internal) rate of return to schooling and solves the equation
 \begin{equation}
-\int \limits _{0} ^{\infty} \exp^{- \phi \tau} \left[ \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau - R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \right] d \tau = 0 \label{eq:postreturn}
+\int \limits _{0} ^{\infty} \exp^{- \phi \tau} \left[ R A \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} \tau - R \left( \frac{\alpha A}{r} \right)^{\frac{1}{1 - \alpha}} \right] d \tau = 0 \label{eq:postreturn}
 \end{equation}
 \noindent Using the Laplace transform, \eqref{eq:postreturn} implies
 \begin{eqnarray}
-\frac{1}{\phi^2} RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} + \frac{1}{\phi} A \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} &=& 0 \nonumber \\
+\frac{1}{\phi^2} RA \left[ \frac{\alpha A}{r} \right]^{\frac{\alpha}{1-\alpha}} - \frac{R}{\phi} A \left[ \frac{\alpha A}{r} \right]^{\frac{1}{1-\alpha}} &=& 0 \nonumber \\
 &\Rightarrow& \nonumber \\
 \phi &=& \frac{r}{\alpha}.
 \end{eqnarray}
 \end{definition}
 
-\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Individuals who are more productive require a smaller return in order to invest in the post-school period. Likewise, relatively patient individuals (relatively low $r$) require a smaller $\phi$ to invest in the post-schooling period.
+\indent The (internal) rate of return to post-schooling investment is a decreasing function of $\alpha$. Recall that the internal rate of return of post-schooling measures the desirability of the investment opportunity. And with a higher $\alpha$, individuals' level of human capital is relatively high even without any post-schooling investment, and thus the relative differences (measured by the ratios) between the amount of disposable earnings in the case with investment and in the case without investment are smaller. Therefore, investments in post-schooling are less desirable for more productive individuals. In addition, relatively patient individuals (who have relatively low $r$) require a smaller discount rate $\phi$ to equalize the scenario with post-schooling investment and the scenario without.
 
 \subsection{Earnings Growth and Patience in Finite Horizon}
 In this section we want to ask, in the same framework, how earnings growth depend on what defines relative patience in this model, the discount rate $r$. To do that, we investigate $\frac{\partial \dot{E(\tau)}}{\partial r}$.
 
 \begin{claim} \label{claim:moreconcwithighr}
-Assume that $1 - \frac{F'(\cdot) F'''(\cdot)}{{F''}^2} < 0$ (recall from Claim \ref{claim:concearnnodep} that this is a sufficient condition for $\dot{E(t)}$ in the current context). Then, $\frac{\partial \dot{E(\tau)}}{\partial r} < 0$.
+Assume that $1 - \frac{F'(\cdot) F'''(\cdot)}{{F''}^2} < 0$ (recall from Claim \ref{claim:concearnnodep} that this is a sufficient condition for $\ddot{E(t)}<0$ in the current context). Then, $\frac{\partial \dot{E(\tau)}}{\partial r} < 0$.
 \end{claim} 
 
 \begin{proof}
@@ -500,26 +469,11 @@ g(t) F'(\cdot) = 1
 \floatfoot{\begin{small}
 \end{small}}
 \end{figure}
-\end{center} 
+\end{center}
 
 \section{The Haley-Rosen Specification: Finite Horizon and the Autoregression Form}
-
-\citet{haley1976estimation} and \citet{rosen1976theory} consider a model in which  Assumption~\ref{assumption:bbpmodel} and Assumption~\ref{assumption:scpf} hold. They further assume that $\dot{H} = A \left( IH \right)^{\frac{1}{2}}$. This is, they assume that the production function for human capital investment is Cobb-Douglas with an specific value for $\alpha$ and that there is no depreciation.
-
-\begin{definition} (Law of Motion for Human Capital Stock in the Haley-Rosen Specification)
-\begin{equation}
-\dot{H} = A \left( IH \right)^{\frac{1}{2}} \label{eq:halroslaw}.
-\end{equation}
-\end{definition}
-
-\indent In Section \ref{section:baseline}, some of the results rely on infinite horizon to derive a set of closed form solutions to the individual's problem. This specification allows for tractability of the finite horizon case. In particular, we focus on the dynamics of post-schooling earnings because one of the implications of the infinite horizon case in Section~\ref{section:baseline} is the linear relation between earnings and experience an may be a caveat.\footnote{Estimates of the so-called Mincer equation usually establish a non-linear relation between earnings an experience \citep[see][]{heckman2006earnings}}\\
-
-\begin{claim} \label{claim:concavehalros} (Concavity of Earnings in the Haley-Rosen Specification)
-Consider the Haley-Rosen Specification of the Basic Ben-Porath Model explained in Section \ref{section:baseline}, i.e. assume that \eqref{eq:halroslaw} is the law of motion for human capital. Then, the earnings function is strictly concave in experience when the time horizon is finite.
-\end{claim}
-
-\begin{proof}
-\indent From \eqref{equation:postearnings} we can write
+We analyze the finite horizon case under the specification that \citet{haley1976estimation} and \citet{rosen1976theory} use. Specifically, we assume that $\dot{H} = A \left( IH \right)^{\alpha}, \alpha = \frac{1}{2}, \sigma = 0$ and the exact same setting as in Section \ref{section:baseline}. Actually, in Section \ref{section:baseline} we rely on infinite horizon to derive a set of closed form solutions to the individual's problem. In this section we relax the infinite horizon assumption and rely on the assumption $\alpha = \frac{1}{2}$ to gain the tractabilities.\\
+\indent We focus on the dynamics of post-schooling earnings because one of the less credible consequence of the infinite horizon is the linearity of earnings on experience. From \eqref{equation:postearnings} we can write\footnote{Typo there is Appendix slife 89. Confusin $t$ and $\tau$}
 \begin{eqnarray}
 E(\tau) &=& RH(t^*) + R \int \limits _{0} ^{\tau} A \left[\frac{1}{2} \frac{g(t^* + l)A}{R} \right]dl - R \left[\frac{1}{2} \frac{g(t^* + \tau)A}{R} \right]^{2} \nonumber \\
 &\Rightarrow& \nonumber \\
@@ -532,24 +486,20 @@ where the second and third equalities use \eqref{eq:grossdep}. Combining \eqref{
 \ddot{E(\tau)} = 2r \dot{E(\tau)} - A^2 R \label{eq:earndifferential}
 \end{equation} 
 
-\noindent where the natural initial and terminal conditions that we impose are $E(0)$ and $\ddot{E(T)} = 0$ and then we guess and verify that $c_{2} = \frac{A^2 R}{2r}\exp^{2rT}$ in the following general solution to \eqref{eq:earndifferential}
+\noindent where the natural initial and terminal conditions that we impose are $E(0)=0$ and $\dot{E(T)} = 0$ and then we guess and verify that the general solution to \eqref{eq:earndifferential}\footnote{There is a typo here in the general solution to the differential equation (slide 50) and in the initial conditions as well. Also, one wrong initial condition is provided.} is as the following.
 \begin{equation}
 E(\tau) = c_{0} + c_{1}\exp^{-2r \tau} + c_{2} \tau
 \end{equation}
 
-\noindent so that $c_{1} + c_{0} = 0, 2rc_1 \exp^{2rT}  + c_{2} = 0$ and, therefore,
+\indent So $E(0)=0$ implies $c_{1} + c_{0} = 0$ and $\dot{E(T)} = 0$ implies $2rc_1 \exp^{2rT}  + c_{2} = 0$. Together with \eqref{eq:earndifferential}, we can solve that $c_0 = \frac{A^2 R}{4r^2 \exp^{2rT}}$, $c_1 = -c_0$, and $c_2 = \frac{A^2 R}{2r}$. Therefore, 
+
 \begin{equation}
-E(\tau) = \frac{A^2 R}{4r^2} \exp^{-2r T} \left( 1 - \exp^{2r \tau} \right) + \frac{A^2 R}{2r} \tau \label{eq:earningspostalpha12}
+E(\tau) = \frac{A^2 R}{4r^2} \exp^{-2r T} \left( 1 - \exp^{2r \tau} \right) + \frac{A^2 R}{2r} \tau. \label{eq:earningspostalpha12}
 \end{equation}
 
-\noindent which is strictly concave in $\tau$.
-\end{proof}
-
-
-\indent The graphical representation of Claim~\ref{claim:concavehalros} is in Figure~\ref{fig:halros}. 
 \begin{center}
 \begin{figure}[H]
-\caption{Post-school Earnings in the Haley-Rosen Specification} \label{fig:halros}
+\caption{Post-school Earnings in the Haley-Rosen Specification}
 \centering
 \includegraphics[width=3.5in, height=1.5in]{Figures/fig-finite-horiz.pdf}
 \floatfoot{\begin{small}
@@ -558,56 +508,45 @@ Note:
 \end{figure}
 \end{center}
 
-\noindent As $t \rightarrow T$ the earnings function becomes less concave on experience. This follows from the trade-off that the individual faces when investing in the two different time horizons. When the individual faces an infinite horizon it is optimal for him to keep investing in human capital at a constant rate, even after the specialization period, as times goes by. In finite horizon, however, the incentives to invest decrease over time, and therefore, earnings increase at a decreasing rate. 
+\indent From \eqref{eq:earnalpha2}, we know that in the finite horizon case, the earnings function is strictly concave unless $t=T$. The intuition behind the linearity of the earnings function in the infinite horizon case is provided in Section \ref{section:specialization}. In contrast with the infinite case, the return to investment is decreasing over time as the agent is approaching to the final period of the time horizon, which implies that $I(t)H(t)$ is decreasing overtime. Thus the stock of human capital is increasing at a decreasing rate, which leads to the concavity of the earnings dynamics. 
 
 \subsection{Evidence}
 \citet{brown1976model} estimates \eqref{eq:earningspostalpha12}, which enables to identify $r$ and $A^2 R$. His estimates, however, are imprecise and show that $r \rightarrow 0$. Then, he estimates the model for the infinite horizon case. He claims this to be a good approximation because he has a sample of young individuals. However, this disables him to estimate $r$.
 
 \subsection{The Autoregression}
-The Haley-Rosen specification enables straightforward analysis of the earnings dynamics. From \eqref{eq:earningspostalpha12} it is possible to write
+From \eqref{eq:earningspostalpha12} it is possible to write
 \begin{equation}
-E(\tau + 1) - E(\tau) =  \frac{A^2 R}{2r}+ \frac{A^2 R}{4r^2} \exp^{-2rT} \left( \exp^{2r(\tau - 1)} \exp^{r \tau} \right) 
+E(\tau + 1) - E(\tau) =  \frac{A^2 R}{2r}+ \frac{A^2 R}{4r^2} \exp^{-2rT} \left( \exp^{2r\tau} - \exp^{2r(\tau+1)} \right) 
 \end{equation}
 
-\noindent which implies that
+\noindent which implies that\footnote{slide 55 typo when multiplying by $\exp^2r$}
 
 \begin{equation}
 z(\tau + 1) = \exp^{2r} z(\tau) + \frac{A^2 R}{2r} \left( 1 - \exp^{2r} \right) \label{eq:growthalpha12}
 \end{equation}
 
-\noindent where $z(\tau) \equiv  E(\tau + 1) - E(\tau)$. The graphical representation of \eqref{eq:growthalpha12} in Figure~\ref{fig:halrosgrowth} may mislead to the conclusion that earnings growth follow an explosive dynamic. Claim~\ref{claim:halrosdyn} clarifies this. 
+\noindent where $z(\tau) \equiv E(\tau + 1) - E(\tau)$ and we can analyze the growth dynamics of earnings. Consider a visual representation of \eqref{eq:growthalpha12}
 
 \begin{center}
 \begin{figure}[H]
-\caption{Earnings Growth in the Haley-Rosen Representation} \label{fig:halrosgrowth}
+\caption{Earnings Growth in the Haley-Rosen Representation}
 \centering
 \includegraphics[width=3in, height=3in]{Figures/fig-explode-converge.pdf}
 \floatfoot{\begin{small}
+Note:
 \end{small}}
 \end{figure}
 \end{center}
 
-\begin{claim} \label{claim:halrosdyn}
-Earnings growth, $z(\tau)$, converges to a constant.
-\end{claim}
-
-\begin{proof}
-Informally, note that
+\indent Apparently, the dynamics of the earnings growth are explosive. However, note that
 \begin{eqnarray}
 \frac{\partial \left[ E(\tau) - E(\tau - 1) \right] }{\partial \tau} &=& \frac{A^2 R}{2r} \exp{2r(\tau - T)} \left[ \exp^{-2r} - 1 \right] \nonumber \\
-&<& 0.
+&<& 0
 \end{eqnarray}
-
-\noindent Formally, note that $z(0) = E(0) \equiv z_{0}$ and solve \eqref{eq:growthalpha12} to get
-\begin{equation}
-z(\tau) = \exp^{2rT} z_{0} + \frac{A^2 R}{2r} \left( 1 - \exp{2r} \right) \sum \limits _{j=0} ^{T-1} \exp^{2rj}
-\end{equation}
-
-\noindent so that the earnings growth converges to the constant $\exp^{2rT} z_{0}$.
-\end{proof}
+so that even when the growth dynamics of earnings is explosive, the earnings dynamics, $E(t)$, can be converging overtime.
 
 \subsection{From the Haley-Rosen Specification to the Mincer Equation}
-The earnings function in the Haley-Rosen specification actually leads to the Mincer equation. To see that take take logs of \eqref{eq:earningspostalpha12} and obtain
+The earnings function in the Haley-Rosen specification actually leads to the Mincer equation. To see that take logs of \eqref{eq:earningspostalpha12} and obtain
 \begin{equation}
 \ln E(\tau) = \ln \left( \frac{A^2 R}{ 2r} \right) + \ln \tau + \ln \left[ 1 + \frac{\exp^{-2rT} - \exp^{2r(\tau - T)} }{2r \tau} \right]. \label{eq:logs}
 \end{equation}
@@ -618,14 +557,14 @@ The earnings function in the Haley-Rosen specification actually leads to the Min
 \ln \left[ 1 + \frac{\exp^{-2rT} - \exp^{2r(\tau - T)} }{2r \tau} \right] &\approx& \xi_{0} + \xi_{1} \left( \tau - \tau_{0} \right) + \xi_{2} \frac{\left( \tau - \tau_{0} \right)^2}{2!}
 \end{eqnarray}
 
-\noindent for the adequate $\xi_{0}, \xi_{1}, xi_{2}$. Thus,
+\noindent for the adequate $\xi_{0}, \xi_{1}, \xi_{2}$. Thus,
 \begin{equation}
 \ln(\tau) + \ln \left[ 1 + \frac{\exp^{-2rT} - \exp^{2r(\tau - T)} }{2r \tau} \right] \approx \alpha_{0} + \alpha_{1}\left( \tau - \tau_{0} \right) + \alpha_{2} \left( \tau - \tau_{0} \right)^2
 \end{equation}
 
-\noindent with $\alpha_{0} \equiv \ln(\tau_{0}) + \xi_{0}, \alpha_{1} \equiv \frac{1}{\tau_{0}} + \xi_{1}, \alpha_{2} \equiv \frac{-\frac{1}{\tau_{0}^2} + \xi_{2}}{2}$, which leads to the so-called Mincer equation \citep[see][]{mincer1974schooling}:
+\noindent with $\alpha_{0} \equiv \ln(\tau_{0}) + \xi_{0}, \alpha_{1} \equiv \frac{1}{\tau_{0}} + \xi_{1}, \alpha_{2} \equiv \frac{-\frac{1}{\tau_{0}^2} + \xi_{2}}{2}$. This leads to the so called Mincer equation \citep[see][]{mincer1974schooling}:
 \begin{equation}
-\ln E(\tau) = k_{0} + k_{1} \tau k_{2} \tau^2 \label{eq:mincer}
+\ln E(\tau) = k_{0} + k_{1} \tau + k_{2} \tau^2 \label{eq:mincer}
 \end{equation}
 
 \noindent where $k_{0} = \alpha_{0} - \tau_{0} \alpha_{1} + \alpha_{2} \tau_{0}^2, k_{2} = \alpha_{2}$. This provides a baseline to compare ``Ben-Porath'' with ``Mincer'' coefficients. Table \ref{table:bpmincer} provides different combinations of the parameters $r, \tau_{0}, T$ that lead to different values of $k_{1}, k_{2}$ that are close to the estimates that \citet{mincer1974schooling} obtains.
@@ -654,36 +593,35 @@ $24.70$ & $74.77$ & $0.081$ & $-0.0008$ \\ \hline\hline
 \end{table}
 \end{center}
 
-\indent Now, if $rT \approx 0$ then $\exp^{-rT} \approx 1$ and \eqref{eq:logs} becomes 
+Now, if $rT \approx 0$ then $\exp^{-rT} \approx 1$ and \eqref{eq:logs} becomes 
 \begin{equation}
 \ln E(\tau) \approx \ln \left( \frac{A^2 R}{2r} \right) + \ln \tau + \ln \left[ 1 + \frac{1 - \exp^{2r \tau}}{2 r \tau} \right] \label{eq:intercept}
 \end{equation}
 
-\noindent which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argues against the Ben-Porath model. It could simply be the case that \citet{mincer1974schooling} does not include ability measures in his estimations, which appear in \eqref{eq:intercept}, and therefore finds a positive coefficient on schooling. 
-
+which leads to various observations. The Haley-Rosen specification of the Ben-Porath model implies no economic content for the Mincerian rate of return on post-school investment. Put differently, an extension of \eqref{eq:mincer} which includes post-school investment does not have a structural counterpart. Actually, this model implies that the entire economic content is in the intercept (see \eqref{eq:intercept}. Actually, \eqref{eq:intercept} implies that, \textit{caeteris paribus}, schooling has no effect on earnings. \citet{mincer1974schooling} finds that the contrary. However, we claim that his finding does not necessarily argue against the Ben-Porath model. It could simply be the case that \citet{mincer1974schooling} does not include ability measures in his estimations, which appear in \eqref{eq:intercept}, and therefore finds a positive coefficient on schooling. 
  
 \section{Generalized Ben-Porath Model} \label{section:generalized}
-We know generalize the model in Section \ref{section:baseline} to a more general production function of human capital investment. We focus our analysis on specialization because the analysis of other conditions is very similar to that of Section \ref{section:baseline}
+We now generalize the model in Section \ref{section:baseline} by relaxing the neutrality assumption so that the production function of human capital is more general. We focus our analysis on specialization because the analysis of other conditions is very similar to that of Section \ref{section:baseline}. \\
 
-\begin{definition} (Law of Motion for Human Capital Stock in the Generalized Ben-Porath Model)
+\indent In particular, the law of motion for human capital stock in the generalized Ben-Porath model is
+
 \begin{equation}
 \dot{H} = A I^{\alpha} H^{\beta} - \sigma H \label{eq:lawhgen}.
 \end{equation}
-\end{definition}
 
-\indent The model in Section \ref{section:baseline} is a particular case of this general formulation when $\alpha = \beta$. To simplify the analysis of the implications of this model we assume that there is neither discounting nor depreciation, i.e. $r = \sigma = 0$. To ease notation we neglect the argument $t$ when possible. We analyze this model in finite horizon.\\
+\noindent So the model in Section \ref{section:baseline} is a particular case of this general formulation when $\alpha = \beta$. To simplify the analysis of the implications of this model we assume that there is neither discounting nor depreciation, i.e. $r = \sigma = 0$. To ease notation we neglect the argument $t$ when possible. We analyze this model in finite horizon.\\
 \indent The Hamiltonian of the problem is
 \begin{equation}
-\mathcal{H} = RH(t) \left(1 - I(t) \right) + \mu \left( A I^{\alpha} H^{\beta} \right)
+\mathcal{H} = RH(t) \left(1 - I(t) \right) + \mu(t) \left( A I(t)^{\alpha} H(t)^{\beta} \right)
 \end{equation} 
 
-\noindent where $\mu(t)$ defines the shadow price of human capital. The following condition describe optimality.
+\noindent where $\mu(t)$ defines the shadow price of human capital. The following condition must be satisfied for interior solutions.
 
 \begin{condition} (Optimality Conditions for the Life-Cycle Individual's Problem in the Generalized Ben-Porath Model) \label{condition:optgen}
 \begin{eqnarray}
-\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu A \alpha I^{\alpha - 1} H^{\beta} \geq RG \label{eq:focinvestmentgen} \\
-\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& -R(1 - I) - \beta \mu A I^{\alpha} H^{\beta -1} \label{eq:focstockgen} \\ 
-\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H} &\Leftrightarrow& \dot{H(t)} = F \left( I(t) H(t), D(t) \right) - \sigma H(t) \label{eq:focmotiongen} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu(t) A \alpha I(t)^{\alpha - 1} H(t)^{\beta} = RH(t) \label{eq:focinvestmentgen} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& -R(1 - I(t)) - \beta \mu(t) A I(t)^{\alpha} H(t)^{\beta -1} = \dot{\mu(t)} \label{eq:focstockgen} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H} &\Leftrightarrow& \dot{H(t)} = A I(t)^\alpha H(t)^\beta \label{eq:focmotiongen} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalitygen}
 \end{eqnarray}
 \end{condition}
@@ -691,14 +629,14 @@ We know generalize the model in Section \ref{section:baseline} to a more general
 \indent Condition \ref{condition:optgen} are equivalent to the Mangasarian sufficient conditions for a global optimum if $\beta \leq 1$ \citep[see][]{mangasarian1966sufficient}.
 
 \subsection{Specialization}
-If \eqref{eq:focinvestmentgen} holds with strict inequality the individual specializes, i.e. $I=1$. Thus, Condition~\ref{condition:spe} guarantees specialization.
+If $\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} >0$ with $I(t)=1$, the agent would specialize. Thus the condition guaranteeing specialization is as follows.
 
 \begin{condition} (Conditions for Specialization in the Generalized Ben-Porath Model) \label{condition:spe}
 \begin{eqnarray}
 \text{Conditions for Specialization :}
 \begin{cases}
 H > \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta > 1 \\
-1 > \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta = 1 \\
+1 > \left[ \frac{R}{\alpha A \mu} \right], & \beta = 1 \\
 H < \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta < 1. \\
 \end{cases}
 \end{eqnarray}
@@ -707,7 +645,7 @@ H < \left[ \frac{R}{\alpha A \mu} \right]^{\frac{1}{\beta - 1}}, & \beta < 1. \\
 \indent During the period(s) of specialization \eqref{eq:focstockgen}, \eqref{eq:focmotiongen} become 
 \begin{eqnarray}
 \dot{\mu} &=& - \beta \mu A H^{\beta - 1} \label{eq:focstockgenspe} \\
-\dot{H}  &=& A H^{\beta} \label{eq:focmotiongenspe}\\
+\dot{H}  &=& A H^{\beta} \label{eq:focmotiongenspe}
 \end{eqnarray}
 
 \noindent and we can solve for the dynamics of human capital stock in this region
@@ -720,9 +658,9 @@ c_{0} \exp^{At}, & \beta = 1 \\
 \end{cases}
 \end{eqnarray}
 
-\noindent The initial condition for the human capital stock leads to $c_{0} = \frac{H_{0}}{\exp^{1}} $ and $c_{1} = \frac{H_{0}^{1 - \beta}}{1-\beta}$ which implies that
+\noindent The initial condition for the human capital stock leads to $c_{0} = H_{0} $ and $c_{1} = \frac{H_{0}^{1 - \beta}}{1-\beta}$ which implies that
 \begin{eqnarray}
-H(t)
+H(t) =
 \begin{cases}
 H_{0} \exp^{At - 1}, & \beta = 1 \\
 \left( At + \frac{H_{0}^{\frac{1}{1-\beta}}}{1-\beta} \right)^{\frac{1}{1 - \beta}} \left( 1 - \beta \right)^{\frac{1}{1-\beta}}, & \beta \neq 1. \label{eq:humanspe}
@@ -761,30 +699,30 @@ If the period of specialization exists, it is unique when either when $\beta = 1
 \end{claim}
 
 \begin{proof}
-In both cases \eqref{eq:muspe} implies that $\dot{\mu(t)} < 0$. Importantly, $\mu(t)$ is the shadow price or value of human capital. Thus, $\dot{I(t)} < 0 $ and, if it exists, the period of specialization is unique.
+In both cases \eqref{eq:muspe} implies that $\dot{\mu(t)} < 0$. Importantly, $\mu(t)$ is the shadow price or value of human capital. Thus, $\dot{I(t)} < 0 $ and, if exists, the period of specialization is unique.
 \end{proof}
 
  
-\section{The Basic Shenshinski Specification: Bang-Bang E	quilibria}
-The Basic Shenshinski specification is a particular case of the Generalized Ben Porath model in Section \ref{section:generalized} in which $\alpha = \beta = 1$.
-\begin{definition} (Law of Motion for Human Capital Stock in the Basic Shenshinski Specification)
+\section{The Basic Sheshinski Specification: Bang-Bang Equilibria}
+The Basic Sheshinski specification is a particular case of the Generalized Ben-Porath model in Section \ref{section:generalized} in which $\alpha = \beta = 1$.
+\begin{definition} (Law of Motion for Human Capital Stock in the Basic Sheshinski Specification)
 \begin{equation}
 \dot{H(t)} = AI(t)H(t) - \sigma H(t).
 \end{equation}
 \end{definition}
 
-\indent Proceeding as in Section \ref{section:baseline} and Section \ref{section:generalized} we can write down the current value Hamiltonian and obtain the following conditions for optimality.
+\indent Proceeding as in Section \ref{section:baseline} and Section \ref{section:generalized} we can write down the current value Hamiltonian and obtain the following optimality conditions for interior solutions.
 
-\begin{condition} (Optimality Conditions for the Life-cycle Individual's Problem in the Basic Shenshinski Specification)
+\begin{condition} (Optimality Conditions for the Life-cycle Individual's Problem in the Basic Sheshinski Specification)
 \begin{eqnarray}
-\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu(t) \exp{rt} \geq \frac{R}{A} \label{eq:focinvestmentshenbasic} \\
-\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& - \exp^{rt} R(1 - I(t)) - \mu(t) \left( A I(t) - \sigma \right) = \dot{\mu(t)} \label{eq:focstockshenbasic} \\ 
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu(t) \exp^{rt} = \frac{R}{A} \label{eq:focinvestmentshenbasic} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& - \exp^{-rt} R(1 - I(t)) - \mu(t) \left( A I(t) - \sigma \right) = \dot{\mu(t)} \label{eq:focstockshenbasic} \\ 
 \frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} =  A I(t) H(t)- \sigma H(t) \label{eq:focmotionshenbasic} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0 \label{eq:foctransversalityshenbasic}
 \end{eqnarray}
 \end{condition}
 
-\begin{claim} (Bang-Bang in the Shenshinski Specification) \label{claim:bangbang}
+\begin{claim} (Bang-Bang in the Sheshinski Specification) \label{claim:bangbang}
 Assume that $\sigma + r < A$ and that there is an initial period of specialization. \footnote{Note that $\sigma + r > A$ implies that $\dot{g(t)} > 0$ and this violates the transversality condition.} Then, the solution to the problem is Bang-Bang, i.e. either $I = 0$ or $I = 1$. 
 \end{claim}
 
@@ -795,21 +733,22 @@ Define $g(t) = \mu(t) \exp^{rt}$ and use \eqref{eq:focstockshenbasic}, \eqref{eq
 g(T) &=& 0.
 \end{eqnarray}
 
-\indent In the specialization period $I(t) = 1$  If $\sigma + r < A$, $\dot{g(t)}<0$. Actually, by \eqref{eq:focinvestmentshenbasic}, $g(t)$ decreases to $\frac{R}{A}$ and $I(t) = 0$ onwards. This happens because $g(t)$ represents returns to gross investment in human capital net accounting for time and depreciation and $I(t)$ is bounded below by zero. Thus, if $g(t)$ reaches a constant phase $I(t)$ remains constant at $0$. Now, when $I(t) = 0$ we can use $g(T) = 0$ and write
+\indent In the specialization period $I(t) = 1$  If $\sigma + r < A$, $\dot{g(t)}<0$. Actually, by \eqref{eq:focinvestmentshenbasic}, as $g(t)$ decreases to $\frac{R}{A}$, $I(t)$ switches from it's upper bound $1$ to it lower bound $0$. Then, with $I(t) = 0$ we can use $g(T) = 0$ and write
+
 \begin{eqnarray}
 \dot{g(t)} &=& (\sigma + r)g(t) - R \nonumber \\
 &\Rightarrow& \nonumber \\ 
 g(t) &=& \frac{R}{\sigma + r} \left[1 - \exp^{(\sigma + r)(t-T)} \right] \label{eq:gshenbasei0}.
 \end{eqnarray}
 
-\noindent for which $\dot{g(t)}<0$ as well. Then, once $I(t)$ reaches zero it never goes back again to a positive value. This formulation has a Bang-Bang solution.
+\noindent for which $\dot{g(t)}<0$ as well. Therefore, once $I(t)$ reaches zero it never goes back again to a positive value. This formulation has a Bang-Bang solution.
 \end{proof}
 
 \indent It follows that the schooling period, if it exists, is unique and at the beginning of the investment cycle. If it does not exist the individual does not invest at all in human capital. Figure~\ref{fig:bangbang} is a graphical representation of Claim~\ref{claim:bangbang}. 
 
 \begin{center}
 \begin{figure}[H]
-\caption{Bang-Bang Equilibrium in the Basic Shenshinski Specification} \label{fig:bangbang}
+\caption{Bang-Bang Equilibrium in the Basic Sheshinski Specification} \label{fig:bangbang}
 \centering
 \includegraphics[width=3.5in, height=3.5in]{Figures/fig-shesh-rule.pdf}
 \floatfoot{\begin{small}
@@ -825,32 +764,34 @@ Note:
 t^* &=& \frac{1}{\sigma + r} \ln \frac{A - (\sigma + r) }{A} + T.
 \end{eqnarray}
 
-\indent Thus, (i) longer investment horizons imply more schooling, $\frac{\partial t^*}{\partial T} > 0$; (ii) greater depreciation implies less schooling, $\frac{\partial t^*}{\partial \sigma} < 0$; (iii) higher relative impatience implies less schooling, $\frac{\partial t^*}{\partial r} > 0$; (iv) higher productivity implies more schooling; (v) initial human capital does not affect schooling, $\frac{\partial t^*}{\partial H_{0}} = 0$.
+\indent Thus, (i) longer life horizons imply more schooling, $\frac{\partial t^*}{\partial T} > 0$; (ii) greater depreciation implies less schooling, $\frac{\partial t^*}{\partial \sigma} < 0$; (iii) higher relative impatience implies less schooling, $\frac{\partial t^*}{\partial r} < 0$; (iv) higher productivity implies more schooling, $\frac{\partial t^*}{\partial A} > 0$; (v) initial human capital does not affect schooling, $\frac{\partial t^*}{\partial H_{0}} = 0$.
 
-\subsection{From the Basic Shenshinski Specification to the Mincer Equation}
+\subsection{From the Basic Sheshinski Specification to the Mincer Equation}
 Assume that there is a period of specialization. From \eqref{eq:focmotiongenspe} we know that in the period $[0,t^*]$
 \begin{eqnarray}
 \dot{H(t)} = (A - \sigma)H(t) \nonumber \\
 &\Rightarrow& \nonumber \\ 
-H(t) = H_{0} \exp^{A - \sigma}.
+H(t) = H_{0} \exp^{(A - \sigma)t}.
 \end{eqnarray}
 
 \noindent At $t^*$, actually, $I(t) = 0$ so earnings are $Y(t) = R H(t^*)$ Then,
 \begin{equation}
 \ln Y(t^*) = \ln(RH_{0}) + (A - \sigma)t^*.
 \end{equation} 
-\noindent According to this model, the returns to schooling are given by the productivity of the human capital investment production function less the human capital depreciation.  
+\noindent According to this model, the returns to schooling, $A-\sigma$, are given by the productivity of the human capital less the human capital depreciation rate.  
 
-\section{The Modified Shenshinski Specification}
+\section{The Modified Sheshinski Specification}
 The last variation to the Ben-Porath model that we consider allows for human capital investment cycles. This is, it allows for investment in human capital stock to happen in different episodes.\\
-\begin{definition} (Law of Motion for Human Capital in the Modified Shenshinski Specification)
-$\dot{H} = AI - \sigma H$. \label{eq:modshenlaw}
+\begin{definition} (Law of Motion for Human Capital in the Modified Sheshinski Specification)\\
+\begin{equation}
+\dot{H} = AI - \sigma H. \label{eq:modshenlaw}
+\end{equation}
 \end{definition}
 
-\indent The optimality conditions in this model are the following.
-\begin{condition} (Optimality Condition for the Life-cycle Individual's Problem in the Modified Shanshinski Specification)
+\indent Note that the human capital production function does not depend on $H(t)$. The optimality conditions for interior solutions in this model are the following.
+\begin{condition} (Optimality Condition for the Life-cycle Individual's Problem in the Modified Sheshinski Specification)
 \begin{eqnarray}
-\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu \exp^{rt} \geq \frac{RH}{A} \label{eq:focinvestmentmodsehn} \\
+\frac{\partial \mathcal{H} (\cdot)}{\partial I(t)} = 0 &\Leftrightarrow& \mu \exp^{rt} = \frac{RH}{A} \label{eq:focinvestmentmodsehn} \\
 \frac{\partial \mathcal{H} (\cdot)}{\partial H(t)} = - \dot{\mu(t)} &\Leftrightarrow& \dot{\mu} = \mu \sigma - \exp^{-rt} R (1 - I) \label{eq:focstockmodshen} \\ 
 \frac{\partial \mathcal{H} (\cdot)}{\partial \mu(t)} = \dot{H(t)} &\Leftrightarrow& \dot{H(t)} = AI - \sigma H \label{eq:focmotionmodshen} \\
 \text{Transversality} &:& \lim_{t \rightarrow T} \mu(t) H(t) = 0. \label{eq:foctransversalitymodshen}
@@ -863,21 +804,41 @@ $\dot{H} = AI - \sigma H$. \label{eq:modshenlaw}
 \dot{g} = g(\sigma + r) - R(1 - I). \label{eq:gmodshen}
 \end{equation}
 
-\noindent Let $\sigma = 0 $. Then $\dot{g} = -R(1 - I) + rg$ and $\dot{H} = A$ so the solution for the human capital trajectory when $I = 1$ is
+\noindent Let $\sigma = 0 $. Then $\dot{g} = -R(1 - I) + rg$. And $\dot{H} = A$ when $I=1$. So the solution for the human capital trajectory when $I = 1$ is
 \begin{equation}
 H(t) = At + H_{0} \label{eq:humancapshenmod}.
 \end{equation} 
 
-\noindent At $t = 0$, $I = 1$ if $g(0) > \frac{R}{A} H_{0}$. Importantly, $I = 1$ implies that $\dot{g(t)} = r g(t) > 0$. As $t$ grows, the return for gross investment grows because the payoff period gets closer. $I = 1$ cannot be a solution forever because the agent receives no earnings if she invest all of the time during the complete life-cycle.\\
-\begin{claim} (Uniqueness of the Period of Specialization in the Modified Shenshinski Specification with no Depreciation)
+\noindent At $t = 0$, $I = 1$ if $g(0) > \frac{R}{A} H_{0}$. Importantly, $I = 1$ implies that $\dot{g(t)} = r g(t) > 0$. As $t$ grows, the return for gross investment grows because the payoff period gets closer. $I = 1$ cannot be a solution forever because the agent receives no earnings if she invests all of the time during the complete life-cycle.\\
+\begin{claim} (Uniqueness of the Period of Specialization in the Modified Sheshinski Specification with no Depreciation)
 If the specialization period exists then it is unique.
 \end{claim}
 
 \begin{proof}
-\textbf{Jorge: Yike, please fix this.}
+Based on \eqref{eq:focinvestmentmodsehn}, if a specialization period exists and if $g(t) - \frac{RH(t)}{A}$ is strictly decreasing overtime, then the specialization period must occur at the beginning of the life cycle and is unique. So in the following we show that $\dot{g(t)} - \frac{R}{A}\dot{H(t)} < 0$.\\
+
+\indent Given that $\dot{g(t)} = rg(t) - R(1-I(t))$ and $g(T)=0$, we have:
+\begin{eqnarray}
+g(t) = R \int_t^T (1-I(s)) \exp^{r(t-s)} ds \label{eq:gshendisc}
+\end{eqnarray}
+
+\indent Then taking derivative with respect to time gives:
+\begin{eqnarray}
+\dot{g(t)} = R \left[ -1 + I(t) + r\int_t^T (1-I(s)) \exp^{r(t-s)} ds \right] 
+\end{eqnarray}
+
+Together with \eqref{eq:modshenlaw}, we have:
+\begin{eqnarray}
+\dot{g(t)} - \frac{R}{A} \dot{H(t)} &=& -R + Rr\int_t^T (1-I(s)) \exp^{r(t-s)} ds\\
+&\leq & -R + Rr\int_t^T \exp^{r(t-s)} ds \\
+&=& -R\exp^{r(t-T)} \\
+&<& 0  
+\end{eqnarray}
+
+\noindent The first inequality above follows by setting $I(\tau)=0$.
 \end{proof}
 
-\indent Finally, note that \eqref{eq:focinvestmentmodsehn} holds with strict equality at $t^*$ and \eqref{eq:humancapshenmod} is valid so that
+\indent Finally, to compute the optimal schooling year, $t^*$, note that \eqref{eq:focinvestmentmodsehn} holds with strict equality at $t^*$ and \eqref{eq:humancapshenmod} is valid so that
 \begin{equation}
 g(t^*) = \frac{R}{A} \left( A t^* + H_{0} \right). 
 \end{equation}
@@ -887,10 +848,10 @@ g(t^*) = \frac{R}{A} \left( A t^* + H_{0} \right).
 \left( 1 - \exp^{r(t^*-T)} \right) = \frac{r}{A} \left( A t^* + H_{0} \right)
 \end{equation}
 
-\noindent and $\frac{\partial t^*}{\partial H_{0}} < 0, \frac{\partial t^*}{\partial A}> 0$ as in the model of Section \ref{section:baseline}. 
+\noindent and thus $\frac{\partial t^*}{\partial H_{0}} < 0, \frac{\partial t^*}{\partial A}> 0$ and $\frac{\partial t^*}{\partial r} < 0$ as in the model of Section \ref{section:baseline}. 
  
 \subsection{Depreciation} \label{section:cycles}
-Let us give some conditions under which human capital investment would have different episodes over the life cycle. First assume that $g(0) > \frac{H_{0} R}{A}$ so that there is an specialization period to begin with. We can solve \eqref{eq:focmotionmodshen} and \eqref{eq:gmodshen} to obtain
+Let us give some conditions under which human capital investment would have different episodes over the life cycle. First assume that $g(0) > \frac{H_{0} R}{A}$ so that there is a specialization period to begin with. We can solve \eqref{eq:focmotionmodshen} and \eqref{eq:gmodshen} to obtain
 \begin{eqnarray}
 H(t) &=& \left[ H_{0} - \frac{A}{\sigma} \right] \exp^{- \sigma t} + \frac{A}{\sigma} \nonumber \\
 g(t) &=& g_{0} \exp^{(r + \sigma)t} \label{eq:gmodshent1} \nonumber
@@ -900,7 +861,7 @@ g(t) &=& g_{0} \exp^{(r + \sigma)t} \label{eq:gmodshent1} \nonumber
 
 \begin{center}
 \begin{figure}[H]
-\caption{Return to Gross Investment in Human Capital in the Modified Shenshinski Specification}
+\caption{Return to Gross Investment in Human Capital in the Modified Sheshinski Specification}
 \centering
 \includegraphics[width=4.5in, height=3.5in]{Figures/fig-shesh-for-intersection.pdf}
 \floatfoot{\begin{small}
@@ -919,7 +880,7 @@ H(t) &=& H(t_{1}) \exp^{-\sigma(t - t_{1})}
 
 \begin{center}
 \begin{figure}[H]
-\caption{Human Capital Investment Episodes in the Modified Shenshinski Specification} \label{figure:multi}
+\caption{Human Capital Investment Episodes in the Modified Sheshinski Specification} \label{figure:multi}
 \centering
 \includegraphics[width=4.5in, height=3.5in]{Figures/fig-shesh-one-traj.pdf}
 \floatfoot{\begin{small}
